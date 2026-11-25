@@ -45,7 +45,7 @@
 
   /* shape and rhythm */
   --bindu-r-sm:6px; --bindu-r-md:10px; --bindu-r-lg:14px; --bindu-r-xl:20px; --bindu-r-full:999px;
-  --bindu-section:clamp(72px,9vw,128px);
+  --bindu-section:clamp(64px,7.5vw,104px);
   --bindu-content:1240px;
   --bindu-wide:1440px;
 
