@@ -1,0 +1,154 @@
+{
+  "version": "1.0",
+  "updated": "2026-11-20",
+  "legalName": "Quantocos Global Systems LLP",
+  "legalIdentifier": "ACY-3556",
+  "incorporated": "2026-05-18",
+  "brandName": "GC³",
+  "brandFull": "Global Cloud Capability Center",
+  "contactEmail": "hello@quantocos.com",
+  "currency": "USD",
+  "creditRate": 25,
+  "creditRateText": "$25 a credit",
+  "pods": {
+    "priced": [
+      {
+        "name": "Creative Pod",
+        "price": 3000,
+        "credits": 120,
+        "page": "solutions/creative-pod.html"
+      },
+      {
+        "name": "Digital Pod",
+        "price": 6000,
+        "credits": 240,
+        "page": "solutions/digital-pod.html"
+      },
+      {
+        "name": "Strategy Pod",
+        "price": 9000,
+        "credits": 360,
+        "page": "solutions/strategy-pod.html"
+      }
+    ],
+    "scoped": [
+      {
+        "name": "Automation Pod",
+        "page": "solutions/automation-pod.html"
+      },
+      {
+        "name": "Interactive Pod",
+        "page": "solutions/interactive-pod.html"
+      },
+      {
+        "name": "REMAU",
+        "page": "solutions/remau.html"
+      }
+    ],
+    "scopedLabel": "Scoped per client"
+  },
+  "pilot": {
+    "name": "Pilot Sprint",
+    "days": 14,
+    "price": 1500,
+    "credits": 60,
+    "creditBack": "Subscribe to any pod within 14 days of the pilot ending and the $1,500 is credited against your first month.",
+    "refund": "Unused pilot credits are refunded.",
+    "noLockIn": "The pilot ends on its own — no lock-in."
+  },
+  "counts": {
+    "tracks": 6,
+    "industries": 10,
+    "pricedPods": 3,
+    "scopedPods": 3,
+    "catalogs": 6
+  },
+  "geography": [
+    "US",
+    "UK",
+    "EU",
+    "UAE",
+    "ANZ"
+  ],
+  "geographyText": "US, UK, EU, UAE and ANZ",
+  "deliveryPartners": [
+    "Singapore"
+  ],
+  "workLocation": "Named specialists work from India, overlapping your business day; some markets are served through independent delivery partners (for example Singapore).",
+  "gates": [
+    {
+      "id": "G1",
+      "name": "brief approval"
+    },
+    {
+      "id": "G2",
+      "name": "direction selection"
+    },
+    {
+      "id": "G3",
+      "name": "internal QA"
+    },
+    {
+      "id": "G4",
+      "name": "client review"
+    },
+    {
+      "id": "G5",
+      "name": "go-live"
+    }
+  ],
+  "g4Wording": "G4 is your 48 business-hour review window, not our delivery promise.",
+  "claimsWeDontMake": "No turnaround-hour promises, no ROI figures, no invented benchmarks.",
+  "certifications": "We hold none yet, so we display none. What exists today is contractual: NDA, DPA, IP assignment and a written data-location statement.",
+  "neverCharged": [
+    "onboarding",
+    "brand ingestion",
+    "brief clarification",
+    "asset handover",
+    "monthly pod review"
+  ],
+  "ownerNeeds": [
+    "names, roles, photos and LinkedIn URLs for pod leads and founder",
+    "portal screenshot or short demo (balance, burn rate, request quote)",
+    "ungraded capture for the before/after slider",
+    "confirmation of pilot terms (14 days, $1,500, 60 credits, credit-back, refund)",
+    "confirmation of the work-location wording",
+    "confirmation that REMAU's 240 h/month (280 peak) capacity wording survives the move to scoped pricing",
+    "confirm the terms wording against the engagement letter (no exit fee / written notice)",
+    "confirm that back-office work is scoped inside a custom pod",
+    "confirm whether 'weekly demo', 'rework logged' and 'every deliverable has a date' are real engagement terms (all three were removed from the stage widget pending confirmation)",
+    "confirm whether a sample monthly statement exists (the old link pointed at contracts.html)"
+  ],
+  "terms": "No setup fee. No exit fee. Month to month, with written notice before the next billing date.",
+  "termsConfirmed": false,
+  "vocabulary": {
+    "track": "a category of work; there are six",
+    "pod": "the subscription package (named manager + specialists + AI agents)",
+    "catalog": "used only on credit-matrix pages, never on the homepage"
+  },
+  "backoffice": {
+    "statement": "Back-office work (finance and operations) is scoped inside a custom pod.",
+    "confirmed": false
+  },
+  "fixedPhrase": "Stages run your month. Gates approve each deliverable.",
+  "heroFacts": [
+    "6 capability tracks",
+    "3 published pod prices",
+    "$25 per credit, one rate",
+    "IP assigns to you"
+  ],
+  "order": [
+    "hero",
+    "#monday",
+    "#pods",
+    "#pods-hero",
+    "#services",
+    "#pricing",
+    "#calculator",
+    "#vs",
+    "#trust",
+    "#creative-ads",
+    "#faq",
+    "cta"
+  ]
+}

@@ -1,0 +1,830 @@
+[
+ {
+  "w": 1440,
+  "page": "404.html",
+  "checked": 43,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "automation.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "backoffice.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "creative.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "growth.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "interactive.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "strategy.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "capabilities.html",
+  "checked": 111,
+  "failing": 54
+ },
+ {
+  "w": 1440,
+  "page": "careers.html",
+  "checked": 63,
+  "failing": 6
+ },
+ {
+  "w": 1440,
+  "page": "company.html",
+  "checked": 79,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "compare.html",
+  "checked": 64,
+  "failing": 12
+ },
+ {
+  "w": 1440,
+  "page": "contact.html",
+  "checked": 44,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "contracts.html",
+  "checked": 60,
+  "failing": 9
+ },
+ {
+  "w": 1440,
+  "page": "gc3.html",
+  "checked": 91,
+  "failing": 4
+ },
+ {
+  "w": 1440,
+  "page": "gcc-vs-pod.html",
+  "checked": 53,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "glossary.html",
+  "checked": 46,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "how-it-works.html",
+  "checked": 51,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "index.html",
+  "checked": 222,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "agencies.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "education.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "healthcare.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "manufacturing.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "professional.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "real-estate.html",
+  "checked": 93,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "retail.html",
+  "checked": 93,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "saas.html",
+  "checked": 93,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "smb.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "travel.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "industries.html",
+  "checked": 44,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "insights.html",
+  "checked": 47,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "legal.html",
+  "checked": 44,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "onboarding.html",
+  "checked": 57,
+  "failing": 5
+ },
+ {
+  "w": 1440,
+  "page": "pilot.html",
+  "checked": 50,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "pricing.html",
+  "checked": 69,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "prism.html",
+  "checked": 156,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "apara.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "april.html",
+  "checked": 77,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "astx.html",
+  "checked": 72,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "automate.html",
+  "checked": 80,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "caksh.html",
+  "checked": 71,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "cobridge.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "code.html",
+  "checked": 80,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "cpiu.html",
+  "checked": 69,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "d3.html",
+  "checked": 72,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "friday.html",
+  "checked": 68,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "gc3.html",
+  "checked": 81,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "hpcf.html",
+  "checked": 74,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "interactive-surface.html",
+  "checked": 80,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "lxp.html",
+  "checked": 74,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "martech.html",
+  "checked": 80,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "plan.html",
+  "checked": 80,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "portal.html",
+  "checked": 69,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "prism.html",
+  "checked": 79,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "qore.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "qrek.html",
+  "checked": 69,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "saltpetre.html",
+  "checked": 84,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "sigma.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "studio.html",
+  "checked": 80,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "products.html",
+  "checked": 62,
+  "failing": 1
+ },
+ {
+  "w": 1440,
+  "page": "proof.html",
+  "checked": 46,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "search.html",
+  "checked": 44,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "security.html",
+  "checked": 59,
+  "failing": 13
+ },
+ {
+  "w": 1440,
+  "page": "automation-pod.html",
+  "checked": 72,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "creative-pod.html",
+  "checked": 77,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "digital-pod.html",
+  "checked": 74,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "interactive-pod.html",
+  "checked": 72,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "remau.html",
+  "checked": 72,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "strategy-pod.html",
+  "checked": 74,
+  "failing": 0
+ },
+ {
+  "w": 1440,
+  "page": "solutions.html",
+  "checked": 112,
+  "failing": 6
+ },
+ {
+  "w": 390,
+  "page": "404.html",
+  "checked": 40,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "automation.html",
+  "checked": 70,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "backoffice.html",
+  "checked": 70,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "creative.html",
+  "checked": 70,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "growth.html",
+  "checked": 70,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "interactive.html",
+  "checked": 70,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "strategy.html",
+  "checked": 70,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "capabilities.html",
+  "checked": 108,
+  "failing": 54
+ },
+ {
+  "w": 390,
+  "page": "careers.html",
+  "checked": 60,
+  "failing": 6
+ },
+ {
+  "w": 390,
+  "page": "company.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "compare.html",
+  "checked": 61,
+  "failing": 12
+ },
+ {
+  "w": 390,
+  "page": "contact.html",
+  "checked": 41,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "contracts.html",
+  "checked": 58,
+  "failing": 9
+ },
+ {
+  "w": 390,
+  "page": "gc3.html",
+  "checked": 88,
+  "failing": 4
+ },
+ {
+  "w": 390,
+  "page": "gcc-vs-pod.html",
+  "checked": 50,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "glossary.html",
+  "checked": 43,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "how-it-works.html",
+  "checked": 48,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "index.html",
+  "checked": 219,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "agencies.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "education.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "healthcare.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "manufacturing.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "professional.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "real-estate.html",
+  "checked": 90,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "retail.html",
+  "checked": 90,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "saas.html",
+  "checked": 90,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "smb.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "travel.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "industries.html",
+  "checked": 41,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "insights.html",
+  "checked": 44,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "legal.html",
+  "checked": 41,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "onboarding.html",
+  "checked": 53,
+  "failing": 5
+ },
+ {
+  "w": 390,
+  "page": "pilot.html",
+  "checked": 47,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "pricing.html",
+  "checked": 66,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "prism.html",
+  "checked": 153,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "apara.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "april.html",
+  "checked": 74,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "astx.html",
+  "checked": 69,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "automate.html",
+  "checked": 77,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "caksh.html",
+  "checked": 68,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "cobridge.html",
+  "checked": 70,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "code.html",
+  "checked": 77,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "cpiu.html",
+  "checked": 66,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "d3.html",
+  "checked": 69,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "friday.html",
+  "checked": 65,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "gc3.html",
+  "checked": 78,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "hpcf.html",
+  "checked": 71,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "interactive-surface.html",
+  "checked": 77,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "lxp.html",
+  "checked": 71,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "martech.html",
+  "checked": 77,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "plan.html",
+  "checked": 77,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "portal.html",
+  "checked": 66,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "prism.html",
+  "checked": 76,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "qore.html",
+  "checked": 73,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "qrek.html",
+  "checked": 66,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "saltpetre.html",
+  "checked": 81,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "sigma.html",
+  "checked": 70,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "studio.html",
+  "checked": 77,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "products.html",
+  "checked": 58,
+  "failing": 1
+ },
+ {
+  "w": 390,
+  "page": "proof.html",
+  "checked": 43,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "search.html",
+  "checked": 41,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "security.html",
+  "checked": 56,
+  "failing": 13
+ },
+ {
+  "w": 390,
+  "page": "automation-pod.html",
+  "checked": 69,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "creative-pod.html",
+  "checked": 74,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "digital-pod.html",
+  "checked": 71,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "interactive-pod.html",
+  "checked": 69,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "remau.html",
+  "checked": 69,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "strategy-pod.html",
+  "checked": 71,
+  "failing": 0
+ },
+ {
+  "w": 390,
+  "page": "solutions.html",
+  "checked": 106,
+  "failing": 6
+ }
+]

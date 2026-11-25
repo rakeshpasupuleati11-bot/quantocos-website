@@ -1,0 +1,100 @@
+FAIL 404.html @1440: 66 console errors
+FAIL capabilities.html @1440: 1 console errors; contrast 60
+FAIL careers.html @1440: contrast 6
+FAIL company.html @1440: contrast 6
+FAIL compare.html @1440: 15 console errors; contrast 12
+FAIL contact.html @1440: 25 console errors
+FAIL contracts.html @1440: contrast 9
+FAIL gc3.html @1440: contrast 4
+FAIL gcc-vs-pod.html @1440: 7 console errors
+FAIL glossary.html @1440: 5 console errors
+FAIL index.html @1440: 412 console errors
+FAIL industries/agencies.html @1440: 27 console errors
+FAIL industries/education.html @1440: 14 console errors
+FAIL industries/healthcare.html @1440: 19 console errors
+FAIL industries/manufacturing.html @1440: 20 console errors
+FAIL industries/professional.html @1440: 19 console errors
+FAIL industries/real-estate.html @1440: 9 console errors
+FAIL industries/retail.html @1440: 38 console errors
+FAIL industries/saas.html @1440: 13 console errors
+FAIL industries/smb.html @1440: 10 console errors
+FAIL industries/travel.html @1440: 11 console errors
+FAIL industries.html @1440: 24 console errors
+FAIL onboarding.html @1440: contrast 5
+FAIL pilot.html @1440: 1 console errors
+FAIL products/saltpetre.html @1440: 1 console errors
+FAIL products.html @1440: 1 console errors; contrast 1
+FAIL security.html @1440: 23 console errors; contrast 13
+FAIL solutions/automation-pod.html @1440: 4 console errors
+FAIL solutions/interactive-pod.html @1440: 30 console errors
+FAIL solutions.html @1440: contrast 6
+FAIL 404.html @390: 38 console errors
+FAIL capabilities/automation.html @390: 22 console errors
+FAIL capabilities/backoffice.html @390: 24 console errors
+FAIL capabilities/creative.html @390: 27 console errors
+FAIL capabilities/growth.html @390: 22 console errors
+FAIL capabilities/interactive.html @390: 27 console errors
+FAIL capabilities/strategy.html @390: 28 console errors
+FAIL capabilities.html @390: 15 console errors; contrast 60
+FAIL careers.html @390: 24 console errors; contrast 6
+FAIL company.html @390: 20 console errors; contrast 6
+FAIL compare.html @390: 21 console errors; contrast 12
+FAIL contact.html @390: 18 console errors
+FAIL contracts.html @390: 7 console errors; contrast 9
+FAIL gc3.html @390: 18 console errors; contrast 4
+FAIL gcc-vs-pod.html @390: 33 console errors
+FAIL glossary.html @390: 37 console errors
+FAIL how-it-works.html @390: 71 console errors
+FAIL industries/agencies.html @390: 33 console errors
+FAIL industries/education.html @390: 38 console errors
+FAIL industries/healthcare.html @390: 35 console errors
+FAIL industries/manufacturing.html @390: 35 console errors
+FAIL industries/professional.html @390: 43 console errors
+FAIL industries/real-estate.html @390: 34 console errors
+FAIL industries/retail.html @390: 39 console errors
+FAIL industries/saas.html @390: 39 console errors
+FAIL industries/smb.html @390: 33 console errors
+FAIL industries/travel.html @390: 33 console errors
+FAIL industries.html @390: 8 console errors
+FAIL insights.html @390: 23 console errors
+FAIL legal.html @390: 14 console errors
+FAIL onboarding.html @390: 25 console errors; contrast 5
+FAIL pilot.html @390: 21 console errors
+FAIL pricing.html @390: 22 console errors
+FAIL prism.html @390: 12 console errors
+FAIL products/apara.html @390: 21 console errors
+FAIL products/april.html @390: 24 console errors
+FAIL products/astx.html @390: 22 console errors
+FAIL products/automate.html @390: 23 console errors
+FAIL products/caksh.html @390: 24 console errors
+FAIL products/cobridge.html @390: 22 console errors
+FAIL products/code.html @390: 24 console errors
+FAIL products/cpiu.html @390: 24 console errors
+FAIL products/d3.html @390: 20 console errors
+FAIL products/friday.html @390: 23 console errors
+FAIL products/gc3.html @390: 24 console errors
+FAIL products/hpcf.html @390: 23 console errors
+FAIL products/interactive-surface.html @390: 25 console errors
+FAIL products/lxp.html @390: 22 console errors
+FAIL products/martech.html @390: 23 console errors
+FAIL products/plan.html @390: 20 console errors
+FAIL products/portal.html @390: 24 console errors
+FAIL products/prism.html @390: 25 console errors
+FAIL products/qore.html @390: 23 console errors
+FAIL products/qrek.html @390: 23 console errors
+FAIL products/saltpetre.html @390: 28 console errors
+FAIL products/sigma.html @390: 24 console errors
+FAIL products/studio.html @390: 25 console errors
+FAIL products.html @390: 12 console errors; contrast 1
+FAIL proof.html @390: 27 console errors
+FAIL search.html @390: 23 console errors
+FAIL security.html @390: 20 console errors; contrast 13
+FAIL solutions/automation-pod.html @390: 24 console errors
+FAIL solutions/creative-pod.html @390: 24 console errors
+FAIL solutions/digital-pod.html @390: 22 console errors
+FAIL solutions/interactive-pod.html @390: 16 console errors
+FAIL solutions/remau.html @390: 18 console errors
+FAIL solutions/strategy-pod.html @390: 19 console errors
+FAIL solutions.html @390: 14 console errors; contrast 6
+
+138 page/width combinations · 98 failing · screenshots in QA/shots
