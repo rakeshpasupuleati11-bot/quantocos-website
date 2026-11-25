@@ -14,6 +14,12 @@ Updated 2026-11-25. Branch `redesign-v2` (baseline `edc5bf0`, cleanup `3cd643e`)
   GC³ watermark on the front tile); pause control, offscreen/tab pausing, reduced-motion
   fallback, mobile scrim and 5-tile subset, 2-up facts ≤1100px. CSS + existing observer only —
   the repo has no GSAP/Lenis and `CLAUDE.md` forbids adding them.
+- **Homepage tone split (`9418aef`).** Measured 77% black / 23% light by section height at 1440.
+  Dark: problems, deliverables, pods, how, pricing, compare, faq. Light: facts band, work gallery,
+  final CTA band. Implemented as a scoped token remap on `.section--dark` plus new
+  `.section--raise` (void-1) for alternating bands; no component duplication. Contrast audit
+  (measured ratio per text node, 1440/768/390): 0 failures; gate/pod tags and the image caption
+  chip needed explicit dark-context colours; select options pinned to void.
 - **QA (homepage).** `build.py --check` clean; `check_site.py` 66 pages · 0 errors · 0 warnings; Playwright at 360–1920: no horizontal overflow, no console errors, one H1, calculator live (76 of 120), footer contrast raised.
 - **QA (hero Phase 3).** Playwright at 1440/1280/1100/1024/900/768/390: no overflow, no console
   errors, one H1, headline/CTAs/facts clear of tiles; pause toggles and pauses all tile layers;
