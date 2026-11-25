@@ -20,6 +20,14 @@ Updated 2026-11-25. Branch `redesign-v2` (baseline `edc5bf0`, cleanup `3cd643e`)
   `.section--raise` (void-1) for alternating bands; no component duplication. Contrast audit
   (measured ratio per text node, 1440/768/390): 0 failures; gate/pod tags and the image caption
   chip needed explicit dark-context colours; select options pinned to void.
+- **Pods bento + gate panels.** Six pods now share one 12-column grid: the three published pods
+  at span 4, the three scoped pods in a second band at span 5/4/3 with `min-height:172px` and a
+  ghost numeral (01–03) bottom-left. Published spans 4/4/4 keep equal height (388×457); scoped
+  band 489/388/288×172. `#how .gates` is a single-column panel ladder (bordered `void-2` cards,
+  860px max). A scroll-pinned stage stack was built and tested five times, then removed: at 1440
+  the container height (706px) barely exceeds the last sticky top+height (646px), so cards
+  collapse on release and G3–G5 hide. Pure-CSS stacking is not viable here; a JS pin would need
+  GSAP/ScrollTrigger, which `CLAUDE.md` forbids.
 - **QA (homepage).** `build.py --check` clean; `check_site.py` 66 pages · 0 errors · 0 warnings; Playwright at 360–1920: no horizontal overflow, no console errors, one H1, calculator live (76 of 120), footer contrast raised.
 - **QA (hero Phase 3).** Playwright at 1440/1280/1100/1024/900/768/390: no overflow, no console
   errors, one H1, headline/CTAs/facts clear of tiles; pause toggles and pauses all tile layers;

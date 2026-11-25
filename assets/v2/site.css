@@ -725,3 +725,39 @@ table.compare{width:100%;border-collapse:collapse;min-width:820px;font-size:13.5
   .reveal-armed [data-reveal],.reveal-armed [data-stagger]>*{opacity:1;transform:none}
   .tile,.tile__glass{animation:none !important}
 }
+
+/* ---------- bento pods: six cells, asymmetric spans ---------- */
+.pods{grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.pods>.pod{grid-column:span 4}
+.pods>.pod:nth-child(4){grid-column:span 5}
+.pods>.pod:nth-child(5){grid-column:span 4}
+.pods>.pod:nth-child(6){grid-column:span 3}
+.pods>.pod--scoped{justify-content:space-between;gap:18px;min-height:172px}
+.pods>.pod--scoped::after{
+  content:attr(data-n);position:absolute;left:22px;bottom:-10px;pointer-events:none;
+  font-family:var(--bindu-font-display);font-weight:600;line-height:1;
+  font-size:clamp(72px,7vw,96px);color:rgba(250,248,242,.07)
+}
+.pods>.pod--scoped>span{position:relative;z-index:1;display:grid;gap:6px}
+.pods>.pod--scoped strong{font-family:var(--bindu-font-display);font-size:22px;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+.pods>.pod--scoped small{font-family:var(--bindu-font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--bindu-ink-3)}
+.pods>.pod--scoped svg{width:16px;height:16px;align-self:flex-end;color:var(--bindu-ink-2);transition:transform var(--bindu-dur) var(--bindu-ease);position:relative;z-index:1}
+.pods>.pod--scoped:hover svg{transform:translateX(4px)}
+
+/* ---------- gate stack: pinned ladder (no text clipping) ---------- */
+#how .gates{grid-template-columns:1fr;gap:14px;max-width:860px}
+#how .gate{
+  padding:24px 30px 26px;
+  border:1px solid rgba(250,248,242,.16);border-radius:var(--bindu-r-lg);
+  background:var(--bindu-void-2);box-shadow:0 24px 60px rgba(0,0,0,.45);
+}
+#how .gate::before{left:30px;top:0;translate:0 -50%;box-shadow:0 0 0 5px var(--bindu-void)}
+#how .gate h3{font-size:clamp(20px,2vw,24px);margin:6px 0 4px}
+#how .gate p{max-width:60ch;font-size:13.5px;line-height:1.45}
+
+@media (max-width:1100px){
+  .pods>.pod,.pods>.pod:nth-child(4),.pods>.pod:nth-child(5),.pods>.pod:nth-child(6){grid-column:span 6}
+}
+@media (max-width:680px){
+  .pods>.pod,.pods>.pod:nth-child(4),.pods>.pod:nth-child(5),.pods>.pod:nth-child(6){grid-column:span 12}
+}
