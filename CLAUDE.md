@@ -31,8 +31,8 @@ score ≥9/10. Do not start redesign or deployment until explicitly instructed.
 | `site-facts.json` | prices, credits, pilot terms, counts, geography, gates, `ownerNeeds` |
 | `VOICE.md` | voice rules, definitions, banned phrases |
 | `README-BUILD.md` | build and gate commands |
-| `HANDOVER.md` | current state, open items |
-| `docs/final-strategy-2026-11-24.md` | approved V2 direction, sitemap, design system |
+| `V2-TRACKER.md` | current state, open items, approvals |
+| `V2-DESIGN.md` | V2 tokens, identity rules, layout language |
 | `QA/summary.md` | last browser QA results |
 
 - Any claim not confirmed by `site-facts.json` or `ownerNeeds` sign-off must not appear on a page.

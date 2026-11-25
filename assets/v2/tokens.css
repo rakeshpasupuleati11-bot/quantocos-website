@@ -1,0 +1,61 @@
+/* ============================================================
+   Quantocos V2 — BINDU PRISM UI tokens (single source of truth)
+   Canonical system: BINDU PRISM UI v4.
+   Layout language: AI FusionX (light, editorial, image-led).
+   Override any token here; no component defines its own colour.
+   ============================================================ */
+:root{
+  /* ground */
+  --bindu-void:#080B12; --bindu-void-1:#0C1020; --bindu-void-2:#111827;
+  --bindu-shunya:#FAF8F2; --bindu-shunya-1:#F3F0E8; --bindu-shunya-2:#E6E2D6;
+  --bindu-paper:#FFFFFF;
+
+  /* ink */
+  --bindu-ink:#080B12;
+  --bindu-ink-2:rgba(8,11,18,.64);
+  --bindu-ink-3:rgba(8,11,18,.44);
+  --bindu-on-dark:#FAF8F2;
+  --bindu-on-dark-2:rgba(250,248,242,.64);
+
+  /* somA gold — the action colour. Never a decoration. */
+  --bindu-soma:#C9911A; --bindu-soma-light:#F2D582; --bindu-soma-deep:#8B6410;
+  --bindu-soma-wash:rgba(201,145,26,.12);
+
+  /* spectrum — prism refractions, hairlines and washes only */
+  --bindu-spectrum:linear-gradient(90deg,#7B00FF 0%,#3300FF 13%,#0055FF 24%,#0099FF 37%,#00DDAA 50%,#AAFF00 63%,#FFDD00 73%,#FF8800 84%,#FF2200 100%);
+  --bindu-spectrum-soft:linear-gradient(135deg,rgba(123,0,255,.22),rgba(0,153,255,.16) 38%,rgba(0,221,170,.14) 62%,rgba(255,136,0,.18));
+  --bindu-violet:#7B00FF; --bindu-blue:#0099FF; --bindu-teal:#00DDAA; --bindu-green:#AAFF00;
+  --bindu-orange:#FF8800; --bindu-yellow:#FFDD00;
+
+  /* lines and glass */
+  --bindu-line:rgba(8,11,18,.10);
+  --bindu-line-strong:rgba(8,11,18,.18);
+  --bindu-line-dark:rgba(250,248,242,.10);
+  --bindu-glass:rgba(255,255,255,.58);
+  --bindu-glass-heavy:rgba(255,255,255,.82);
+  --bindu-glass-border:rgba(255,255,255,.72);
+  --bindu-glass-blur:blur(20px) saturate(1.5);
+
+  /* type */
+  --bindu-font-display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --bindu-font-body:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --bindu-font-mono:'DM Mono',ui-monospace,SFMono-Regular,Consolas,monospace;
+  --bindu-display-weight:600;
+  --bindu-leading-tight:1.02;
+
+  /* shape and rhythm */
+  --bindu-r-sm:6px; --bindu-r-md:10px; --bindu-r-lg:14px; --bindu-r-xl:20px; --bindu-r-full:999px;
+  --bindu-section:clamp(72px,9vw,128px);
+  --bindu-content:1240px;
+  --bindu-wide:1440px;
+
+  /* elevation */
+  --bindu-sh-sm:0 1px 2px rgba(8,11,18,.05);
+  --bindu-sh-md:0 18px 44px rgba(8,11,18,.10);
+  --bindu-sh-lg:0 40px 90px rgba(8,11,18,.18);
+
+  /* motion — BINDU durations */
+  --bindu-ease:cubic-bezier(.16,1,.3,1);
+  --bindu-ease-out:cubic-bezier(.25,.46,.45,.94);
+  --bindu-dur-fast:120ms; --bindu-dur:220ms; --bindu-dur-slow:420ms; --bindu-dur-enter:700ms;
+}

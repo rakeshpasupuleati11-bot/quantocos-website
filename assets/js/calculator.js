@@ -62,6 +62,8 @@
     setText("stat-pool", fmt(pool));
     setText("stat-left", fmt(left));
     setText("stat-pct", pct + "%");
+    var bar = document.getElementById("stat-pct");
+    if (bar) bar.style.width = Math.min(100, Math.max(0, pct)) + "%";
     setText("stat-over", over > 0 ? fmt(over) + " credits" : "0");
   }
 
