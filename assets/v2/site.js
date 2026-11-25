@@ -93,24 +93,24 @@
     }
   });
 
-  /* hero ecosystem — pointer depth, offscreen pause, manual pause */
-  var stage = document.querySelector('.eco');
+  /* hero glass tiles — pointer depth, offscreen pause, manual pause */
+  var tiles = document.querySelector('.tiles');
   var hero = document.querySelector('.hero');
-  if (stage && !reduce && window.matchMedia('(pointer:fine)').matches) {
+  if (tiles && hero && !reduce && window.matchMedia('(pointer:fine)').matches) {
     var ticking = false;
-    stage.addEventListener('pointermove', function (e) {
+    hero.addEventListener('pointermove', function (e) {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(function () {
-        var r = stage.getBoundingClientRect();
-        stage.style.setProperty('--mx', (((e.clientX - r.left) / r.width) - .5).toFixed(3));
-        stage.style.setProperty('--my', (((e.clientY - r.top) / r.height) - .5).toFixed(3));
+        var r = hero.getBoundingClientRect();
+        hero.style.setProperty('--mx', (((e.clientX - r.left) / r.width) - .5).toFixed(3));
+        hero.style.setProperty('--my', (((e.clientY - r.top) / r.height) - .5).toFixed(3));
         ticking = false;
       });
     }, { passive: true });
-    stage.addEventListener('pointerleave', function () {
-      stage.style.setProperty('--mx', 0);
-      stage.style.setProperty('--my', 0);
+    hero.addEventListener('pointerleave', function () {
+      hero.style.setProperty('--mx', 0);
+      hero.style.setProperty('--my', 0);
     });
   }
   if (hero) {
