@@ -92,4 +92,43 @@
       document.activeElement.blur();
     }
   });
+
+  /* hero ecosystem — pointer depth, offscreen pause, manual pause */
+  var stage = document.querySelector('.eco');
+  var hero = document.querySelector('.hero');
+  if (stage && !reduce && window.matchMedia('(pointer:fine)').matches) {
+    var ticking = false;
+    stage.addEventListener('pointermove', function (e) {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var r = stage.getBoundingClientRect();
+        stage.style.setProperty('--mx', (((e.clientX - r.left) / r.width) - .5).toFixed(3));
+        stage.style.setProperty('--my', (((e.clientY - r.top) / r.height) - .5).toFixed(3));
+        ticking = false;
+      });
+    }, { passive: true });
+    stage.addEventListener('pointerleave', function () {
+      stage.style.setProperty('--mx', 0);
+      stage.style.setProperty('--my', 0);
+    });
+  }
+  if (hero) {
+    var toggle = hero.querySelector('[data-motion-toggle]');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var paused = hero.classList.toggle('is-paused');
+        toggle.setAttribute('aria-pressed', String(paused));
+        toggle.textContent = paused ? 'Resume motion' : 'Pause motion';
+      });
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        hero.classList.toggle('is-offscreen', !entries[0].isIntersecting);
+      }, { rootMargin: '120px' }).observe(hero);
+    }
+    document.addEventListener('visibilitychange', function () {
+      hero.classList.toggle('is-hidden-tab', document.hidden);
+    });
+  }
 })();

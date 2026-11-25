@@ -7,6 +7,11 @@ Updated 2026-11-25. Branch `redesign-v2` (baseline `edc5bf0`, cleanup `3cd643e`)
 - **Phase A — cleanup.** 340 dev/historical files archived outside the repo; tree 196 MB → 110 MB; archive 86 MB; backups and old QA excluded from publish. 70 live HTML pages kept, 66 gated pages.
 - **Identity.** BINDU tokens extracted into `assets/v2/tokens.css`; component layer in `assets/v2/site.css`; reference in `V2-DESIGN.md`.
 - **Homepage V2.** 12 sections, AI FusionX structure + BINDU identity; reuses `motion.js`, `calculator.js`, nav/drawer/footer partials and the 127-service catalog.
+- **Hero motion (`0fafdcb`).** Rotating conic prism aura, bloom drift on hero glow, scroll-linked spectrum hairline, spectrum edge on dark bands; shard drift and card/image hover retained. Reduced-motion guarded; no new dependencies.
+- **Hero rewrite (Phase 2).** Split hero: proposition, price and both CTAs left; capability
+  ecosystem right (GC³ hub, six pod nodes on flowing spectrum wires, board-deck and
+  launch-campaign deliverables, pointer depth, pause control, offscreen/tab pause,
+  reduced-motion guards, static two-column grid ≤680). Committed on `redesign-v2`.
 - **QA (homepage).** `build.py --check` clean; `check_site.py` 66 pages · 0 errors · 0 warnings; Playwright at 360–1920: no horizontal overflow, no console errors, one H1, calculator live (76 of 120), footer contrast raised.
 
 ## Awaiting approval
