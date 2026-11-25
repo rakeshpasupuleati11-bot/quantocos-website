@@ -60,9 +60,11 @@ Publish = static upload of the root. Backups are dev artefacts; exclude them.
   Do not introduce a second token set. Check `components.css` before writing new cards/buttons.
 - CSS entry: pages load `app.min.css` → `site-2026.css` → page/section CSS. New section styles
   go in a named section file, not appended to `app.min.css`.
-- JS: `motion.js` is the only motion layer (`data-reveal`, `data-stagger`, `data-count`,
+- JS: `motion.js` is the CSS-driven motion layer (`data-reveal`, `data-stagger`, `data-count`,
   `data-parallax`, `data-draw`, `data-tilt`); `components.js` owns tabs/count-up/link enhancer.
-  Do not add GSAP, Lenis or a second observer.
+  `assets/v2/motion-gsap.js` is the scroll layer on pages that link it, using the pinned,
+  checksummed builds in `assets/vendor/` (Lenis 1.3.28, GSAP 3.15.1 + ScrollTrigger).
+  Do not add a third motion library, a second IntersectionObserver, or an unpinned CDN tag.
 - Data: `assets/data/services.json` (service catalog), `site-facts.json` (pricing).
 - Patterns to reuse: pod card, gate/stage track, credit ledger/calculator, orbit map,
   comparison table, statement mock, FAQ accordion, CTA band.

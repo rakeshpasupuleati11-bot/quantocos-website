@@ -1,0 +1,16 @@
+/* Gate ladder — scroll-drawn edge. Owned by assets/v2/motion-gsap.js.
+   Adds nothing to layout: the accent sits on the card's own left border. */
+
+#how .gate{--lit:0}
+#how .gate::after{
+  content:"";position:absolute;left:-1px;top:-1px;bottom:-1px;width:2px;
+  border-radius:3px;transform-origin:50% 0;transform:scaleY(var(--lit));
+  background:linear-gradient(180deg,rgba(242,213,130,.95),rgba(201,145,26,.85));
+  box-shadow:0 0 16px rgba(201,145,26,.55);
+  pointer-events:none}
+#how .gate__tag{transition:color .45s var(--bindu-ease,cubic-bezier(.16,1,.3,1))}
+
+@media (prefers-reduced-motion:reduce){
+  #how .gate{--lit:0}
+  #how .gate::after{display:none}
+}

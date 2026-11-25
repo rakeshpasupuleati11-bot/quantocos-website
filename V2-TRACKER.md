@@ -20,6 +20,12 @@ Updated 2026-11-25. Branch `redesign-v2` (baseline `edc5bf0`, cleanup `3cd643e`)
   `.section--raise` (void-1) for alternating bands; no component duplication. Contrast audit
   (measured ratio per text node, 1440/768/390): 0 failures; gate/pod tags and the image caption
   chip needed explicit dark-context colours; select options pinned to void.
+- **Scroll layer (Lenis + GSAP).** Pinned builds vendored in `assets/vendor/` (Lenis 1.3.28,
+  GSAP 3.15.1 + ScrollTrigger; SHA-256 recorded in `assets/vendor/README.md`). `assets/v2/motion-gsap.js`
+  wires smooth scroll, ScrollTrigger sync, drawer scroll lock, and a scroll-scrubbed gold edge on each
+  `#how` gate (2px `::after` scaled by `--lit`, no layout change). Homepage only. Reduced motion exits
+  before touching the DOM; skip link excluded from anchor interception. 52 KB gzip added.
+  `three` and `barba` are vendored but not referenced by any page.
 - **Pods bento + gate panels.** Six pods now share one 12-column grid: the three published pods
   at span 4, the three scoped pods in a second band at span 5/4/3 with `min-height:172px` and a
   ghost numeral (01–03) bottom-left. Published spans 4/4/4 keep equal height (388×457); scoped
