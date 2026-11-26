@@ -29,7 +29,16 @@
 <link rel="stylesheet" href="assets/v2/tokens.css">
 <link rel="stylesheet" href="assets/v2/site.css">
 <link rel="stylesheet" href="assets/vendor/lenis.css">
-<link rel="stylesheet" href="assets/v2/section-gates.css">
+<link rel="stylesheet" href="assets/v2/section-gate-stage.css">
+<link rel="stylesheet" href="assets/v2/section-story.css">
+<link rel="stylesheet" href="assets/v2/section-storycards.css">
+<link rel="stylesheet" href="assets/v2/section-capabilities.css">
+<link rel="stylesheet" href="assets/v2/section-pricing.css">
+<link rel="stylesheet" href="assets/v2/section-planner.css">
+<link rel="stylesheet" href="assets/v2/section-compare.css">
+<link rel="stylesheet" href="assets/v2/section-trust.css">
+<link rel="stylesheet" href="assets/v2/section-human.css">
+<link rel="stylesheet" href="assets/v2/section-refine.css">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {
@@ -64,6 +73,7 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="assets/css/rgb.css?v=1">
 </head>
 <body class="v2" data-page="home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -313,27 +323,16 @@
 
   <!-- 1 · HERO -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="tiles" aria-hidden="true">
-      <span class="tile tile--1"><span class="tile__glass"></span></span>
-      <span class="tile tile--2"><span class="tile__glass"></span></span>
-      <span class="tile tile--3"><span class="tile__glass"></span></span>
-      <span class="tile tile--4"><span class="tile__glass"></span></span>
-      <span class="tile tile--5"><span class="tile__glass"></span></span>
-      <span class="tile tile--6"><span class="tile__glass"></span></span>
-      <span class="tile tile--7"><span class="tile__glass"><span class="tile__mark">GC³</span></span></span>
-      <span class="tile tile--8"><span class="tile__glass"></span></span>
-      <span class="tile tile--9"><span class="tile__glass"></span></span>
-      <span class="tile tile--10"><span class="tile__glass"></span></span>
-      <span class="tile tile--11"><span class="tile__glass"></span></span>
-      <span class="tile tile--12"><span class="tile__glass"></span></span>
-      <span class="tile tile--13"><span class="tile__glass"></span></span>
+    <div class="hero__prism" aria-hidden="true">
+      <img src="assets/v2/img/prism-hero.webp"
+           srcset="assets/v2/img/prism-hero-900.webp 900w, assets/v2/img/prism-hero.webp 1672w"
+           sizes="100vw" width="1672" height="941" alt="" decoding="async" fetchpriority="low">
     </div>
-
     <div class="wrap wrap--wide hero__inner">
       <svg class="hero__spark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 1.5l2.4 8.1 8.1 2.4-8.1 2.4L12 22.5l-2.4-8.1-8.1-2.4 8.1-2.4z" fill="currentColor"/></svg>
       <p class="eyebrow">GC³ &middot; Global Cloud Capability Center</p>
       <h1 class="hero__title" id="hero-title">Your business communications. <em>One connected team.</em></h1>
-      <p class="hero__sub">Managed creative, digital and strategic capabilities through one monthly subscription.</p>
+      <p class="hero__sub">Managed human specialists and AI agents for your everyday internal and external communications. One monthly subscription, one named team.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="contact.html">Book a Discovery Call
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -350,31 +349,53 @@
     <button class="hero__pause" type="button" data-motion-toggle aria-pressed="false">Pause motion</button>
   </section>
 
-  <!-- 2 · COMMERCIAL CREDIBILITY -->
-  <section class="section section--tight" aria-labelledby="facts-title">
+  <!-- 2 · TRUST STRIP -->
+  <section class="trust-strip" aria-label="What every engagement includes">
+    <ul class="wrap trust-strip__list">
+      <li>A named pod manager</li>
+      <li>Human-reviewed work</li>
+      <li>Transparent monthly pricing</li>
+      <li>IP assignment in the contract pack</li>
+      <li>Five approval gates</li>
+      <li>DPA and a published security pack</li>
+    </ul>
+  </section>
+
+  <!-- 3 · COMMERCIAL CREDIBILITY -->
+  <section class="section section--tight section--dark stats-section" id="facts" aria-labelledby="facts-title">
+    <span class="stats-stream stats-stream--tr" aria-hidden="true"></span>
+    <span class="stats-stream stats-stream--bl" aria-hidden="true"></span>
     <div class="wrap">
       <div class="section-head" data-reveal>
         <p class="eyebrow">Commercials in the open</p>
         <h2 class="h2" id="facts-title">A capability center you can audit.</h2>
         <p class="lead">The price, the credit rate and the approval points are published before a brief is written. The same numbers apply to every client.</p>
       </div>
-      <div class="facts" data-stagger>
-        <div class="fact">
-          <p class="fact__num">3 <small>priced pods</small></p>
-          <p class="fact__label">Published monthly prices from $3,000.</p>
-        </div>
-        <div class="fact">
-          <p class="fact__num">$25</p>
-          <p class="fact__label">One credit rate across every pod.</p>
-        </div>
-        <div class="fact">
-          <p class="fact__num">127</p>
-          <p class="fact__label">Catalogued services across six capability tracks.</p>
-        </div>
-        <div class="fact">
-          <p class="fact__num">5</p>
-          <p class="fact__label">Approval gates between brief and go-live.</p>
-        </div>
+      <div class="stats" data-stagger>
+        <article class="stat stat--owner">
+          <span class="stat__glow" aria-hidden="true"></span>
+          <p class="stat__num"><span aria-hidden="true" data-count="3" data-count-dur="1100">3</span><span class="sr-only">3</span></p>
+          <p class="stat__title">priced pods</p>
+          <p class="stat__desc">Published monthly prices from $3,000.</p>
+        </article>
+        <article class="stat stat--rate">
+          <span class="stat__glow" aria-hidden="true"></span>
+          <p class="stat__num"><span aria-hidden="true" data-count="25" data-prefix="$" data-count-dur="1100">$25</span><span class="sr-only">$25</span></p>
+          <p class="stat__title">credit rate</p>
+          <p class="stat__desc">One credit rate across every pod.</p>
+        </article>
+        <article class="stat stat--services">
+          <span class="stat__glow" aria-hidden="true"></span>
+          <p class="stat__num"><span aria-hidden="true" data-count="127" data-count-dur="1100">127</span><span class="sr-only">127</span></p>
+          <p class="stat__title">catalogued services</p>
+          <p class="stat__desc">Across six capability tracks.</p>
+        </article>
+        <article class="stat stat--gates">
+          <span class="stat__glow" aria-hidden="true"></span>
+          <p class="stat__num"><span aria-hidden="true" data-count="5" data-count-dur="1100">5</span><span class="sr-only">5</span></p>
+          <p class="stat__title">approval gates</p>
+          <p class="stat__desc">Between brief and go-live.</p>
+        </article>
       </div>
       <div class="facts-note">
         <div class="terms">
@@ -384,50 +405,47 @@
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
         </a>
       </div>
-      <p class="micro" style="margin-top:18px">Quantocos Global Systems LLP &middot; registered identifier ACY-3556 &middot; services under a written engagement letter.</p>
+      <p class="micro">Quantocos Global Systems LLP &middot; registered identifier ACY-3556 &middot; services under a written engagement letter.</p>
     </div>
   </section>
 
-  <!-- 3 · CUSTOMER PROBLEMS -->
-  <section class="section section--dark" aria-labelledby="problems-title">
+  <!-- 4 · CUSTOMER PROBLEMS -->
+  <section class="section section--dark" id="problems" aria-labelledby="problems-title">
     <div class="wrap">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">Why the month gets hard</p>
-        <h2 class="h2" id="problems-title">The work does not stop when the team is small.</h2>
-        <p class="lead">A growing business needs a steady stream of design, content and campaigns. Four gaps make that expensive to sustain.</p>
-      </div>
-      <div class="grid grid--4" data-stagger>
-        <article class="card">
-          <p class="card__index">01</p>
-          <h3>Retainers buy hours, not output</h3>
-          <p>You pay for availability, then negotiate scope when the work changes. The invoice rarely maps to what shipped.</p>
-        </article>
-        <article class="card">
-          <p class="card__index">02</p>
-          <h3>Hiring takes a quarter you do not have</h3>
-          <p>A role opens, the search starts, and the campaign waits. By the time someone joins, the moment has moved.</p>
-        </article>
-        <article class="card">
-          <p class="card__index">03</p>
-          <h3>Freelancers do not share a standard</h3>
-          <p>Every file arrives in a different system, voice and quality. Someone internal has to become the editor.</p>
-        </article>
-        <article class="card">
-          <p class="card__index">04</p>
-          <h3>The invoice is the first cost you see</h3>
-          <p>Budgets arrive after the work, not before it. There is no unit price to plan against.</p>
-        </article>
+      <div class="hp-split">
+        <div class="hp-copy" data-reveal>
+          <p class="eyebrow">Why the month gets hard</p>
+          <h2 class="h2" id="problems-title"><span class="line-mask"><span>Your business shouldn't</span></span><span class="line-mask"><span>run on your follow-ups.</span></span></h2>
+          <p class="lead">A growing business needs a steady stream of design, content and campaigns. Four gaps make that expensive to sustain.</p>
+          <ul class="hp-probs">
+            <li><strong>Retainers buy hours, not output.</strong> The invoice rarely maps to what shipped.</li>
+            <li><strong>Hiring takes a quarter you do not have.</strong> By the time someone joins, the campaign has moved.</li>
+            <li><strong>Freelancers do not share a standard.</strong> Someone internal has to become the editor.</li>
+            <li><strong>The invoice is the first cost you see.</strong> There is no unit price to plan against.</li>
+          </ul>
+          <a class="link-arrow" href="#how">See how a pod runs
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+        </div>
+        <figure class="hp-media hp-media--4x3" data-reveal data-rgb="minimal"
+                data-asset="assets/v2/img/human/customer-business-owner.webp">
+          <div class="hp-ph" role="img" aria-label="Reserved space for a photograph of a small business owner managing the workday">
+            <span class="hp-ph__tag">Image reserved</span>
+            <span class="hp-ph__name">customer-business-owner.webp</span>
+            <span class="hp-ph__dim">1200 &times; 900 &middot; 4:3</span>
+          </div>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- 4 · THE GC³ SOLUTION -->
-  <section class="section section--raise" aria-labelledby="solution-title">
+  <!-- 5 · THE GC³ SOLUTION -->
+  <section class="section section--raise model-section" id="model" aria-labelledby="solution-title">
     <div class="wrap">
-      <div class="split">
+      <div class="split model-split">
         <div class="split__copy" data-reveal>
           <p class="eyebrow">The GC³ model</p>
-          <h2 class="h2" id="solution-title">One pod. One manager. One credit pool.</h2>
+          <h2 class="h2" id="solution-title"><span class="line-mask"><span>One pod. One manager.</span></span><span class="line-mask"><span>One credit pool.</span></span></h2>
           <p class="lead">A pod is a small named team led by a manager who owns your month. You brief once; the pod plans, produces and ships through five gates.</p>
           <ul class="checks">
             <li>
@@ -448,9 +466,18 @@
             </li>
           </ul>
         </div>
-        <aside class="panel" aria-label="Published pod sizes" data-reveal>
-          <p class="panel__label">Creative Pod pool</p>
-          <p class="panel__big">120<span>credits / month</span></p>
+        <aside class="panel pool" data-reveal data-rgb="soft" aria-label="Published pod sizes">
+          <p class="panel__label">Credit pool &middot; monthly</p>
+          <div class="pool__seg" role="group" aria-label="Choose a pod">
+            <button type="button" aria-pressed="true" data-pod="Creative" data-credits="120" data-price="$3,000">Creative</button>
+            <button type="button" aria-pressed="false" data-pod="Digital" data-credits="240" data-price="$6,000">Digital</button>
+            <button type="button" aria-pressed="false" data-pod="Strategy" data-credits="360" data-price="$9,000">Strategy</button>
+          </div>
+          <p class="panel__big"><span class="pool__credits" data-pool-credits aria-hidden="true">120</span><span aria-hidden="true">credits / month</span></p>
+          <p class="pool__price" aria-hidden="true"><b data-pool-price>$3,000</b> monthly subscription</p>
+          <div class="pool__bar" aria-hidden="true"><span data-pool-fill></span></div>
+          <p class="pool__scale" aria-hidden="true"><span>0</span><span>360 credits</span></p>
+          <p class="sr-only" aria-live="polite" data-pool-status>Creative Pod: 120 credits, $3,000 per month.</p>
           <div class="panel__rows">
             <div class="panel__row"><span>Digital Pod</span><span>240 credits</span></div>
             <div class="panel__row"><span>Strategy Pod</span><span>360 credits</span></div>
@@ -463,345 +490,885 @@
     </div>
   </section>
 
-  <!-- 5 · DELIVERABLES -->
-  <section class="section section--dark" aria-labelledby="deliverables-title">
-    <div class="wrap">
-      <div class="section-head section-head--row" data-reveal>
-        <div class="section-head__text">
-          <p class="eyebrow">What a pod ships</p>
-          <h2 class="h2" id="deliverables-title">Internal and external work, in one monthly rhythm.</h2>
-          <p class="lead">Your pod covers the work your team communicates inside the company and the work it publishes outside it.</p>
-        </div>
-        <a class="btn btn--ghost" href="capabilities.html">Every capability</a>
-      </div>
-      <div class="deliver">
-        <figure class="deliver__media" data-reveal>
-          <img src="assets/img/home/creative-track.webp" alt="Campaign creative and production layouts from the GC³ studio" width="1400" height="1045" loading="lazy" decoding="async">
-          <figcaption class="deliver__tag">Studio sample &middot; creative production</figcaption>
-        </figure>
-        <div class="deliver__cols" data-stagger>
-          <div class="deliver__block">
-            <h3>Internal communication</h3>
-            <ul class="deliver__list">
-              <li><strong>Leadership update decks</strong><span>monthly</span></li>
-              <li><strong>Town-hall and all-hands kits</strong><span>live</span></li>
-              <li><strong>Onboarding and training material</strong><span>module</span></li>
-              <li><strong>SOPs and operating playbooks</strong><span>ops</span></li>
-            </ul>
-          </div>
-          <div class="deliver__block">
-            <h3>External communication</h3>
-            <ul class="deliver__list">
-              <li><strong>Campaign creative sets</strong><span>creative</span></li>
-              <li><strong>Social and email posts</strong><span>copy + design</span></li>
-              <li><strong>Website and landing pages</strong><span>build</span></li>
-              <li><strong>Sales decks and one-pagers</strong><span>sales</span></li>
-              <li><strong>Video and motion cuts</strong><span>edit</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 6 · SIX PODS -->
   <section class="section section--raise" id="pods" aria-labelledby="pods-title">
     <div class="wrap">
       <div class="section-head section-head--row" id="pods-hero" data-reveal>
         <div class="section-head__text">
-          <p class="eyebrow">Six pods</p>
-          <h2 class="h2" id="pods-title">Three published prices. Three scoped pods.</h2>
-          <p class="lead">Start with the work you need most. Move up a pod when the volume changes.</p>
+          <p class="eyebrow">Six capabilities</p>
+          <h2 class="h2" id="pods-title">Different capabilities. One connected pod.</h2>
+          <p class="lead">Access the specialists and AI-powered capabilities your business needs, working together as one connected monthly team.</p>
+          <p class="cap-sub">One named manager per pod, the same five gates on every job, and one calendar for the month.</p>
         </div>
         <a class="link-arrow" href="solutions.html">Compare every pod
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
         </a>
       </div>
-      <div class="pods" data-stagger>
-        <a class="pod" href="solutions/creative-pod.html">
-          <div class="pod__top"><span class="pod__name">Creative</span><span class="pod__tag">Published</span></div>
-          <p class="pod__price">$3,000<small>/ month</small></p>
-          <p class="pod__credits">120 credits &middot; $25 per credit</p>
-          <p class="pod__desc">Campaigns, content and brand production for a team without a studio.</p>
-          <ul class="pod__list">
-            <li>Design and creative production</li>
-            <li>Copy and campaign assets</li>
-            <li>Social and email sets</li>
-            <li>One named pod manager</li>
-          </ul>
-          <span class="pod__cta">See the Creative Pod
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </span>
-        </a>
-        <a class="pod pod--featured" href="solutions/digital-pod.html">
-          <div class="pod__top"><span class="pod__name">Digital</span><span class="pod__tag">Most scope</span></div>
-          <p class="pod__price">$6,000<small>/ month</small></p>
-          <p class="pod__credits">240 credits &middot; $25 per credit</p>
-          <p class="pod__desc">Creative plus web, media and measurement in one monthly plan.</p>
-          <ul class="pod__list">
-            <li>Everything in the Creative Pod</li>
-            <li>Website and landing pages</li>
-            <li>Paid and organic media</li>
-            <li>Reporting and iteration</li>
-          </ul>
-          <span class="pod__cta">See the Digital Pod
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </span>
-        </a>
-        <a class="pod" href="solutions/strategy-pod.html">
-          <div class="pod__top"><span class="pod__name">Strategy</span><span class="pod__tag">Published</span></div>
-          <p class="pod__price">$9,000<small>/ month</small></p>
-          <p class="pod__credits">360 credits &middot; $25 per credit</p>
-          <p class="pod__desc">Research, positioning and a quarterly plan your leadership can act on.</p>
-          <ul class="pod__list">
-            <li>Market and customer research</li>
-            <li>Positioning and messaging</li>
-            <li>Quarterly roadmap</li>
-            <li>Executive-ready decks</li>
-          </ul>
-          <span class="pod__cta">See the Strategy Pod
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </span>
-        </a>
-        <a class="pod pod--scoped" data-n="01" href="solutions/automation-pod.html">
-          <span><strong>Automation Pod</strong><small>Scoped per client</small></span>
+      <div class="cap-rail" data-cap-rail role="region" aria-roledescription="carousel" aria-label="Quantocos capabilities">
+        <div class="cap-viewport">
+          <div class="cap-track" data-cap-track>
+            <article class="cap">
+              <div class="cap__top"><span class="cap__n">01</span><span class="cap__tag">Published</span></div>
+              <h3 class="cap__title">Creative</h3>
+              <p class="cap__price"><b>$3,000</b> <span>/ month &middot; 120 credits</span></p>
+              <p class="cap__desc">Your brand, campaigns and everyday communications, handled by one connected creative team.</p>
+              <div class="cap__stage" aria-hidden="true">
+                <span class="obj obj--creative"><i></i><i></i><i></i></span>
+              </div>
+              <a class="cap__link" href="solutions/creative-pod.html">See the Creative Pod
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+            </article>
+            <article class="cap">
+              <div class="cap__top"><span class="cap__n">02</span><span class="cap__tag">Published</span></div>
+              <h3 class="cap__title">Digital</h3>
+              <p class="cap__price"><b>$6,000</b> <span>/ month &middot; 240 credits</span></p>
+              <p class="cap__desc">Build visibility, engage customers and grow through connected digital marketing.</p>
+              <div class="cap__stage" aria-hidden="true">
+                <span class="obj obj--digital"><i></i><i></i><i></i></span>
+              </div>
+              <a class="cap__link" href="solutions/digital-pod.html">See the Digital Pod
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+            </article>
+            <article class="cap">
+              <div class="cap__top"><span class="cap__n">03</span><span class="cap__tag">Published</span></div>
+              <h3 class="cap__title">Strategy</h3>
+              <p class="cap__price"><b>$9,000</b> <span>/ month &middot; 360 credits</span></p>
+              <p class="cap__desc">Turn research, insights and business intelligence into confident decisions.</p>
+              <div class="cap__stage" aria-hidden="true">
+                <span class="obj obj--strategy"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              </div>
+              <a class="cap__link" href="solutions/strategy-pod.html">See the Strategy Pod
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+            </article>
+            <article class="cap">
+              <div class="cap__top"><span class="cap__n">04</span><span class="cap__tag">Scoped</span></div>
+              <h3 class="cap__title">Interactive</h3>
+              <p class="cap__price"><span>Scoped per client</span></p>
+              <p class="cap__desc">Deliver digital experiences that connect your business with customers.</p>
+              <div class="cap__stage" aria-hidden="true">
+                <span class="obj obj--interactive"><i></i><i></i><i></i></span>
+              </div>
+              <a class="cap__link" href="solutions/interactive-pod.html">See the Interactive &amp; XR Pod
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+            </article>
+            <article class="cap">
+              <div class="cap__top"><span class="cap__n">05</span><span class="cap__tag">Scoped</span></div>
+              <h3 class="cap__title">Automation</h3>
+              <p class="cap__price"><span>Scoped per client</span></p>
+              <p class="cap__desc">Reduce repetitive work with intelligent agents and connected workflows.</p>
+              <div class="cap__stage" aria-hidden="true">
+                <span class="obj obj--automation"><i></i><i></i><i></i></span>
+              </div>
+              <a class="cap__link" href="solutions/automation-pod.html">See the Automation Pod
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+            </article>
+            <article class="cap">
+              <div class="cap__top"><span class="cap__n">06</span><span class="cap__tag">Scoped</span></div>
+              <h3 class="cap__title">REMAU</h3>
+              <p class="cap__price"><span>Scoped per client</span></p>
+              <p class="cap__desc">Specialized marketing and business support for real estate operations.</p>
+              <div class="cap__stage" aria-hidden="true">
+                <span class="obj obj--remau"><i></i><i></i><i></i></span>
+              </div>
+              <a class="cap__link" href="solutions/remau.html">See REMAu
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+        <p class="cap-more"><a class="link-arrow" href="solutions.html">Explore our capabilities
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-        </a>
-        <a class="pod pod--scoped" data-n="02" href="solutions/interactive-pod.html">
-          <span><strong>Interactive &amp; XR Pod</strong><small>Scoped per client</small></span>
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-        </a>
-        <a class="pod pod--scoped pod--widebar" data-n="03" href="solutions/remau.html">
-          <span><strong>REMAU</strong><small>Real estate &middot; scoped per client</small></span>
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-        </a>
+        </a></p>
       </div>
     </div>
   </section>
 
-  <!-- 7 · WORKFLOW AND GATES -->
-  <section class="section section--dark" id="how" aria-labelledby="gates-title">
+  <!-- 7 · THE ACCOUNT PAGE -->
+  <section class="section section--dark cws" id="workspace" aria-labelledby="workspace-title">
     <div class="wrap">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">How the month runs</p>
-        <h2 class="h2" id="gates-title">Five gates between a brief and go-live.</h2>
-        <p class="lead">Stages run your month. Gates approve each deliverable. You always know what is being made and who has signed it off.</p>
-      </div>
-      <div class="gates" data-stagger>
-        <div class="gate">
-          <p class="gate__tag">G1 &middot; Brief</p>
-          <h3>Brief approval</h3>
-          <p>Scope, audience and credit estimate agreed in writing.</p>
+      <div class="cws-grid">
+        <div class="cws-head" data-reveal>
+          <p class="eyebrow">The connected pod</p>
+          <h2 class="h2" id="workspace-title"><span class="line-mask"><span>Your team.</span></span><span class="line-mask"><span>Your priorities.</span></span><span class="line-mask"><span>One connected workspace.</span></span></h2>
+          <p class="lead">Every request, credit, approval and file sits on one account, owned by one named manager.</p>
         </div>
-        <div class="gate">
-          <p class="gate__tag">G2 &middot; Direction</p>
-          <h3>Direction selection</h3>
-          <p>You choose the route before production begins.</p>
+        <figure class="hp-media hp-media--4x3 cws-media" data-reveal data-rgb="minimal"
+                data-asset="assets/v2/img/human/gc3-connected-team.webp">
+          <div class="hp-ph" role="img" aria-label="Reserved space for a photograph of the GC³ team working together">
+            <span class="hp-ph__tag">Image reserved</span>
+            <span class="hp-ph__name">gc3-connected-team.webp</span>
+            <span class="hp-ph__dim">1440 &times; 1080 &middot; 4:3</span>
+          </div>
+        </figure>
+        <div class="cws-body" data-reveal>
+          <ul class="hp-probs cws-benefits">
+            <li><strong>A named pod manager.</strong> One person owns the plan, the week and the handover.</li>
+            <li><strong>Human specialists, AI acceleration.</strong> Agents draft and repeat; specialists review and approve.</li>
+            <li><strong>One workspace.</strong> Requests, credits, approvals and files on a single account page.</li>
+            <li><strong>Clear communication.</strong> One thread per request, with the estimate attached.</li>
+            <li><strong>Structured approvals.</strong> Five gates, each signed off before the next begins.</li>
+            <li><strong>Accountable delivery.</strong> Each request carries an estimate before work starts.</li>
+          </ul>
+          <a class="link-arrow" href="sample-statement.html">Open the sample statement
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
         </div>
-        <div class="gate">
-          <p class="gate__tag">G3 &middot; Internal</p>
-          <h3>Internal QA</h3>
-          <p>The pod checks craft, brand and consistency against the brief.</p>
-        </div>
-        <div class="gate">
-          <p class="gate__tag">G4 &middot; Client</p>
-          <h3>Client review</h3>
-          <p>You review within a 48 business-hour window.</p>
-        </div>
-        <div class="gate">
-          <p class="gate__tag">G5 &middot; Live</p>
-          <h3>Go-live</h3>
-          <p>Files are delivered and published on approval.</p>
-        </div>
-      </div>
-      <div class="gate-note">
-        <p>“Stages run your month. Gates approve each deliverable.”</p>
-        <a class="btn btn--ghost" href="gc3.html#how">See the full delivery model</a>
       </div>
     </div>
   </section>
 
-  <!-- 8 · PRICING AND CREDITS -->
-  <section class="section section--raise" id="pricing" aria-labelledby="credits-title">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">Pricing and credits</p>
-        <h2 class="h2" id="credits-title">Price the month before you commit.</h2>
-        <p class="lead">Pick a pod, add the work you expect, and see the credits it uses. One rate applies: $25 per credit.</p>
+  <!-- 8 · WORKFLOW AND GATES -->
+  <section class="section section--dark gates-section" id="how" aria-labelledby="gates-title">
+    <div class="wrap wrap--wide">
+      <div class="gate-stage" data-gate-stage>
+        <div class="gate-rail">
+          <div class="gate-rail__head" data-reveal>
+            <p class="eyebrow">How the month runs</p>
+            <h2 class="h2" id="gates-title"><span class="line-mask"><span>Five gates between</span></span><span class="line-mask"><span>a brief and go-live.</span></span></h2>
+            <p class="lead">Stages run your month. Gates approve each deliverable. You always know what is being made and who has signed it off.</p>
+          </div>
+          <ol class="gate-steps" aria-label="The five approval gates">
+            <span class="gate-steps__track" aria-hidden="true"><span class="gate-steps__fill" data-gate-fill></span></span>
+            <li class="gate-step" data-gate-step>
+              <span class="gate-step__dot" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.2 6.2l2.5 2.4 5-5.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="gate-step__text"><span class="gate-step__n">G1</span><span class="gate-step__label">Brief approval</span></span>
+            </li>
+            <li class="gate-step" data-gate-step>
+              <span class="gate-step__dot" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.2 6.2l2.5 2.4 5-5.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="gate-step__text"><span class="gate-step__n">G2</span><span class="gate-step__label">Direction selection</span></span>
+            </li>
+            <li class="gate-step" data-gate-step>
+              <span class="gate-step__dot" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.2 6.2l2.5 2.4 5-5.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="gate-step__text"><span class="gate-step__n">G3</span><span class="gate-step__label">Internal QA</span></span>
+            </li>
+            <li class="gate-step" data-gate-step>
+              <span class="gate-step__dot" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.2 6.2l2.5 2.4 5-5.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="gate-step__text"><span class="gate-step__n">G4</span><span class="gate-step__label">Client review</span></span>
+            </li>
+            <li class="gate-step" data-gate-step>
+              <span class="gate-step__dot" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.2 6.2l2.5 2.4 5-5.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="gate-step__text"><span class="gate-step__n">G5</span><span class="gate-step__label">Go-live</span></span>
+            </li>
+          </ol>
+          <a class="btn btn--ghost gate-rail__cta" href="gc3.html#how">See the full delivery model</a>
+        </div>
+
+        <div class="gate-visual">
+          <article class="gate-panel" data-gate-panel>
+            <figure class="hp-media hp-media--4x3 gate-shot" data-rgb="minimal">
+              <div class="hp-ph" role="img" aria-label="Reserved space for the brief approval photograph">
+                <span class="hp-ph__tag">Image reserved</span>
+                <span class="hp-ph__name">gate-01-brief.webp</span>
+                <span class="hp-ph__dim">1600 &times; 1200 &middot; 4:3</span>
+              </div>
+              <img src="assets/v2/img/gates/gate-01-brief.webp" alt="A clipboard, a professionally arranged brief and a brushed-metal pen" width="1600" height="1200" loading="eager" fetchpriority="high" decoding="async">
+            </figure>
+            <div class="gate-panel__meta">
+              <p class="gate-panel__count"><span>01</span>/05</p>
+              <h3 class="gate-panel__title">Brief approval</h3>
+              <p class="gate-panel__desc">Scope, audience and credit estimate agreed in writing.</p>
+            </div>
+          </article>
+          <article class="gate-panel" data-gate-panel>
+            <figure class="hp-media hp-media--4x3 gate-shot" data-rgb="minimal">
+              <div class="hp-ph" role="img" aria-label="Reserved space for the direction selection photograph">
+                <span class="hp-ph__tag">Image reserved</span>
+                <span class="hp-ph__name">gate-02-direction.webp</span>
+                <span class="hp-ph__dim">1600 &times; 1200 &middot; 4:3</span>
+              </div>
+              <img src="assets/v2/img/gates/gate-02-direction.webp" alt="Gold and graphite chess pieces arranged in a deliberate composition" width="1600" height="1200" loading="lazy" decoding="async">
+            </figure>
+            <div class="gate-panel__meta">
+              <p class="gate-panel__count"><span>02</span>/05</p>
+              <h3 class="gate-panel__title">Direction selection</h3>
+              <p class="gate-panel__desc">You choose the route before production begins.</p>
+            </div>
+          </article>
+          <article class="gate-panel" data-gate-panel>
+            <figure class="hp-media hp-media--4x3 gate-shot" data-rgb="minimal">
+              <div class="hp-ph" role="img" aria-label="Reserved space for the production photograph">
+                <span class="hp-ph__tag">Image reserved</span>
+                <span class="hp-ph__name">gate-03-production.webp</span>
+                <span class="hp-ph__dim">1600 &times; 1200 &middot; 4:3</span>
+              </div>
+              <img src="assets/v2/img/gates/gate-03-production.webp" alt="A camera lens shown in an exploded assembly on a dark studio surface" width="1600" height="1200" loading="lazy" decoding="async">
+            </figure>
+            <div class="gate-panel__meta">
+              <p class="gate-panel__count"><span>03</span>/05</p>
+              <h3 class="gate-panel__title">Internal QA</h3>
+              <p class="gate-panel__desc">The pod checks craft, brand and consistency against the brief.</p>
+            </div>
+          </article>
+          <article class="gate-panel" data-gate-panel>
+            <figure class="hp-media hp-media--4x3 gate-shot" data-rgb="minimal">
+              <div class="hp-ph" role="img" aria-label="Reserved space for the client review photograph">
+                <span class="hp-ph__tag">Image reserved</span>
+                <span class="hp-ph__name">gate-04-review.webp</span>
+                <span class="hp-ph__dim">1600 &times; 1200 &middot; 4:3</span>
+              </div>
+              <img src="assets/v2/img/gates/gate-04-review.webp" alt="A magnifying glass over a printed design proof" width="1600" height="1200" loading="lazy" decoding="async">
+            </figure>
+            <div class="gate-panel__meta">
+              <p class="gate-panel__count"><span>04</span>/05</p>
+              <h3 class="gate-panel__title">Client review</h3>
+              <p class="gate-panel__desc">You review within a 48 business-hour window.</p>
+            </div>
+          </article>
+          <article class="gate-panel" data-gate-panel>
+            <figure class="hp-media hp-media--4x3 gate-shot" data-rgb="minimal">
+              <div class="hp-ph" role="img" aria-label="Reserved space for the go-live photograph">
+                <span class="hp-ph__tag">Image reserved</span>
+                <span class="hp-ph__name">gate-05-approval.webp</span>
+                <span class="hp-ph__dim">1600 &times; 1200 &middot; 4:3</span>
+              </div>
+              <img src="assets/v2/img/gates/gate-05-approval.webp" alt="A sculptural metallic approval medallion with a gold checkmark" width="1600" height="1200" loading="lazy" decoding="async">
+            </figure>
+            <div class="gate-panel__meta">
+              <p class="gate-panel__count"><span>05</span>/05</p>
+              <h3 class="gate-panel__title">Go-live</h3>
+              <p class="gate-panel__desc">Files are delivered and published on approval.</p>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="calc">
-        <form class="calc__form" data-reveal onsubmit="return false">
-          <div class="field field--pod">
-            <label for="pod-select">Pod</label>
-            <select id="pod-select" name="pod">
-              <option value="120" data-name="Creative Pod">Creative Pod — 120 credits — $3,000/month</option>
-              <option value="240" data-name="Digital Pod">Digital Pod — 240 credits — $6,000/month</option>
-              <option value="360" data-name="Strategy Pod">Strategy Pod — 360 credits — $9,000/month</option>
-            </select>
+    </div>
+  </section>
+
+  <!-- 9 · DELIVERABLES -->
+  <section class="section section--dark story-section" aria-labelledby="deliverables-title">
+    <div class="wrap wrap--wide">
+      <div class="section-head section-head--row" data-reveal>
+        <div class="section-head__text">
+          <p class="eyebrow">Work and deliverables</p>
+          <h2 class="h2" id="deliverables-title">See what your team can deliver.</h2>
+          <p class="lead">Your pod covers the work your company communicates inside and the work it publishes outside — campaigns, calendars, decks, pages, newsletters and reports.</p>
+        </div>
+        <a class="btn btn--ghost" href="capabilities.html">Every capability</a>
+      </div>
+
+      <div class="story-stage" data-story-stage>
+        <div class="story-meter" aria-hidden="true">
+          <span data-story-count>01</span><span>/04</span>
+          <span class="story-meter__track"><span class="story-meter__fill" data-story-fill></span></span>
+        </div>
+        <div class="story-stack" data-story-stack>
+
+          <article class="storycard" data-story-card data-rgb="soft" aria-labelledby="sc01-title">
+            <div class="storycard__top">
+              <span class="storycard__num">01</span>
+              <span class="storycard__theme">Leadership &amp; employee communications</span>
+              <span class="storycard__brand">QUANTOCOS GC&sup3;</span>
+            </div>
+            <p class="storycard__label">Internal communications</p>
+            <div class="storycard__grid">
+              <div class="storycard__visual">
+                <div class="scv">
+                  <svg viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false">
+                    <rect class="draw" x="34" y="38" width="132" height="124" rx="12" pathLength="100"/>
+                    <path class="hair" d="M34 74h132"/>
+                    <path class="hair fade d2" d="M70 22v22M130 22v22"/>
+                    <rect class="fillsoft fade d1" x="52" y="90" width="26" height="15" rx="4"/>
+                    <rect class="fillsoft fade d2" x="87" y="90" width="26" height="15" rx="4"/>
+                    <rect class="fillsoft fade d3" x="122" y="90" width="26" height="15" rx="4"/>
+                    <rect class="fillsoft fade d1" x="52" y="115" width="26" height="15" rx="4"/>
+                    <rect class="fillsoft fade d4" x="87" y="115" width="26" height="15" rx="4"/>
+                    <circle class="pulse" cx="100" cy="144" r="9"/>
+                    <circle class="dot d4" cx="63" cy="146" r="3"/>
+                    <path class="checkline d3" d="M126 141l6 7 12-15" pathLength="100"/>
+                  </svg>
+                </div>
+                <p class="storycard__value">One</p>
+                <p class="storycard__vlabel">Connected calendar</p>
+                <p class="storycard__vtext">Consistent business communications.</p>
+              </div>
+              <div class="storycard__copy">
+                <h3 class="storycard__title" id="sc01-title">Keep everyone aligned.</h3>
+                <div class="storycard__blocks">
+                  <div class="story-block"><span class="story-block__label">Problem</span><p>Leadership updates, employee announcements and presentations are managed separately, creating fragmented internal communications.</p></div>
+                  <div class="story-block"><span class="story-block__label">Our approach</span><p>A connected pod plans and produces internal communications through one shared calendar, covering leadership decks, town-hall kits, newsletters and employee announcements.</p></div>
+                  <div class="story-block"><span class="story-block__label">Business value</span><p>Clearer communication, consistent messaging and coordinated delivery across teams.</p></div>
+                </div>
+                <a class="storycard__link" href="capabilities/creative.html">Internal communications <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="storycard storycard--2" data-story-card data-rgb="soft" aria-labelledby="sc02-title">
+            <div class="storycard__top">
+              <span class="storycard__num">02</span>
+              <span class="storycard__theme">Training &amp; operating playbooks</span>
+              <span class="storycard__brand">QUANTOCOS GC&sup3;</span>
+            </div>
+            <p class="storycard__label">Knowledge &amp; operations</p>
+            <div class="storycard__grid">
+              <div class="storycard__visual">
+                <div class="scv">
+                  <svg viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false">
+                    <rect class="fillsoft fade d1" x="42" y="46" width="112" height="118" rx="10"/>
+                    <rect class="draw" x="54" y="34" width="112" height="118" rx="10" pathLength="100"/>
+                    <path class="hair fade d2" d="M74 64h72M74 82h72M74 100h48"/>
+                    <rect class="node fade d3" x="74" y="118" width="9" height="9" rx="2"/>
+                    <rect class="node fade d3" x="74" y="136" width="9" height="9" rx="2"/>
+                    <path class="hair fade d3" d="M91 122h47M91 140h38"/>
+                    <circle class="draw d3" cx="146" cy="146" r="16" pathLength="100"/>
+                    <path class="checkline d4" d="M138 146l6 7 12-15" pathLength="100"/>
+                    <circle class="pulse" cx="118" cy="92" r="12"/>
+                  </svg>
+                </div>
+                <p class="storycard__value">One</p>
+                <p class="storycard__vlabel">Shared standard</p>
+                <p class="storycard__vtext">Structured business documentation.</p>
+              </div>
+              <div class="storycard__copy">
+                <h3 class="storycard__title" id="sc02-title">Make knowledge work.</h3>
+                <div class="storycard__blocks">
+                  <div class="story-block"><span class="story-block__label">Problem</span><p>Training materials, operating procedures and business knowledge become fragmented across different teams and documents.</p></div>
+                  <div class="story-block"><span class="story-block__label">Our approach</span><p>Create structured onboarding materials, standard operating procedures, training resources and operating playbooks through one managed team.</p></div>
+                  <div class="story-block"><span class="story-block__label">Business value</span><p>More consistent processes and accessible business knowledge.</p></div>
+                </div>
+                <a class="storycard__link" href="capabilities/backoffice.html">Knowledge and operations <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="storycard storycard--3" data-story-card data-rgb="soft" aria-labelledby="sc03-title">
+            <div class="storycard__top">
+              <span class="storycard__num">03</span>
+              <span class="storycard__theme">Creative campaigns &amp; digital experiences</span>
+              <span class="storycard__brand">QUANTOCOS GC&sup3;</span>
+            </div>
+            <p class="storycard__label">External communications</p>
+            <div class="storycard__grid">
+              <div class="storycard__visual">
+                <div class="scv">
+                  <svg viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false">
+                    <circle class="draw" cx="100" cy="100" r="56" pathLength="100"/>
+                    <circle class="draw d1" cx="100" cy="100" r="34" pathLength="100"/>
+                    <path class="hair fade d2" d="M100 22v16M100 162v16M22 100h16M162 100h16"/>
+                    <circle class="pulse" cx="100" cy="100" r="20"/>
+                    <circle class="dot d3" cx="100" cy="100" r="4"/>
+                    <path class="arrowline d3" d="M164 168L114 112" pathLength="100"/>
+                    <path class="arrowline d4" d="M114 112l15 2M114 112l2 15" pathLength="100"/>
+                  </svg>
+                </div>
+                <p class="storycard__value">One</p>
+                <p class="storycard__vlabel">Brand direction</p>
+                <p class="storycard__vtext">Connected creative and digital execution.</p>
+              </div>
+              <div class="storycard__copy">
+                <h3 class="storycard__title" id="sc03-title">Make your brand stand out.</h3>
+                <div class="storycard__blocks">
+                  <div class="story-block"><span class="story-block__label">Problem</span><p>Disconnected campaigns, websites and social media channels create inconsistent customer-facing messaging.</p></div>
+                  <div class="story-block"><span class="story-block__label">Our approach</span><p>Coordinate creative campaigns, brand assets, social content, websites, landing pages and digital marketing through one connected pod.</p></div>
+                  <div class="story-block"><span class="story-block__label">Business value</span><p>A more consistent brand experience across customer touchpoints.</p></div>
+                </div>
+                <a class="storycard__link" href="capabilities/growth.html">External communications <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="storycard storycard--4" data-story-card data-rgb="soft" aria-labelledby="sc04-title">
+            <div class="storycard__top">
+              <span class="storycard__num">04</span>
+              <span class="storycard__theme">Sales collateral &amp; video production</span>
+              <span class="storycard__brand">QUANTOCOS GC&sup3;</span>
+            </div>
+            <p class="storycard__label">Sales &amp; media</p>
+            <div class="storycard__grid">
+              <div class="storycard__visual">
+                <div class="scv">
+                  <svg viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false">
+                    <path class="hair" d="M44 166h112"/>
+                    <rect class="fillsoft fade d1" x="56" y="128" width="18" height="38" rx="4"/>
+                    <rect class="fillsoft fade d2" x="84" y="108" width="18" height="58" rx="4"/>
+                    <rect class="fillsoft fade d3" x="112" y="84" width="18" height="82" rx="4"/>
+                    <rect class="fillsoft fade d4" x="140" y="58" width="18" height="108" rx="4"/>
+                    <path class="arrowline d2" d="M48 146C82 140 104 112 126 76" pathLength="100"/>
+                    <path class="arrowline d4" d="M126 76l-15 3M126 76l-3 15" pathLength="100"/>
+                    <circle class="dot d5" cx="126" cy="76" r="3"/>
+                  </svg>
+                </div>
+                <p class="storycard__value">One</p>
+                <p class="storycard__vlabel">Connected team</p>
+                <p class="storycard__vtext">Sales and marketing communications.</p>
+              </div>
+              <div class="storycard__copy">
+                <h3 class="storycard__title" id="sc04-title">Turn attention into action.</h3>
+                <div class="storycard__blocks">
+                  <div class="story-block"><span class="story-block__label">Problem</span><p>Disconnected sales presentations, promotional materials and video content lack a consistent creative direction.</p></div>
+                  <div class="story-block"><span class="story-block__label">Our approach</span><p>Produce sales decks, one-pagers, marketing collateral, video content and motion graphics through one managed pod.</p></div>
+                  <div class="story-block"><span class="story-block__label">Business value</span><p>Clearer sales messaging and coordinated promotional materials.</p></div>
+                </div>
+                <a class="storycard__link" href="capabilities/creative.html">Sales collateral and video <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · PODS AND PRICING -->
+  <section class="section pp-section" id="plans" aria-labelledby="plans-title">
+    <div class="wrap wrap--wide">
+      <div class="pp-head" data-reveal>
+        <span class="pp-badge">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8l6.2 3.3L8 8.4 1.8 5.1 8 1.8zm0 7.3l6.2-3.2v2.5L8 11.6 1.8 8.4V5.9L8 9.1z" fill="currentColor"/></svg>
+          Pods &amp; Pricing
+        </span>
+        <h2 class="pp-title" id="plans-title"><span class="pp-line"><span>One subscription.</span></span><span class="pp-line"><span>One connected team.</span></span></h2>
+        <p class="pp-lead">Choose the capabilities your business needs. Scale as your requirements grow.</p>
+      </div>
+
+      <div class="pp-grid" data-stagger>
+        <article class="pp-card" data-rgb="minimal">
+          <h3 class="pp-name">Creative Pod</h3>
+          <p class="pp-price"><span class="pp-amount">$3,000</span> <span class="pp-per">per month</span></p>
+          <p class="pp-credits">120 monthly credits</p>
+          <p class="pp-desc">For businesses that need consistent creative and brand communications.</p>
+          <a class="pp-btn" href="solutions/creative-pod.html">Explore Creative Pod</a>
+          <hr class="pp-rule">
+          <ul class="pp-list">
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>One manager, two specialists and two AI agents.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Social content and calendars.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Design, layout and brand assets.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Copywriting and editorial.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Short-form video and sales collateral.</li>
+          </ul>
+        </article>
+
+        <article class="pp-card pp-card--hero" data-rgb="violet">
+          <h3 class="pp-name">Digital Pod</h3>
+          <p class="pp-price"><span class="pp-amount">$6,000</span> <span class="pp-per">per month</span></p>
+          <p class="pp-credits">240 monthly credits</p>
+          <p class="pp-desc">For businesses that need creative execution and digital marketing.</p>
+          <a class="pp-btn" href="solutions/digital-pod.html">Explore Digital Pod</a>
+          <hr class="pp-rule">
+          <ul class="pp-list">
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in the Creative catalog.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>SEO and answer-engine optimization.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Paid media and campaign management.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Landing pages, analytics and lifecycle email.</li>
+          </ul>
+        </article>
+
+        <article class="pp-card" data-rgb="minimal">
+          <h3 class="pp-name">Strategy Pod</h3>
+          <p class="pp-price"><span class="pp-amount">$9,000</span> <span class="pp-per">per month</span></p>
+          <p class="pp-credits">360 monthly credits</p>
+          <p class="pp-desc">For businesses that need connected execution and strategic direction.</p>
+          <a class="pp-btn" href="solutions/strategy-pod.html">Explore Strategy Pod</a>
+          <hr class="pp-rule">
+          <ul class="pp-list">
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in the Creative and Digital catalogs.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Brand and go-to-market strategy.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Positioning, research and pricing.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Technology and AI roadmaps.</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Operating model design.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="pp-assure" data-reveal>
+        <p class="pp-assure__rate">One credit. $25. Across all plans.</p>
+        <ul class="pp-assure__list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>No setup fee.</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>No exit fee.</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Month-to-month subscription.</li>
+        </ul>
+      </div>
+
+      <div class="pp-convert" data-reveal>
+        <p class="pp-convert__ask">Not sure which pod fits your business?</p>
+        <p class="pp-convert__links">
+          <a class="pp-convert__cta" href="#pricing">Calculate your monthly requirements
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="pp-convert__more" href="solutions.html#credits">How credits work</a>
+        </p>
+        <p class="pp-foot">Month to month, with <a href="contracts.html">written notice</a> before the next billing date.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · PRICING AND CREDITS · INTERACTIVE CREDIT PLANNER -->
+  <section class="section section--raise planner" id="pricing" aria-labelledby="credits-title">
+    <div class="wrap wrap--wide planner__wrap">
+      <header class="planner__head" data-reveal>
+        <p class="planner__eyebrow"><span class="planner__spark" aria-hidden="true"></span>Interactive Credit Planner</p>
+        <h2 class="planner__title" id="credits-title"><span class="pl-mask"><span>Build your monthly workload.</span></span></h2>
+        <p class="planner__lead">Choose your pod. Plan your deliverables. Know your credits before work begins.</p>
+      </header>
+
+      <div class="planner__pods" role="radiogroup" aria-label="Choose a pod" style="--pod-i:0">
+        <button type="button" class="podsel is-on" role="radio" aria-checked="true" data-pod="creative"
+          data-name="Creative Pod" data-price="3000" data-credits="120">
+          <span class="podsel__name">Creative</span>
+          <span class="podsel__meta">$3,000 · 120 credits</span>
+        </button>
+        <button type="button" class="podsel" role="radio" aria-checked="false" data-pod="digital"
+          data-name="Digital Pod" data-price="6000" data-credits="240">
+          <span class="podsel__name">Digital</span>
+          <span class="podsel__meta">$6,000 · 240 credits</span>
+        </button>
+        <button type="button" class="podsel" role="radio" aria-checked="false" data-pod="strategy"
+          data-name="Strategy Pod" data-price="9000" data-credits="360">
+          <span class="podsel__name">Strategy</span>
+          <span class="podsel__meta">$9,000 · 360 credits</span>
+        </button>
+        <span class="podsel__glider" aria-hidden="true"></span>
+      </div>
+
+      <div class="planner__body">
+        <div class="planner__controls">
+          <div class="presets" role="group" aria-label="Planning examples">
+            <span class="presets__label">Start from a planning example</span>
+            <div class="presets__row">
+              <button type="button" class="preset" data-preset="brand">Brand Builder</button>
+              <button type="button" class="preset" data-preset="growth">Growth Engine</button>
+              <button type="button" class="preset" data-preset="essentials">Business Essentials</button>
+              <button type="button" class="preset" data-preset="custom" aria-pressed="true">Custom Workload</button>
+            </div>
           </div>
-          <div class="calc__row">
-            <div class="field">
-              <label for="q-posts">Posts</label>
-              <input id="q-posts" name="posts" type="number" min="0" max="999" step="1" value="8" inputmode="numeric">
+
+          <div class="dctrls">
+            <div class="dctrl" data-item="posts" data-rate="2">
+              <div class="dctrl__head">
+                <span class="dctrl__ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><rect x="2.5" y="3.5" width="15" height="11" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 7.5h9M5.5 10.5h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+                <span class="dctrl__name" id="dl-posts">Social media posts</span>
+                <span class="dctrl__rate">2 credits each</span>
+                <span class="dctrl__sub"><span data-sub>16</span> cr</span>
+                <span class="stepper">
+                  <button type="button" class="stepper__btn" data-minus aria-label="Decrease social media posts">−</button>
+                  <input class="stepper__num" id="q-posts" type="number" inputmode="numeric" min="0" max="999" step="1" value="8" aria-labelledby="dl-posts" data-q>
+                  <button type="button" class="stepper__btn" data-plus aria-label="Increase social media posts">+</button>
+                </span>
+              </div>
+              <div class="ruler" style="--p:20%">
+                <input class="ruler__range" type="range" min="0" max="40" step="1" value="8" aria-labelledby="dl-posts" tabindex="-1">
+                <span class="ruler__bubble" aria-hidden="true" data-bubble>8</span>
+              </div>
             </div>
-            <div class="field">
-              <label for="q-videos">Videos</label>
-              <input id="q-videos" name="videos" type="number" min="0" max="999" step="1" value="2" inputmode="numeric">
+
+            <div class="dctrl" data-item="videos" data-rate="8">
+              <div class="dctrl__head">
+                <span class="dctrl__ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><rect x="2.5" y="4.5" width="15" height="11" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 8l3.5 2-3.5 2V8z" fill="currentColor"/></svg></span>
+                <span class="dctrl__name" id="dl-videos">Videos</span>
+                <span class="dctrl__rate">8 credits each</span>
+                <span class="dctrl__sub"><span data-sub>16</span> cr</span>
+                <span class="stepper">
+                  <button type="button" class="stepper__btn" data-minus aria-label="Decrease videos">−</button>
+                  <input class="stepper__num" id="q-videos" type="number" inputmode="numeric" min="0" max="999" step="1" value="2" aria-labelledby="dl-videos" data-q>
+                  <button type="button" class="stepper__btn" data-plus aria-label="Increase videos">+</button>
+                </span>
+              </div>
+              <div class="ruler" style="--p:10%">
+                <input class="ruler__range" type="range" min="0" max="20" step="1" value="2" aria-labelledby="dl-videos" tabindex="-1">
+                <span class="ruler__bubble" aria-hidden="true" data-bubble>2</span>
+              </div>
             </div>
-            <div class="field">
-              <label for="q-visuals">Visuals</label>
-              <input id="q-visuals" name="visuals" type="number" min="0" max="999" step="1" value="2" inputmode="numeric">
+
+            <div class="dctrl" data-item="visuals" data-rate="10">
+              <div class="dctrl__head">
+                <span class="dctrl__ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><rect x="2.5" y="3.5" width="15" height="13" rx="2" stroke="currentColor" stroke-width="1.4"/><circle cx="7" cy="8" r="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M2.8 14l4.2-4 3.4 3 2.6-2.2 4.2 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="dctrl__name" id="dl-visuals">Creative visuals</span>
+                <span class="dctrl__rate">10 credits each</span>
+                <span class="dctrl__sub"><span data-sub>20</span> cr</span>
+                <span class="stepper">
+                  <button type="button" class="stepper__btn" data-minus aria-label="Decrease creative visuals">−</button>
+                  <input class="stepper__num" id="q-visuals" type="number" inputmode="numeric" min="0" max="999" step="1" value="2" aria-labelledby="dl-visuals" data-q>
+                  <button type="button" class="stepper__btn" data-plus aria-label="Increase creative visuals">+</button>
+                </span>
+              </div>
+              <div class="ruler" style="--p:10%">
+                <input class="ruler__range" type="range" min="0" max="20" step="1" value="2" aria-labelledby="dl-visuals" tabindex="-1">
+                <span class="ruler__bubble" aria-hidden="true" data-bubble>2</span>
+              </div>
             </div>
-            <div class="field">
-              <label for="q-assets">Assets</label>
-              <input id="q-assets" name="assets" type="number" min="0" max="999" step="1" value="4" inputmode="numeric">
+
+            <div class="dctrl" data-item="assets" data-rate="3">
+              <div class="dctrl__head">
+                <span class="dctrl__ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M10 3l7 3.5-7 3.5-7-3.5L10 3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M3 10l7 3.5 7-3.5M3 13.5L10 17l7-3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="dctrl__name" id="dl-assets">Design assets</span>
+                <span class="dctrl__rate">3 credits each</span>
+                <span class="dctrl__sub"><span data-sub>12</span> cr</span>
+                <span class="stepper">
+                  <button type="button" class="stepper__btn" data-minus aria-label="Decrease design assets">−</button>
+                  <input class="stepper__num" id="q-assets" type="number" inputmode="numeric" min="0" max="999" step="1" value="4" aria-labelledby="dl-assets" data-q>
+                  <button type="button" class="stepper__btn" data-plus aria-label="Increase design assets">+</button>
+                </span>
+              </div>
+              <div class="ruler" style="--p:10%">
+                <input class="ruler__range" type="range" min="0" max="40" step="1" value="4" aria-labelledby="dl-assets" tabindex="-1">
+                <span class="ruler__bubble" aria-hidden="true" data-bubble>4</span>
+              </div>
             </div>
-            <div class="field">
-              <label for="q-decks">Decks</label>
-              <input id="q-decks" name="decks" type="number" min="0" max="999" step="1" value="2" inputmode="numeric">
+
+            <div class="dctrl" data-item="decks" data-rate="6">
+              <div class="dctrl__head">
+                <span class="dctrl__ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><rect x="2.5" y="3.5" width="15" height="10" rx="1.6" stroke="currentColor" stroke-width="1.4"/><path d="M10 13.5V17M7 17h6M6 7.5h8M6 10h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+                <span class="dctrl__name" id="dl-decks">Presentation decks</span>
+                <span class="dctrl__rate">6 credits each</span>
+                <span class="dctrl__sub"><span data-sub>12</span> cr</span>
+                <span class="stepper">
+                  <button type="button" class="stepper__btn" data-minus aria-label="Decrease presentation decks">−</button>
+                  <input class="stepper__num" id="q-decks" type="number" inputmode="numeric" min="0" max="999" step="1" value="2" aria-labelledby="dl-decks" data-q>
+                  <button type="button" class="stepper__btn" data-plus aria-label="Increase presentation decks">+</button>
+                </span>
+              </div>
+              <div class="ruler" style="--p:6.7%">
+                <input class="ruler__range" type="range" min="0" max="30" step="1" value="2" aria-labelledby="dl-decks" tabindex="-1">
+                <span class="ruler__bubble" aria-hidden="true" data-bubble>2</span>
+              </div>
             </div>
           </div>
-        </form>
-        <aside class="calc__out" aria-label="Credit estimate">
-          <div class="calc__out-top">
+        </div>
+
+        <aside class="planner__panel" aria-label="Credit estimate" data-state="ok" data-rgb="soft">
+          <div class="panel__top">
             <span class="panel__label">Credit estimate</span>
-            <span id="output-badge">Within pool</span>
+            <span class="panel__pod" data-res-pod>Creative Pod</span>
           </div>
-          <div class="calc__big">
-            <span id="stat-used">0</span>
-            <span class="calc__of">of <span id="stat-pool">120</span> credits</span>
+
+          <div class="gauge">
+            <svg class="gauge__svg" viewBox="0 0 220 220" aria-hidden="true">
+              <circle class="gauge__inner" cx="110" cy="110" r="94"/>
+              <g class="gauge__ticks" data-ticks></g>
+              <circle class="gauge__track" cx="110" cy="110" r="78"/>
+              <circle class="gauge__ring" data-ring cx="110" cy="110" r="78"
+                stroke-dasharray="490.1" stroke-dashoffset="179.7"/>
+            </svg>
+            <div class="gauge__core">
+              <span class="gauge__pct" data-gauge-pct>63%</span>
+              <span class="gauge__num" data-alloc>76</span>
+              <span class="gauge__of">of <span data-cap>120</span> credits</span>
+            </div>
           </div>
-          <div class="calc__bar" role="img" aria-label="Share of the monthly credit pool used">
-            <span id="stat-pct"></span>
-          </div>
-          <dl class="calc__stats">
-            <div class="calc__stat"><dt>Credits left</dt><dd id="stat-left">0</dd></div>
-            <div class="calc__stat"><dt>Credit rate</dt><dd>$25</dd></div>
-            <div class="calc__stat"><dt>Beyond pool</dt><dd><span id="stat-over">0</span></dd></div>
+
+          <p class="panel__state" data-state-msg>Within this pool. 44 credits remain.</p>
+
+          <dl class="panel__stats">
+            <div class="panel__stat"><dt>Remaining</dt><dd data-remain>44</dd></div>
+            <div class="panel__stat"><dt>Beyond pool</dt><dd data-beyond>0</dd></div>
+            <div class="panel__stat"><dt>Rate</dt><dd>$25</dd></div>
           </dl>
-          <p class="calc__fine">Estimate only. Rates: post 2 credits, video 8, visual 10, asset 3, deck 6. <a href="solutions.html#credits">Read the credit rules</a>.</p>
+
+          <div class="panel__sub">
+            <span class="panel__sub-label">Selected subscription</span>
+            <p class="panel__price"><span data-price-roll>$3,000</span><span class="panel__per">/ month</span></p>
+            <p class="panel__rec" data-rec>Recommended: Creative Pod — the smallest credit pool that fits this workload.</p>
+          </div>
+
+          <div class="panel__actions">
+            <a class="panel__cta" href="contact.html" data-discuss>Discuss my configuration
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="panel__mini">
+              <button type="button" class="panel__btn" data-copy>Copy my estimate</button>
+              <button type="button" class="panel__reset" data-reset>Reset</button>
+            </div>
+          </div>
+
+          <p class="panel__fine">Estimate only, not a live balance. The subscription is the selected pod's monthly fee, not the workload multiplied by $25. <a href="solutions.html#credits">Read the credit rules</a>.</p>
+          <p class="sr-only" role="status" data-copy-msg></p>
+          <p class="sr-only" aria-live="polite" data-live></p>
         </aside>
       </div>
     </div>
   </section>
 
-  <!-- 9 · COMPARISON -->
-  <section class="section section--dark" id="compare" aria-labelledby="compare-title">
+  <!-- 12 · PILOT STAIRCASE -->
+  <section class="section section--paper" id="pilot-band" aria-labelledby="pilot-band-title">
     <div class="wrap">
-      <div class="section-head section-head--row" data-reveal>
-        <div class="section-head__text">
-          <p class="eyebrow">A structural comparison</p>
-          <h2 class="h2" id="compare-title">Pod, agency, freelancer or hire.</h2>
-          <p class="lead">Each option solves a different problem. This table compares how they work, not what they charge.</p>
+      <div class="pilot-grid">
+        <ol class="pilot-stack">
+          <li class="pilot-card pilot-card--lead">
+            <div class="pilot-card__in">
+              <p class="pilot-card__n"><span class="pilot-num"><span aria-hidden="true">14</span><span class="sr-only">14</span></span> <small>days</small></p>
+              <p class="pilot-card__t">The pilot ends on its own. There is nothing to cancel.</p>
+            </div>
+          </li>
+          <li class="pilot-card">
+            <div class="pilot-card__in">
+              <p class="pilot-card__n"><span class="pilot-num pilot-num--money">$<span aria-hidden="true">1,500</span><span class="sr-only">1,500</span></span></p>
+              <p class="pilot-card__t">Credited against your first month when you subscribe within 14 days of the pilot ending.</p>
+            </div>
+          </li>
+          <li class="pilot-card">
+            <div class="pilot-card__in">
+              <p class="pilot-card__n"><span class="pilot-num"><span aria-hidden="true">60</span><span class="sr-only">60</span></span> <small>credits</small></p>
+              <p class="pilot-card__t">Unused pilot credits are refunded.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="pilot-copy" data-reveal>
+          <p class="eyebrow">Pilot Sprint</p>
+          <h2 class="h2" id="pilot-band-title"><span class="pilot-line"><span>Fourteen days of real work,</span></span><span class="pilot-line"><span>then you decide.</span></span></h2>
+          <p class="lead">The same pods, the same gates and the same credit rate, for two weeks.</p>
+          <a class="link-arrow" href="pilot.html">Start the 14-day pilot
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+          <p class="pilot-note">Pilot terms as published: 14 days, $1,500, 60 credits, credit-back and refund.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · COMPARISON -->
+  <section class="section section--dark versus" id="compare" aria-labelledby="compare-title">
+    <div class="wrap">
+      <header class="versus__head" data-reveal>
+        <p class="eyebrow">A structural comparison</p>
+        <h2 class="versus__title" id="compare-title"><span class="versus-line"><span>Different models.</span></span><span class="versus-line"><span>One connected advantage.</span></span></h2>
+        <p class="versus__lead">Compare how your business gets work done.</p>
+      </header>
+
+      <div class="versus__switch" role="tablist" aria-label="Comparison model" style="--model-i:0" data-reveal>
+        <button type="button" class="versus-tab is-on" role="tab" aria-selected="true" aria-controls="versus-panel-them" data-model="agency">Agency</button>
+        <button type="button" class="versus-tab" role="tab" aria-selected="false" aria-controls="versus-panel-them" data-model="freelancer">Freelancer</button>
+        <button type="button" class="versus-tab" role="tab" aria-selected="false" aria-controls="versus-panel-them" data-model="inhouse">In-house</button>
+        <span class="versus-glider" aria-hidden="true"></span>
+      </div>
+
+      <div class="versus-stage" data-reveal>
+        <div class="versus-panes" aria-hidden="true">
+          <span class="versus-pane versus-pane--us" data-rgb="violet"></span>
+          <span class="versus-pane versus-pane--them"></span>
+        </div>
+
+        <div class="versus-inner">
+          <div class="versus-heads">
+            <div class="versus-side versus-side--us">
+              <p class="versus-kick">US</p>
+              <p class="versus-who">Quantocos</p>
+              <p class="versus-cost">From $3,000</p>
+            </div>
+            <div class="versus-vs" aria-hidden="true">
+              <span class="versus-vs__line"></span>
+              <span class="versus-vs__mark">VS</span>
+              <span class="versus-vs__line"></span>
+            </div>
+            <div class="versus-side versus-side--them">
+              <p class="versus-kick">THEM</p>
+              <p class="versus-who" data-them-name aria-live="polite">Agency</p>
+              <p class="versus-cost">Varies</p>
+            </div>
+          </div>
+
+          <div class="versus-rows" id="versus-panel-them">
+            <div class="versus-row">
+              <span class="versus-row__label">Pricing model</span>
+              <span class="versus-row__us"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Transparent credit pricing.</span>
+              <span class="versus-row__them"><span class="versus-dash" aria-hidden="true"></span><span class="versus-val" data-them="0">Scoped retainer or project pricing.</span></span>
+            </div>
+            <div class="versus-row">
+              <span class="versus-row__label">Team structure</span>
+              <span class="versus-row__us"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>One named pod manager.</span>
+              <span class="versus-row__them"><span class="versus-dash" aria-hidden="true"></span><span class="versus-val" data-them="1">Agency-managed resources.</span></span>
+            </div>
+            <div class="versus-row">
+              <span class="versus-row__label">Capabilities</span>
+              <span class="versus-row__us"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Connected human specialists and AI-powered capabilities.</span>
+              <span class="versus-row__them"><span class="versus-dash" aria-hidden="true"></span><span class="versus-val" data-them="2">Agreed service scope.</span></span>
+            </div>
+            <div class="versus-row">
+              <span class="versus-row__label">Delivery control</span>
+              <span class="versus-row__us"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Five structured approval gates.</span>
+              <span class="versus-row__them"><span class="versus-dash" aria-hidden="true"></span><span class="versus-val" data-them="3">Agency approval process.</span></span>
+            </div>
+            <div class="versus-row">
+              <span class="versus-row__label">Commitment</span>
+              <span class="versus-row__us"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3.3 3.3L13 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Month-to-month subscription terms.</span>
+              <span class="versus-row__them"><span class="versus-dash" aria-hidden="true"></span><span class="versus-val" data-them="4">Contract-dependent terms.</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="versus-note">Structural comparison. Terms vary by provider, contract and business requirements.</p>
+
+      <div class="versus__closing" data-reveal>
+        <p class="versus__one">One manager. One workspace. <em>One credit pool.</em></p>
         <a class="link-arrow" href="compare.html">Compare in detail
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
         </a>
       </div>
-      <div class="table-wrap" data-reveal>
-        <table class="compare">
-          <caption class="sr-only">Comparison of a GC³ pod with an agency, a freelancer and an in-house hire</caption>
-          <thead>
-            <tr>
-              <th scope="col">What matters</th>
-              <th scope="col" class="col-pod">GC³ pod</th>
-              <th scope="col">Agency</th>
-              <th scope="col">Freelancer</th>
-              <th scope="col">In-house hire</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Monthly cost</th>
-              <td class="col-pod">Published from $3,000</td>
-              <td>Retainer, quoted per scope</td>
-              <td>Day or project rate</td>
-              <td>Salary and benefits</td>
-            </tr>
-            <tr>
-              <th scope="row">Time to first work</th>
-              <td class="col-pod">Days, after brief approval</td>
-              <td>Weeks</td>
-              <td>Depends on availability</td>
-              <td>One to three months to hire</td>
-            </tr>
-            <tr>
-              <th scope="row">Scope</th>
-              <td class="col-pod">Six catalogs, one pod</td>
-              <td>Whatever the statement of work covers</td>
-              <td>One discipline</td>
-              <td>What one person covers</td>
-            </tr>
-            <tr>
-              <th scope="row">Continuity</th>
-              <td class="col-pod">Named manager and pod</td>
-              <td>Team changes with accounts</td>
-              <td>Single point of failure</td>
-              <td>Depends on retention</td>
-            </tr>
-            <tr>
-              <th scope="row">Budget visibility</th>
-              <td class="col-pod">Credit estimate before work</td>
-              <td>Hours reported after</td>
-              <td>Quote per project</td>
-              <td>Payroll, not output</td>
-            </tr>
-            <tr>
-              <th scope="row">Commitment</th>
-              <td class="col-pod">Month to month</td>
-              <td>Term varies</td>
-              <td>Per project</td>
-              <td>Employment contract</td>
-            </tr>
-            <tr>
-              <th scope="row">Best for</th>
-              <td class="col-pod">A monthly mix of creative and digital work</td>
-              <td>Brand strategy and large campaigns</td>
-              <td>A single specialist task</td>
-              <td>Full-time control of one function</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="table-note">Structural comparison only, not a quote for any named provider. Terms vary by market and by contract.</p>
     </div>
   </section>
 
-  <!-- 10 · WORK AND PROOF -->
-  <section class="section section--paper" id="work" aria-labelledby="work-title">
+  <!-- 14 · TRUST AND PROOF -->
+  <section class="section section--raise" id="trust" aria-labelledby="trust-title">
     <div class="wrap">
-      <div class="section-head section-head--row" data-reveal>
-        <div class="section-head__text">
-          <p class="eyebrow">Work and proof</p>
-          <h2 class="h2" id="work-title">Craft, shown honestly.</h2>
-          <p class="lead">These are studio samples, not client outcomes. Client work is published only with written permission.</p>
+      <div class="section-head section-head--center" data-reveal>
+        <p class="eyebrow">Trust and proof</p>
+        <h2 class="h2" id="trust-title">Built on expertise. Delivered with accountability.</h2>
+        <p class="lead">The contract pack, the security controls and the company record are published, not summarised in a slide.</p>
+      </div>
+      <figure class="hp-media hp-media--16x9 hp-media--panorama" data-reveal data-rgb="soft"
+              data-asset="assets/v2/img/human/quantocos-team.webp">
+        <div class="hp-ph" role="img" aria-label="Reserved space for a panoramic photograph of the Quantocos team">
+          <span class="hp-ph__tag">Image reserved</span>
+          <span class="hp-ph__name">quantocos-team.webp</span>
+          <span class="hp-ph__dim">1920 &times; 1080 &middot; 16:9</span>
         </div>
-        <a class="link-arrow" href="proof.html">How we publish proof
+      </figure>
+      <div class="grid grid--4" data-stagger>
+        <article class="card">
+          <p class="card__index">01</p>
+          <h3>Contract pack</h3>
+          <p>Mutual NDA, engagement letter, master services agreement, DPA and IP assignment. Available before an engagement exists.</p>
+        </article>
+        <article class="card">
+          <p class="card__index">02</p>
+          <h3>Security controls</h3>
+          <p>Role-based access, encryption in transit and at rest, and a DPA. Client material is not used to train shared models.</p>
+        </article>
+        <article class="card">
+          <p class="card__index">03</p>
+          <h3>Company record</h3>
+          <p>Quantocos Global Systems LLP, registered identifier ACY-3556, with the signatory named in the engagement letter.</p>
+        </article>
+        <article class="card">
+          <p class="card__index">04</p>
+          <h3>Proof policy</h3>
+          <p>Studio samples are labelled as samples. Client work is published only with written permission, never as a placeholder.</p>
+        </article>
+      </div>
+      <p class="micro" style="margin-top:22px">No invented testimonials, client logos or performance figures appear on this site.
+        <a class="link-arrow" href="proof.html" style="margin-left:10px">How we publish proof
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
         </a>
-      </div>
-      <div class="gallery" data-stagger>
-        <figure class="shot shot--tall">
-          <img src="assets/img/home/interactive-light.webp" alt="Interactive light installation shown as a studio sample" width="736" height="736" loading="lazy" decoding="async">
-          <figcaption>Interactive installation</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/img/home/media-stack.webp" alt="Media and channel artwork shown as a studio sample" width="1024" height="1024" loading="lazy" decoding="async">
-          <figcaption>Media stack</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/img/home/xr-layers.webp" alt="Layered interface artwork shown as a studio sample" width="736" height="635" loading="lazy" decoding="async">
-          <figcaption>XR layers</figcaption>
-        </figure>
-      </div>
-      <div class="proof-note">
-        <p>No invented testimonials, logos or performance figures appear on this site. Outcomes are published only after a client approves the wording and the data.</p>
-        <a class="btn btn--ghost btn--sm" href="pilot.html">Start with the 14-day pilot</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 15 · FINAL CONVERSION -->
+  <section class="section section--tight" id="start" aria-labelledby="start-title">
+    <div class="wrap">
+      <div class="cta" data-reveal>
+        <div class="cta__inner">
+          <p class="eyebrow" style="color:rgba(250,248,242,.64)">Next step</p>
+          <h2 class="h2" id="start-title">Ready to build your connected team?</h2>
+          <p>Tell us what your business needs. We will identify the right capabilities and the monthly pod that fits, with a written scope and a credit estimate.</p>
+          <div class="cta__actions">
+            <a class="btn btn--primary" href="contact.html">Book a Discovery Call
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="pilot.html">Start a Pilot</a>
+          </div>
+          <p class="cta__fine">Quantocos Global Systems LLP &middot; GC³ &middot; services under a written engagement letter</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 11 · FAQ -->
+  <!-- 16 · FAQ -->
   <section class="section section--raise" id="faq" aria-labelledby="faq-title">
     <div class="wrap">
       <div class="faq">
@@ -851,26 +1418,6 @@
               <p>The pilot uses the same gates and the same credit rate as a monthly pod.</p>
             </div>
           </details>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 12 · FINAL CONVERSION -->
-  <section class="section section--tight" id="start" aria-labelledby="start-title">
-    <div class="wrap">
-      <div class="cta" data-reveal>
-        <div class="cta__inner">
-          <p class="eyebrow" style="color:rgba(250,248,242,.64)">Next step</p>
-          <h2 class="h2" id="start-title">Bring us your next month.</h2>
-          <p>A 30-minute briefing, a written scope and a credit estimate. No setup fee, and no obligation to continue.</p>
-          <div class="cta__actions">
-            <a class="btn btn--primary" href="contact.html">Book a briefing
-              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-            </a>
-            <a class="btn btn--ghost" href="mailto:hello@quantocos.com">Email hello@quantocos.com</a>
-          </div>
-          <p class="cta__fine">Quantocos Global Systems LLP &middot; GC³ &middot; services under a written engagement letter</p>
         </div>
       </div>
     </div>
@@ -950,8 +1497,14 @@
 <script src="assets/vendor/gsap.min.js" defer></script>
 <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="assets/js/motion.js" defer></script>
-<script src="assets/js/calculator.js" defer></script>
+<script src="assets/v2/planner.js" defer></script>
 <script src="assets/v2/site.js" defer></script>
 <script src="assets/v2/motion-gsap.js" defer></script>
+<script src="assets/v2/capabilities.js" defer></script>
+<script src="assets/v2/refine.js" defer></script>
+<script src="assets/v2/storyboard.js" defer></script>
+<script src="assets/v2/pilot.js" defer></script>
+<script src="assets/v2/compare.js" defer></script>
+<script src="assets/js/rgb.js?v=1" defer></script>
 </body>
 </html>

@@ -1,0 +1,138 @@
+/* ============================================================
+   V2 · capability carousel
+   Continuous rail of six capability cards. Each card carries its
+   own procedural 3D object (CSS transforms, no raster assets).
+   Tokens: assets/v2/tokens.css. No new palette.
+   ============================================================ */
+
+.cap-rail{position:relative;
+  --chrome:conic-gradient(from 210deg,#fff 0deg,#c9d3e6 38deg,#46536b 96deg,#0a1120 150deg,#8b9bb8 208deg,#fff 252deg,#66748f 306deg,#fff 360deg);
+  --cap-w:clamp(272px,25vw,344px);
+  --cap-gap:20px}
+
+.cap-viewport{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;max-width:100%;
+  padding:10px 0 16px;-webkit-overflow-scrolling:touch}
+.cap-viewport::-webkit-scrollbar{display:none}
+.cap-rail.is-live .cap-viewport{overflow:hidden;cursor:grab}
+.cap-rail.is-live.is-dragging .cap-viewport{cursor:grabbing}
+.cap-rail.is-live .cap-viewport:focus-visible{outline:2px solid var(--bindu-soma);outline-offset:4px}
+
+.cap-track{display:flex;gap:var(--cap-gap);width:max-content;will-change:transform}
+.cap-rail.is-live .cap-track{transform:translate3d(0,0,0)}
+
+/* ---------- card ---------- */
+.cap{position:relative;flex:0 0 var(--cap-w);min-height:380px;display:grid;
+  grid-template-rows:auto auto auto auto 1fr auto;gap:8px;padding:20px 20px 18px;
+  border-radius:var(--bindu-r-lg);border:1px solid rgba(250,248,242,.1);
+  background:linear-gradient(180deg,rgba(250,248,242,.062),rgba(250,248,242,.014));
+  color:var(--bindu-on-dark);overflow:hidden;isolation:isolate;
+  transition:border-color var(--bindu-dur) var(--bindu-ease),
+             transform var(--bindu-dur) var(--bindu-ease),
+             box-shadow var(--bindu-dur) var(--bindu-ease)}
+.cap::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(120% 70% at 50% 118%,rgba(201,145,26,.16),transparent 62%)}
+.cap:hover,.cap:focus-within{border-color:rgba(242,213,130,.4);transform:translateY(-3px);
+  box-shadow:0 24px 54px rgba(0,0,0,.45)}
+
+.cap__top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.cap__n{font-family:var(--bindu-font-mono);font-size:10px;letter-spacing:.18em;color:var(--bindu-on-dark-2)}
+.cap__tag{font-family:var(--bindu-font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--bindu-soma-light);border:1px solid rgba(242,213,130,.28);border-radius:var(--bindu-r-full);
+  padding:3px 8px}
+.cap__title{font-family:var(--bindu-font-display);font-weight:600;font-size:27px;line-height:1.05;
+  letter-spacing:-.015em;margin:2px 0 0;color:var(--bindu-on-dark)}
+.cap__price{margin:0;font-size:12.5px;line-height:1.4;color:var(--bindu-on-dark-2);
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+.cap__price b{font-weight:600;color:var(--bindu-soma-light)}
+.cap__desc{font-size:13.5px;line-height:1.5;color:var(--bindu-on-dark-2);margin:0;max-width:34ch}
+
+.cap-sub{margin:10px 0 0;font-size:14px;line-height:1.55;color:var(--bindu-on-dark-2);max-width:56ch}
+
+.cap__stage{position:relative;height:132px;margin:4px -6px 0;perspective:760px;overflow:hidden;
+  border-radius:var(--bindu-r-md);
+  background:radial-gradient(70% 90% at 50% 40%,rgba(201,145,26,.09),transparent 70%)}
+.cap__link{display:inline-flex;align-items:center;gap:8px;margin-top:2px;
+  font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--bindu-soma-light);text-decoration:none}
+.cap__link svg{width:13px;height:13px;transition:transform var(--bindu-dur) var(--bindu-ease)}
+.cap__link:hover svg,.cap__link:focus-visible svg{transform:translateX(3px)}
+
+/* ---------- procedural object ---------- */
+.obj{position:absolute;left:50%;top:50%;width:104px;height:104px;margin:-52px 0 0 -52px;
+  transform-style:preserve-3d;animation:obj-float 7s var(--bindu-ease-out) infinite alternate}
+.obj i{position:absolute;inset:0;display:block;background:var(--chrome);
+  box-shadow:0 18px 34px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.7);
+  will-change:transform}
+@keyframes obj-float{from{transform:translateY(4px)}to{transform:translateY(-6px)}}
+@keyframes obj-spin{from{transform:rotateY(0) rotateX(12deg)}to{transform:rotateY(360deg) rotateX(12deg)}}
+
+/* 01 creative — stacked plates */
+.obj--creative{animation:obj-float 7s ease-in-out infinite alternate,obj-spin 18s linear infinite}
+.obj--creative i{border-radius:22px}
+.obj--creative i:nth-child(1){transform:translateZ(18px) scale(.99)}
+.obj--creative i:nth-child(2){transform:translateZ(0) scale(.86);opacity:.9}
+.obj--creative i:nth-child(3){transform:translateZ(-18px) scale(.72);opacity:.7}
+
+/* 02 digital — concentric rings */
+.obj--digital{animation:obj-spin 16s linear infinite}
+.obj--digital i{border-radius:50%;background:none;
+  border:2px solid rgba(232,238,248,.62);
+  box-shadow:0 0 22px rgba(242,213,130,.28),inset 0 0 18px rgba(242,213,130,.22),
+             0 12px 26px rgba(0,0,0,.5)}
+.obj--digital i:nth-child(1){inset:0}
+.obj--digital i:nth-child(2){inset:18px;transform:translateZ(16px)}
+.obj--digital i:nth-child(3){inset:36px;transform:translateZ(32px)}
+
+/* 03 strategy — isometric cube */
+.obj--strategy{animation:obj-spin 20s linear infinite}
+.obj--strategy i{inset:auto;left:50%;top:50%;width:88px;height:88px;margin:-44px 0 0 -44px;
+  border-radius:10px;opacity:.94;backface-visibility:hidden}
+.obj--strategy i:nth-child(1){transform:rotateY(0) translateZ(44px)}
+.obj--strategy i:nth-child(2){transform:rotateY(90deg) translateZ(44px)}
+.obj--strategy i:nth-child(3){transform:rotateX(90deg) translateZ(44px)}
+.obj--strategy i:nth-child(4){transform:rotateY(180deg) translateZ(44px)}
+.obj--strategy i:nth-child(5){transform:rotateY(-90deg) translateZ(44px)}
+.obj--strategy i:nth-child(6){transform:rotateX(-90deg) translateZ(44px)}
+
+/* 04 interactive — nested frames */
+.obj--interactive{animation:obj-float 6s ease-in-out infinite alternate}
+.obj--interactive i{inset:auto;left:50%;top:50%;border-radius:14px;
+  transform-origin:50% 50%;animation:frame-pulse 5s ease-in-out infinite}
+.obj--interactive i:nth-child(1){width:96px;height:96px;margin:-48px 0 0 -48px}
+.obj--interactive i:nth-child(2){width:64px;height:64px;margin:-32px 0 0 -32px;animation-delay:.35s}
+.obj--interactive i:nth-child(3){width:32px;height:32px;margin:-16px 0 0 -16px;animation-delay:.7s}
+@keyframes frame-pulse{0%,100%{transform:translateZ(0) rotate(0)}50%{transform:translateZ(26px) rotate(45deg)}}
+
+/* 05 automation — nodes on a running orbit */
+.obj--automation{animation:obj-float 8s ease-in-out infinite alternate}
+.obj--automation::before{content:"";position:absolute;inset:6px;border-radius:50%;
+  border:1px solid rgba(232,238,248,.2);
+  box-shadow:0 0 20px rgba(242,213,130,.14),inset 0 0 18px rgba(242,213,130,.1)}
+.obj--automation i{inset:auto;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;
+  border-radius:50%;transform-origin:0 0;animation:orbit 7s linear infinite;
+  box-shadow:0 6px 14px rgba(0,0,0,.6),0 0 12px rgba(242,213,130,.3)}
+.obj--automation i:nth-child(2){animation-delay:-2.33s;width:12px;height:12px;margin:-6px 0 0 -6px}
+.obj--automation i:nth-child(3){animation-delay:-4.66s;width:9px;height:9px;margin:-4.5px 0 0 -4.5px}
+@keyframes orbit{from{transform:rotate(0) translateX(46px)}to{transform:rotate(360deg) translateX(46px)}}
+
+/* 06 remau — stacked slabs, swaying rather than tumbling so the stack stays readable */
+.obj--remau{animation:remau-sway 9s ease-in-out infinite alternate}
+@keyframes remau-sway{
+  from{transform:rotateY(-24deg) rotateX(11deg) translateY(2px)}
+  to{transform:rotateY(24deg) rotateX(11deg) translateY(-5px)}}
+.obj--remau i{border-radius:8px;height:22px;inset:auto;left:50%;width:92px;margin-left:-46px}
+.obj--remau i:nth-child(1){top:14px}
+.obj--remau i:nth-child(2){top:40px;width:76px;margin-left:-38px;opacity:.92}
+.obj--remau i:nth-child(3){top:66px;width:60px;margin-left:-30px;opacity:.84}
+
+/* ---------- CTA (controls removed: the rail runs unprompted) ---------- */
+.cap-rail .cap-more{margin-top:20px}
+
+@media(max-width:720px){
+  .cap-rail{--cap-w:min(78vw,320px)}
+  .cap{min-height:330px}
+  .cap__stage{height:118px}
+}
+@media(prefers-reduced-motion:reduce){
+  .obj,.obj i{animation:none!important}
+  .cap-rail.is-live .cap-track{transform:none!important}
+}

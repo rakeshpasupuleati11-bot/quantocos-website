@@ -1,0 +1,48 @@
+/* Homepage · trust strip — the assurances every engagement carries.
+   Compact band directly under the hero; no cards, no borders per item. */
+
+.trust-strip {
+  background: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+  padding: 16px 0;
+}
+
+.trust-strip__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .6);
+}
+
+.trust-strip__list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.trust-strip__list li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #86EFAC;
+  opacity: .75;
+}
+
+@media (max-width: 640px) {
+  .trust-strip { padding: 14px 0; }
+  .trust-strip__list {
+    justify-content: flex-start;
+    gap: 4px 20px;
+    font-size: 12.5px;
+  }
+  .trust-strip__list li { white-space: normal; }
+}

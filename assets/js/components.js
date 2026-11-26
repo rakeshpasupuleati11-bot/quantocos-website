@@ -72,7 +72,9 @@
       var prefix = el.getAttribute('data-prefix') || '';
       var suffix = el.getAttribute('data-suffix') || '';
       if (reduced) { el.textContent = prefix + target + suffix; return; }
-      var t0 = null, dur = 900;
+      var t0 = null;
+      var dur = parseInt(el.getAttribute('data-count-dur'), 10) || 900;
+      el.textContent = prefix + '0' + suffix;
       function step(ts) {
         if (!t0) t0 = ts;
         var p = Math.min(1, (ts - t0) / dur);

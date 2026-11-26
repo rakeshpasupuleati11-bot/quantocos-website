@@ -1,0 +1,251 @@
+/* ============================================================
+   Quantocos · RGB light-edge system
+   One palette, one set of layers, four intensities.
+   The edge effect is a decorative child span (`.rgb-ring`) added
+   by rgb.js. Component borders, backgrounds and text are untouched.
+   ============================================================ */
+
+@property --rgb-a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+:root {
+  /* reference palette */
+  --rgb-1: #006EFF;
+  --rgb-2: #2435FF;
+  --rgb-3: #3100A8;
+  --rgb-4: #9333FF;
+  --rgb-5: #E84DDE;
+  --rgb-6: #FF98D5;
+  --rgb-7: #A6EAFF;
+  --rgb-8: #E1FFAC;
+  --rgb-9: #FF1744;
+  --rgb-10: #C084FC;
+  --rgb-11: #FFFFFF;
+
+  --rgb-focus: #A6EAFF;
+  --rgb-grad-full: conic-gradient(
+    from var(--rgb-a) at 50% 50%,
+    var(--rgb-1), var(--rgb-2), var(--rgb-3), var(--rgb-4),
+    var(--rgb-5), var(--rgb-6), var(--rgb-11), var(--rgb-7),
+    var(--rgb-8), var(--rgb-10), var(--rgb-9), var(--rgb-1)
+  );
+  --rgb-grad: var(--rgb-grad-full);
+}
+
+/* host: only supplies a positioning context when it has none */
+:where(.rgb-host) { position: relative; }
+.rgb-ring { display: none; }
+.rgb-host > .rgb-ring { display: block; }
+
+.rgb-host {
+  --rgb-w: 1.2px;
+  --rgb-op: .85;
+  --rgb-dur: 7s;
+  --rgb-glow-1: 12px;
+  --rgb-glow-2: 28px;
+  --rgb-glow-c1: rgba(36, 53, 255, .22);
+  --rgb-glow-c2: rgba(147, 51, 255, .14);
+}
+
+.rgb-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow:
+    0 0 var(--rgb-glow-1) var(--rgb-glow-c1),
+    0 0 var(--rgb-glow-2) var(--rgb-glow-c2);
+  transition: box-shadow .45s cubic-bezier(.16, 1, .3, 1);
+}
+
+/* layer 1 + 2: the sharp 1–1.5px edge, moving conic */
+.rgb-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  padding: var(--rgb-w);
+  border-radius: inherit;
+  background: var(--rgb-grad);
+  opacity: var(--rgb-op);
+  -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+  animation: rgb-spin var(--rgb-dur) linear infinite;
+  animation-delay: var(--rgb-delay, 0s);
+  transition: opacity .35s ease;
+}
+
+@keyframes rgb-spin {
+  from { --rgb-a: 0deg; }
+  to { --rgb-a: 360deg; }
+}
+
+/* ---------- intensities (hierarchy) ---------- */
+
+.rgb-host[data-rgb="prominent"] {
+  --rgb-w: 1.6px;
+  --rgb-op: 1;
+  --rgb-dur: 6s;
+  --rgb-glow-1: 22px;
+  --rgb-glow-2: 56px;
+  --rgb-glow-c1: rgba(36, 53, 255, .5);
+  --rgb-glow-c2: rgba(232, 77, 222, .3);
+}
+
+.rgb-host[data-rgb="medium"] {
+  --rgb-w: 1.4px;
+  --rgb-op: .95;
+  --rgb-dur: 6.5s;
+  --rgb-glow-1: 16px;
+  --rgb-glow-2: 38px;
+  --rgb-glow-c1: rgba(36, 53, 255, .36);
+  --rgb-glow-c2: rgba(147, 51, 255, .22);
+}
+
+.rgb-host[data-rgb="soft"] {
+  --rgb-w: 1.2px;
+  --rgb-op: .85;
+  --rgb-dur: 7s;
+  --rgb-glow-1: 12px;
+  --rgb-glow-2: 28px;
+  --rgb-glow-c1: rgba(36, 53, 255, .22);
+  --rgb-glow-c2: rgba(147, 51, 255, .14);
+}
+
+.rgb-host[data-rgb="minimal"] {
+  --rgb-w: 1px;
+  --rgb-op: .55;
+  --rgb-dur: 8s;
+  --rgb-glow-1: 5px;
+  --rgb-glow-2: 12px;
+  --rgb-glow-c1: rgba(36, 53, 255, .1);
+  --rgb-glow-c2: rgba(36, 53, 255, .06);
+}
+
+/* blue-violet edge for the highlighted pricing card; the full palette
+   returns on hover, so the approved colours are never replaced */
+.rgb-host[data-rgb="violet"] {
+  --rgb-w: 1.2px;
+  --rgb-op: .55;
+  --rgb-dur: 7s;
+  --rgb-glow-1: 16px;
+  --rgb-glow-2: 40px;
+  --rgb-glow-c1: rgba(101, 72, 245, .3);
+  --rgb-glow-c2: rgba(147, 51, 255, .16);
+  --rgb-grad: conic-gradient(from var(--rgb-a) at 50% 50%,
+    var(--rgb-1), var(--rgb-2), var(--rgb-3), var(--rgb-4),
+    var(--rgb-10), var(--rgb-7), var(--rgb-2), var(--rgb-1));
+}
+
+/* crossfade to the full palette rather than snapping the gradient */
+.rgb-host[data-rgb="violet"] > .rgb-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  padding: var(--rgb-w);
+  border-radius: inherit;
+  background: var(--rgb-grad-full);
+  opacity: 0;
+  transition: opacity .45s ease;
+  -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+}
+
+.rgb-host[data-rgb="violet"]:hover > .rgb-ring::after { opacity: .95; }
+
+.rgb-host[data-rgb="violet"]:hover {
+  --rgb-op: .95;
+  --rgb-glow-1: 22px;
+  --rgb-glow-2: 54px;
+  --rgb-glow-c1: rgba(101, 72, 245, .46);
+  --rgb-glow-c2: rgba(147, 51, 255, .28);
+}
+
+/* many small fields in one form: one quiet edge each, brighter on focus */
+.rgb-host.field[data-rgb="minimal"] > .rgb-ring::before { opacity: .4; }
+.rgb-host.field:focus-within > .rgb-ring::before,
+.rgb-host.field:hover > .rgb-ring::before { opacity: .9; }
+.rgb-host.field[data-rgb="minimal"] { --rgb-glow-1: 3px; --rgb-glow-2: 8px; }
+
+/* ---------- states ---------- */
+
+.rgb-host[data-rgb="prominent"]:hover {
+  --rgb-glow-1: 28px;
+  --rgb-glow-2: 68px;
+  --rgb-glow-c1: rgba(36, 53, 255, .66);
+  --rgb-glow-c2: rgba(232, 77, 222, .42);
+}
+
+.rgb-host[data-rgb="medium"]:hover {
+  --rgb-glow-1: 21px;
+  --rgb-glow-2: 48px;
+  --rgb-glow-c1: rgba(36, 53, 255, .5);
+  --rgb-glow-c2: rgba(147, 51, 255, .32);
+}
+
+.rgb-host[data-rgb="soft"]:hover {
+  --rgb-glow-1: 16px;
+  --rgb-glow-2: 38px;
+  --rgb-glow-c1: rgba(36, 53, 255, .34);
+  --rgb-glow-c2: rgba(147, 51, 255, .2);
+}
+
+.rgb-host:hover > .rgb-ring::before,
+.rgb-host:focus-visible > .rgb-ring::before {
+  opacity: 1;
+}
+
+.rgb-host:active > .rgb-ring::before {
+  animation-duration: 2.2s;
+}
+
+.rgb-host:focus-visible {
+  outline: 2px solid var(--rgb-focus);
+  outline-offset: 3px;
+}
+
+.rgb-host:disabled,
+.rgb-host[aria-disabled="true"],
+.rgb-host.is-disabled {
+  --rgb-op: .45;
+  --rgb-glow-c1: rgba(36, 53, 255, .1);
+  --rgb-glow-c2: rgba(36, 53, 255, .05);
+  --rgb-glow-1: 4px;
+  --rgb-glow-2: 8px;
+}
+
+.rgb-host:disabled > .rgb-ring::before,
+.rgb-host[aria-disabled="true"] > .rgb-ring::before,
+.rgb-host.is-disabled > .rgb-ring::before {
+  animation: none;
+  background: linear-gradient(120deg, rgba(147, 51, 255, .45), rgba(36, 53, 255, .25));
+}
+
+/* form fields take the edge directly: they cannot hold a child span */
+.rgb-field:focus-visible {
+  box-shadow:
+    0 0 0 1px rgba(166, 234, 255, .9),
+    0 0 18px rgba(147, 51, 255, .35);
+}
+
+/* ---------- motion safety + play state ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .rgb-ring { transition: none; }
+  .rgb-ring::before { animation: none; }
+}
+
+html.rgb-paused .rgb-ring::before { animation-play-state: paused; }

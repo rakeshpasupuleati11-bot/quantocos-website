@@ -1,0 +1,413 @@
+/* ============================================================
+   Homepage · Pods & Pricing
+   Pure black stage, two graphite cards, one blue-violet card.
+   Light comes from the card surfaces and one ambient glow.
+   ============================================================ */
+
+.pp-section {
+  background: #000;
+  padding: 96px 0 88px;
+  position: relative;
+  overflow: hidden;            /* keeps the ambient glow inside the stage */
+}
+
+.pp-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+
+/* small green pill */
+.pp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(74, 222, 128, .34);
+  background: rgba(22, 101, 52, .16);
+  color: #86EFAC;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: .01em;
+  box-shadow: 0 0 14px rgba(74, 222, 128, .1);
+}
+.pp-badge svg { width: 14px; height: 14px; opacity: .9; }
+
+.pp-title {
+  margin: 22px auto 0;
+  font-family: var(--bindu-font-body);
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.pp-lead {
+  margin: 18px auto 0;
+  max-width: 620px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, .62);
+}
+
+/* ---------- cards ---------- */
+
+.pp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.pp-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, .085);
+  background:
+    linear-gradient(180deg, #1C1C1E 0%, #151515 34%, #101010 64%, #0B0B0B 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .055),
+    0 18px 40px rgba(0, 0, 0, .45);
+  color: #fff;
+  transition:
+    transform .32s cubic-bezier(.16, 1, .3, 1),
+    box-shadow .32s cubic-bezier(.16, 1, .3, 1),
+    border-color .32s ease;
+}
+
+.pp-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, .16);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .075),
+    0 26px 56px rgba(0, 0, 0, .55);
+}
+
+/* the highlighted pod */
+.pp-card--hero {
+  border-color: rgba(138, 126, 255, .42);
+  background:
+    linear-gradient(180deg,
+      #101033 0%,
+      #1E1B55 26%,
+      #30258B 52%,
+      #4835D5 78%,
+      #6548F5 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .14),
+    0 20px 60px rgba(88, 58, 235, .3),
+    0 0 90px rgba(110, 82, 255, .18);
+}
+
+/* the ambient glow: a ring of light outside the card, breathing slowly */
+.pp-card--hero::before {
+  content: "";
+  position: absolute;
+  inset: -30px;
+  z-index: 0;
+  border-radius: 40px;
+  background: radial-gradient(closest-side,
+    rgba(101, 72, 245, 0) 56%,
+    rgba(101, 72, 245, .26) 72%,
+    rgba(101, 72, 245, 0) 90%);
+  filter: blur(18px);
+  pointer-events: none;
+  animation: pp-glow 8s ease-in-out infinite alternate;
+}
+
+.pp-card--hero > * { position: relative; z-index: 1; }
+
+.pp-card--hero:hover {
+  border-color: rgba(166, 234, 255, .6);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .18),
+    0 28px 76px rgba(88, 58, 235, .42),
+    0 0 110px rgba(110, 82, 255, .24);
+}
+
+@keyframes pp-glow {
+  from { opacity: .55; }
+  to { opacity: 1; }
+}
+
+/* content ladder — identical start lines on all three cards */
+.pp-name {
+  margin: 0;
+  font-family: var(--bindu-font-body);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.015em;
+  color: #fff;
+}
+
+.pp-price { margin: 18px 0 0; display: flex; align-items: baseline; gap: 9px; }
+
+.pp-amount {
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: #fff;
+}
+
+.pp-per { font-size: 14px; color: rgba(255, 255, 255, .55); }
+
+.pp-credits {
+  margin: 12px 0 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, .74);
+}
+
+.pp-card--hero .pp-per { color: rgba(255, 255, 255, .72); }
+.pp-card--hero .pp-credits { color: rgba(255, 255, 255, .86); }
+
+/* CTA sits above the divider and the list, on every card */
+.pp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  margin: 24px 0 0;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(255, 255, 255, .055);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background .25s ease, border-color .25s ease, transform .12s ease;
+}
+
+.pp-btn:hover { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .3); }
+.pp-btn:active { transform: scale(.988); }
+
+.pp-card--hero .pp-btn {
+  background: #fff;
+  border-color: #fff;
+  color: #0B0B14;
+  font-weight: 600;
+}
+
+.pp-card--hero .pp-btn:hover { background: #F4F2FF; border-color: #F4F2FF; }
+
+.pp-btn:focus-visible {
+  outline: 2px solid #A6EAFF;
+  outline-offset: 3px;
+}
+
+.pp-rule {
+  height: 1px;
+  margin: 26px 0 22px;
+  border: 0;
+  background: rgba(255, 255, 255, .1);
+}
+
+.pp-card--hero .pp-rule { background: rgba(255, 255, 255, .22); }
+
+.pp-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.pp-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, .76);
+}
+
+.pp-list li svg {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  margin-top: 4px;
+  color: #fff;
+}
+
+.pp-card--hero .pp-list li { color: rgba(255, 255, 255, .9); }
+
+/* ---------- foot line ---------- */
+
+.pp-foot {
+  margin: 34px auto 0;
+  text-align: center;
+  font-size: 15px;
+  color: rgba(255, 255, 255, .56);
+}
+
+.pp-foot a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, .28);
+  padding-bottom: 1px;
+  margin-left: 6px;
+}
+
+.pp-foot a:hover { border-bottom-color: #A6EAFF; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 940px) {
+  .pp-grid { grid-template-columns: 1fr; gap: 18px; max-width: 560px; margin: 0 auto; }
+  .pp-head { margin-bottom: 40px; }
+  .pp-section { padding: 72px 0 64px; }
+}
+
+@media (max-width: 520px) {
+  .pp-card { padding: 26px 22px; border-radius: 22px; }
+  .pp-amount { font-size: 42px; }
+  .pp-title { font-size: 34px; }
+  .pp-lead { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-card,
+  .pp-card--hero,
+  .pp-card--hero::before,
+  .pp-btn { transition: none; animation: none; }
+  .pp-card:hover { transform: none; }
+}
+
+/* ==========================================================================
+   Refinement pass — masks, descriptions, assurances, conversion
+   ========================================================================== */
+
+.pp-section { scroll-margin-top: 80px; }
+
+/* line-mask headline (progressive: visible without the reveal layer) */
+.pp-title .pp-line { display: block; overflow: hidden; padding-bottom: .07em; margin-bottom: -.07em; }
+.pp-title .pp-line > span { display: block; will-change: transform; }
+.reveal-armed .pp-head .pp-line > span { transition: transform .82s var(--bindu-ease); }
+.reveal-armed .pp-head:not(.is-in) .pp-line > span { transform: translateY(112%); }
+.reveal-armed .pp-head.is-in .pp-line:nth-child(2) > span { transition-delay: .12s; }
+
+/* customer description: reserved height keeps feature lists aligned */
+.pp-desc {
+  margin: 14px 0 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, .66);
+  min-height: 3.1em;
+}
+.pp-card--hero .pp-desc { color: rgba(255, 255, 255, .8); }
+
+/* card entrance: 18px rise, 720ms, 120ms stagger (animation, so hover stays 300ms) */
+.reveal-armed .pp-grid > .pp-card {
+  transition: transform .3s var(--bindu-ease), box-shadow .3s var(--bindu-ease), border-color .3s var(--bindu-ease);
+}
+.reveal-armed .pp-grid.is-in > .pp-card { animation: pp-card-in .72s var(--bindu-ease) backwards; }
+.reveal-armed .pp-grid.is-in > .pp-card:nth-child(2) { animation-delay: .12s; }
+.reveal-armed .pp-grid.is-in > .pp-card:nth-child(3) { animation-delay: .24s; }
+@keyframes pp-card-in {
+  from { opacity: 0; translate: 0 18px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* checkmark stagger once the card is in */
+.reveal-armed .pp-card .pp-list li {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .45s var(--bindu-ease), transform .45s var(--bindu-ease);
+}
+.reveal-armed .pp-grid.is-in .pp-list li { opacity: 1; transform: none; }
+.reveal-armed .pp-grid.is-in .pp-list li:nth-child(1) { transition-delay: .34s; }
+.reveal-armed .pp-grid.is-in .pp-list li:nth-child(2) { transition-delay: .41s; }
+.reveal-armed .pp-grid.is-in .pp-list li:nth-child(3) { transition-delay: .48s; }
+.reveal-armed .pp-grid.is-in .pp-list li:nth-child(4) { transition-delay: .55s; }
+.reveal-armed .pp-grid.is-in .pp-list li:nth-child(5) { transition-delay: .62s; }
+
+/* digital pod breathing light: keep the approved wash, slow it to 13s */
+.pp-card--hero::before { animation-duration: 13s; }
+
+/* CTA light sweep */
+.pp-btn { position: relative; overflow: hidden; isolation: isolate; }
+.pp-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(105deg, transparent 32%, rgba(255, 255, 255, .16) 50%, transparent 68%);
+  transform: translateX(-130%);
+  transition: transform .62s var(--bindu-ease);
+  pointer-events: none;
+}
+.pp-btn:hover::after, .pp-btn:focus-visible::after { transform: translateX(130%); }
+.pp-card--hero .pp-btn::after { background: linear-gradient(105deg, transparent 32%, rgba(101, 72, 245, .14) 50%, transparent 68%); }
+
+/* commercial assurances — compact line, no new card */
+.pp-assure { margin: 42px auto 0; text-align: center; }
+.pp-assure__rate { font-size: 15px; letter-spacing: .01em; color: rgba(255, 255, 255, .74); }
+.pp-assure__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 26px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: rgba(255, 255, 255, .58);
+}
+.pp-assure__list li { display: inline-flex; align-items: center; gap: 8px; }
+.pp-assure__list svg { width: 13px; height: 13px; color: #E7B94A; flex: none; }
+
+/* conversion line */
+.pp-convert {
+  margin: 30px auto 0;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, .07);
+  text-align: center;
+}
+.pp-convert__ask { font-size: 17px; color: #fff; }
+.pp-convert__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 26px;
+  margin-top: 10px;
+}
+.pp-convert__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #A6EAFF;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166, 234, 255, .34);
+  padding-bottom: 2px;
+  transition: border-color .25s var(--bindu-ease), color .25s var(--bindu-ease);
+}
+.pp-convert__cta svg { width: 14px; height: 14px; transition: transform .25s var(--bindu-ease); }
+.pp-convert__cta:hover { color: #fff; border-bottom-color: #fff; }
+.pp-convert__cta:hover svg { transform: translateX(4px); }
+.pp-convert__cta:focus-visible { outline: 2px solid #A6EAFF; outline-offset: 3px; border-radius: 2px; }
+.pp-convert__more { font-size: 14px; color: rgba(255, 255, 255, .55); text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .18); }
+.pp-convert__more:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, .5); }
+
+/* written-notice foot line: replace the old centered rule spacing */
+.pp-convert .pp-foot { margin: 16px 0 0; font-size: 12.5px; color: rgba(255, 255, 255, .4); }
+.pp-convert .pp-foot a { color: rgba(255, 255, 255, .62); text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .18); }
+
+@media (max-width: 940px) {
+  .pp-desc { min-height: 0; }
+  .pp-convert { margin-top: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-title .pp-line > span,
+  .pp-card .pp-list li,
+  .pp-btn::after,
+  .pp-convert__cta,
+  .pp-convert__cta svg { transition: none; transform: none; opacity: 1; }
+  .reveal-armed .pp-grid.is-in > .pp-card { animation: none; }
+}

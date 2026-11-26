@@ -61,14 +61,21 @@
   if (!gsap || !ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
 
-  /* ---------- gate ladder: each card draws its own gold edge as it passes ---------- */
-  gsap.utils.toArray('#how .gate').forEach(function (card) {
-    var state = { v: 0 };
-    gsap.to(state, {
-      v: 1,
+  /* ---------- the sample account page scrolls through its own frame ---------- */
+  gsap.utils.toArray('[data-ws]').forEach(function (frame) {
+    var page = frame.querySelector('[data-ws-page]');
+    var viewport = frame.querySelector('.ws-viewport');
+    if (!page || !viewport) return;
+    gsap.fromTo(page, { y: 0 }, {
+      y: function () { return -Math.max(0, page.offsetHeight - viewport.clientHeight); },
       ease: 'none',
-      scrollTrigger: { trigger: card, start: 'top 88%', end: 'top 46%', scrub: true },
-      onUpdate: function () { card.style.setProperty('--lit', state.v.toFixed(3)); }
+      scrollTrigger: {
+        trigger: frame,
+        start: 'top 78%',
+        end: 'bottom 30%',
+        scrub: 0.6,
+        invalidateOnRefresh: true
+      }
     });
   });
 
