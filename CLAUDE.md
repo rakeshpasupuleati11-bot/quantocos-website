@@ -79,6 +79,19 @@ Publish = static upload of the root. Backups are dev artefacts; exclude them.
   4.5:1 body contrast, keyboard-operable interactive components.
 - Run `build.py --check` and `check_site.py` before declaring any page done.
 
+## Deployment — permanent
+
+Every verified change ships to the live site; finished work must never exist only on the desktop.
+
+- Repo `https://github.com/rakeshpasupuleati11-bot/quantocos-website.git`, branch `main`,
+  live URL `https://rakeshpasupuleati11-bot.github.io/quantocos-website/`.
+- Workflow: change → validate locally (`build.py --check`, `check_site.py`, browser check) →
+  commit only site files (exclude `QA/shots`, `QA/video`, `*.webm`, backups, temp reports) →
+  push `origin main` → confirm GitHub Pages serves that commit → compare live against local
+  before reporting.
+- Never force-push, rewrite history, or create another project folder, repo, branch or URL.
+- Never claim completion until the live site serves the verified changes.
+
 ## Working conventions
 
 - Windows/PowerShell environment. Paths use forward slashes in shell tools.
