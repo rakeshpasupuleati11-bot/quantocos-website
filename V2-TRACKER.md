@@ -194,6 +194,12 @@ sign-offs listed above.
 - **Verification.** `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.
   axe (WCAG 2.0/2.1/2.2 A+AA + best-practice) on all 30 indexable pages at 390 and 1440:
   **0 violations, 0 console errors, no horizontal overflow**.
+- **Who it's for (D2).** New `#fit` band between the trust strip and the commercial story:
+  "Is this for you?" with three fits (10–200 US employees, no in-house comms team; comms spread
+  across whoever has time; want named team, published price, monthly credits) and two non-fits
+  (daily on-site department; one large out-of-catalog project). `.who-fund__list` and the
+  `.who-fund--fit` shell added to `section-trust.css` (gold dot for fits, muted dot for non-fits);
+  `section-trust.css` now loads as `?v=2` on the homepage.
 - **Still BLOCKED on external input:** booking URL (calendar embed), form endpoint, GA4/Plausible
   ID + consent banner copy, real proof assets/case studies, unused-credit policy, US presence
   facts, real India↔US overlap hours, and the contact merge that needs server-side 301s.

@@ -278,6 +278,45 @@
   text-wrap: balance;
 }
 
+.who-fund__list {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.who-fund__list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(245, 244, 239, .76);
+}
+
+.who-fund__list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .62em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #E7B94A;
+  opacity: .85;
+}
+
+.who-fund__col--no .who-fund__list li::before {
+  background: rgba(245, 244, 239, .42);
+}
+
+.who-fund--fit {
+  max-width: 1040px;
+  margin: 12px auto 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
 .who-fund__col > p:last-child {
   margin: 0;
   font-size: 14.5px;
