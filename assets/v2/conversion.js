@@ -74,6 +74,65 @@
     }
   }
 
+  /* ---- consent: analytics runs only after an explicit choice ----
+     The banner appears only when an analytics destination is configured,
+     because with no ID there is nothing to consent to. The choice is
+     stored per browser; "denied" is honoured until it is changed here. */
+  function consent() {
+    var hasAnalytics = /^G-[A-Z0-9]{6,}$/.test(safe(C.ga4)) || !!safe(C.plausibleDomain);
+    if (!hasAnalytics) return;
+    var stored = "";
+    try { stored = localStorage.getItem("qc_consent") || ""; } catch (e) { /* private mode */ }
+    if (stored === "granted") { C.consent = true; return; }
+    if (stored === "denied") return;
+
+    var css = document.createElement("style");
+    css.dataset.qcConsentStyle = "1";
+    css.textContent =
+      ".qc-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;" +
+      "margin-inline:auto;max-width:680px;display:flex;flex-wrap:wrap;gap:12px 16px;" +
+      "align-items:center;padding:16px 18px;border-radius:14px;background:#0C0C0C;" +
+      "color:#F5F4EF;border:1px solid rgba(245,244,239,.18);" +
+      "box-shadow:0 18px 40px rgba(0,0,0,.45);font-size:14px;line-height:1.5}" +
+      ".qc-consent p{margin:0;flex:1 1 320px;font-size:14px;color:rgba(245,244,239,.86)}" +
+      ".qc-consent__actions{display:flex;gap:10px;flex:0 0 auto}" +
+      ".qc-consent button{font:inherit;font-size:14px;font-weight:600;min-height:44px;" +
+      "padding:10px 18px;border-radius:999px;cursor:pointer;background:transparent;" +
+      "border:1px solid rgba(245,244,239,.28);color:#F5F4EF}" +
+      ".qc-consent button.qc-consent__allow{background:#E7B94A;border-color:#E7B94A;color:#141005}" +
+      ".qc-consent button:focus-visible{outline:2px solid #F5F4EF;outline-offset:2px}" +
+      "@media(max-width:520px){.qc-consent__actions{width:100%}" +
+      ".qc-consent button{flex:1}}";
+    document.head.appendChild(css);
+
+    var box = document.createElement("div");
+    box.className = "qc-consent";
+    box.setAttribute("role", "region");
+    box.setAttribute("aria-label", "Analytics choice");
+    var p = document.createElement("p");
+    p.textContent = "We use analytics only if you allow it. It records page views and button clicks, never what you type in a form.";
+    var actions = document.createElement("div");
+    actions.className = "qc-consent__actions";
+    function decide(value) {
+      try { localStorage.setItem("qc_consent", value); } catch (e) { /* private mode */ }
+      if (value === "granted") { C.consent = true; analytics(); }
+      box.remove(); css.remove();
+      track(value === "granted" ? "consent_granted" : "consent_denied", {});
+    }
+    var yes = document.createElement("button");
+    yes.type = "button";
+    yes.className = "qc-consent__allow";
+    yes.textContent = "Allow analytics";
+    yes.addEventListener("click", function () { decide("granted"); });
+    var no = document.createElement("button");
+    no.type = "button";
+    no.textContent = "No thanks";
+    no.addEventListener("click", function () { decide("denied"); });
+    actions.appendChild(yes); actions.appendChild(no);
+    box.appendChild(p); box.appendChild(actions);
+    document.body.appendChild(box);
+  }
+
   /* ---- clicks: CTA engagement and pod selection ---- */
   var calcTracked = false;
   document.addEventListener("click", function (ev) {
@@ -214,6 +273,7 @@
   }
 
   function init() {
+    consent();
     analytics();
     booking();
     forms();

@@ -218,3 +218,16 @@ sign-offs listed above.
 - **Decision: conditional GO.** Publish now for organic and direct traffic. NO-GO for paid or
   campaign traffic until a form endpoint, GA4/Plausible with a consent banner, a booking URL and
   real proof assets exist — without them the funnel cannot capture a pilot request or be measured.
+
+### 2026-11-27 — Consent shell and content checklist
+
+- `assets/v2/conversion.js` gains a consent banner that appears only when an analytics
+  destination is configured; it stores the choice, loads analytics only on "Allow", and the
+  "denied" choice is honoured on later visits. No ID is configured, so nothing renders today.
+  All 30 pages load `conversion.js?v=4`.
+- `_planning/content-checklist.md` lists every proof, wiring, policy and hosting asset the
+  business must supply, with its destination section. Internal only.
+- Verified locally: banner absent with no config; with a test GA4 ID it renders at 390px,
+  both buttons are 44px, focus ring present, axe reports 0 violations, "Allow" stores
+  `qc_consent=granted` and loads gtag once, and it stays hidden on reload.
+- `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.
