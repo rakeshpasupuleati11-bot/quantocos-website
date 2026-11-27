@@ -528,3 +528,8 @@ html.rgb-paused #problems::before,
 html.rgb-paused .model-section::before,
 html.rgb-paused .pool::after,
 html.rgb-paused #problems .hp-probs li::after { animation-play-state: paused; }
+
+/* Legibility floor on the homepage: no functional label below 12px */
+.eyebrow,.story-block__label,.storycard__vlabel,.storycard__label,.panel__fine,.panel__rec,
+.versus-note,.dctrl__rate,.micro,.chip,.podsel__meta,.cap__tag,.hp-info__label,
+.storycard__theme,.presets__label,.ftr__legal-note{font-size:12px}
