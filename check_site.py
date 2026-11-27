@@ -135,6 +135,14 @@ def check_page(f: Path, rel: str, all_titles, all_descs, issues):
     if not c:
         add("error", "canonical", "missing")
     else:
+        base = ROUTES["canonicalBase"]
+        if not c.group(1).startswith(base):
+            add("error", "canonical-host", c.group(1))
+        elif rel in ROUTES["pages"] and c.group(1) != base + rel:
+            add("error", "canonical-mismatch", c.group(1))
+        ogurl = re.search(r'property="og:url" content="([^"]*)"', raw)
+        if ogurl and ogurl.group(1) != c.group(1):
+            add("error", "og-url", ogurl.group(1))
         want_tail = rel if rel != "index.html" else ""
         is_redirect = ('http-equiv="refresh"' in raw and 'content="noindex"' in raw)
         if want_tail and not is_redirect and not c.group(1).rstrip("/").endswith(want_tail):
