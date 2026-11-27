@@ -189,6 +189,9 @@
     if (!src) return;
     var bar = document.createElement("div");
     bar.className = "qc-sticky";
+    /* a fixed, labelled landmark so the repeated CTA is not loose body content */
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", "Book a discovery call");
     var a = document.createElement("a");
     a.className = "btn btn--primary";
     a.href = src.getAttribute("href") || "contact.html";
