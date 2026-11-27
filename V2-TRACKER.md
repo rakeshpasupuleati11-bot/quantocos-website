@@ -126,3 +126,14 @@ sign-offs listed above.
   (the added script is 9.8 KB deferred).
 - Still BLOCKED on external input: form endpoint, booking URL, analytics ID + consent,
   trust assets, CRM. No conversion is measured yet.
+
+### 2026-11-27 — Homepage performance variability (d1e569b)
+
+- Cause: the `ScrollTrigger.refresh()` on `load` recalculated every trigger inside the
+  load task (523 ms and 424 ms main-document long tasks under 4x CPU throttling);
+  no vendor script was the driver — blocking all of `assets/vendor/` changed TBT by 20 ms.
+- Fix: `ScrollTrigger.config({limitCallbacks:true})` and the post-load refresh moved to
+  `requestIdleCallback` (timeout 2.5 s). Motion, Lenis and the sample-account scrub unchanged.
+- Controlled live tests after deploy: 96 / 94 / 97 (median 96), TBT 60 / 210 / 0 ms,
+  LCP 2.4 / 2.3 / 2.4 s, CLS 0. Before: 76 / 83 / 94 (median 83).
+- All tracked HTML (84 files) and all 30 sitemap URLs return 200 on the live host.
