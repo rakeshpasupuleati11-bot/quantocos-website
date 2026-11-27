@@ -1,0 +1,38 @@
+{
+ "canonicalBase": "https://rakeshpasupuleati11-bot.github.io/quantocos-website/",
+ "pages": [
+  "index.html",
+  "capabilities.html",
+  "capabilities/automation.html",
+  "capabilities/creative.html",
+  "capabilities/digital.html",
+  "capabilities/interactive.html",
+  "capabilities/remau.html",
+  "capabilities/strategy.html",
+  "company.html",
+  "contact.html",
+  "faq.html",
+  "gc3.html",
+  "how-it-works.html",
+  "industries.html",
+  "industries/professional.html",
+  "industries/real-estate.html",
+  "industries/retail.html",
+  "industries/technology.html",
+  "insights.html",
+  "pricing.html",
+  "privacy.html",
+  "resources.html",
+  "solutions.html",
+  "solutions/business-operations.html",
+  "solutions/external-communications.html",
+  "solutions/growth-marketing.html",
+  "solutions/internal-communications.html",
+  "talk-to-an-expert.html",
+  "terms.html",
+  "why-quantocos.html"
+ ],
+ "nonPageLinks": [
+  "sitemap.xml"
+ ]
+}

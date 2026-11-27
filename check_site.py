@@ -28,6 +28,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 FACTS = json.loads((ROOT / "site-facts.json").read_text(encoding="utf-8"))
+ROUTES = json.loads((ROOT / "routes.json").read_text(encoding="utf-8"))
 
 BANNED = [
     r"\bunlimited\b", r"\bguaranteed\b", r"\bguarantee\b", r"\bROI\b",
@@ -59,6 +60,38 @@ def visible(html: str) -> str:
 def text_of(html: str) -> str:
     import html as h
     return re.sub(r"\s+", " ", h.unescape(visible(html)))
+
+
+def check_routes(issues):
+    """routes.json is the single source of truth: sitemap, nav, drawer and footer
+    may only reference the 30 live pages (plus sitemap.xml)."""
+    base = ROUTES["canonicalBase"]
+    pages = set(ROUTES["pages"])
+    allowed = pages | set(ROUTES["nonPageLinks"])
+
+    def add(rule, detail):
+        issues.append({"page": "(routes)", "sev": "error", "rule": rule, "detail": detail})
+
+    locs = re.findall(r"<loc>([^<]+)</loc>", (ROOT / "sitemap.xml").read_text(encoding="utf-8"))
+    got = [u[len(base):] if u.startswith(base) else u for u in locs]
+    if len(locs) != len(pages):
+        add("route-count", f"sitemap has {len(locs)} URLs, routes.json has {len(pages)}")
+    for p in sorted(set(got) - pages):
+        add("route-sitemap", f"not a live route: {p}")
+    for p in sorted(pages - set(got)):
+        add("route-sitemap", f"missing from sitemap: {p}")
+    for p in sorted(pages):
+        if not (ROOT / p).exists():
+            add("route-file", f"missing file: {p}")
+    for name in ("nav", "drawer", "footer"):
+        raw = (ROOT / "partials" / f"{name}.html").read_text(encoding="utf-8")
+        for h in re.findall(r'href="([^"]*)"', raw):
+            h = h.replace("{{P}}", "").replace("{{HOMEPRICING}}", "#pricing")
+            if not h or h.startswith(("#", "mailto:", "tel:", "javascript:", "http", "//")):
+                continue
+            fp = h.split("#")[0].split("?")[0]
+            if fp and fp not in allowed:
+                add("route-chrome", f"{name}: {h} is not one of the 30 pages")
 
 
 def check_page(f: Path, rel: str, all_titles, all_descs, issues):
@@ -275,6 +308,7 @@ def check_page(f: Path, rel: str, all_titles, all_descs, issues):
 
 def main() -> int:
     issues, all_titles, all_descs = [], {}, {}
+    check_routes(issues)
     count = 0
     for f, rel in pages():
         check_page(f, rel, all_titles, all_descs, issues)
