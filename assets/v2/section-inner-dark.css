@@ -164,7 +164,7 @@ body.v2:not([data-page="home"]) .phero__art::after{
     radial-gradient(70% 60% at 82% 10%,rgba(242,213,130,.18),transparent 66%);
 }
 body.v2:not([data-page="home"]) .phero__tag{
-  left:22px;bottom:22px;z-index:3;background:rgba(8,9,11,.72);border-color:rgba(242,213,130,.3);
+  left:calc(22px + var(--phero-bleed,0px));bottom:22px;z-index:3;background:rgba(8,9,11,.72);border-color:rgba(242,213,130,.3);
   color:var(--bindu-soma-light);letter-spacing:.14em;
 }
 /* layered gold card behind the art for depth */
@@ -292,7 +292,8 @@ body.v2[data-page="company"] .phero__art,
 body.v2[data-page="how-it-works"] .phero__art,
 body.v2[data-page="pricing"] .phero__art,
 body.v2[data-page="why-quantocos"] .phero__art{
-  order:-1;margin-right:0;margin-left:clamp(-64px,-4.5vw,0px);width:calc(100% + clamp(0px,4.5vw,64px));
+  --phero-bleed:clamp(0px,4.5vw,64px);
+  order:-1;margin-right:0;margin-left:calc(-1 * var(--phero-bleed));width:calc(100% + var(--phero-bleed));
 }
 
 /* ---------- 5. sticky section nav ---------- */
