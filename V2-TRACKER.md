@@ -137,3 +137,23 @@ sign-offs listed above.
 - Controlled live tests after deploy: 96 / 94 / 97 (median 96), TBT 60 / 210 / 0 ms,
   LCP 2.4 / 2.3 / 2.4 s, CLS 0. Before: 76 / 83 / 94 (median 83).
 - All tracked HTML (84 files) and all 30 sitemap URLs return 200 on the live host.
+
+### 2026-11-27 — Accessibility sweep closed (c7fc4ae, ad80ad7)
+
+- axe (WCAG 2.0/2.1/2.2 A+AA, best-practice) run on all 30 indexable pages at 390 and
+  1440, scrolling each page first so every reveal has settled: **0 violations**.
+- Fixed in c7fc4ae: two navigation landmarks both named "On this page" on insights,
+  privacy and terms (`.ptoc` is now "Jump to a section"); nested complementary landmarks
+  on the homepage become labelled groups; the why-quantocos comparison table takes focus
+  so it can be scrolled with the keyboard.
+- Fixed in ad80ad7: `.cmp__corner` and `.cmp__them .cmp__cost` were 3.38 and 3.64 against
+  the near-black cell, now 6.1; the injected `.qc-sticky` bar is a labelled region so no
+  body content sits outside a landmark at phone width.
+- Note: axe reports mid-fade reveal text as low contrast. Every page is now measured after
+  the reveal settles; `.pilot-note` samples at 5.8:1 once its 0.54 s delay completes.
+- Nine live Lighthouse runs 30s31s: accessibility, best-practices and SEO 100 in all nine;
+  performance median 95 index / 97 pricing / 99 contact (LCP 1.66–2.42 s, CLS 0.000).
+  Outlier runs coincide with per-script totals the payload cannot explain (509 DOM nodes,
+  136 KiB on pricing), so they are host contention, not page cost.
+- Still BLOCKED on external input: form endpoint, booking URL, analytics ID + consent,
+  trust assets, CRM. No conversion is measured yet.
