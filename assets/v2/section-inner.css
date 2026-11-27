@@ -361,6 +361,7 @@ a.pcard:hover .pcard__link svg{transform:translateX(4px)}
 .pcalc .pform__note{margin:0}
 
 /* ---------- comparison table ---------- */
+.pcompare:focus-visible{outline:2px solid var(--bindu-soma);outline-offset:3px}
 .pcompare{margin-top:clamp(24px,3vw,40px);border:1px solid var(--bindu-line);border-radius:var(--bindu-r-lg);background:var(--bindu-paper);overflow-x:auto;-webkit-overflow-scrolling:touch}
 .pcompare table{width:100%;min-width:760px;border-collapse:collapse;font-size:14.5px;line-height:1.5}
 .pcompare th,.pcompare td{padding:15px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--bindu-line)}
