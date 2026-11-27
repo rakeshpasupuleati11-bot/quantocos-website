@@ -167,7 +167,10 @@ svg{display:block}
   opacity:0;visibility:hidden;pointer-events:none;
   transition:opacity var(--bindu-dur) var(--bindu-ease),transform var(--bindu-dur) var(--bindu-ease),visibility var(--bindu-dur);
 }
-.nav>li:hover>.mega,.nav>li:focus-within>.mega{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+.nav>li:hover>.mega,.nav>li.is-open>.mega{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+/* invisible bridge across the gap between the trigger row and the panel, so a
+   cursor moving down (or diagonally) never leaves the interactive area */
+.mega::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px}
 .mega__grid{display:grid;grid-template-columns:repeat(var(--mega-cols,2),minmax(0,1fr));gap:8px 32px;padding:0 26px 20px}
 .mega__col{display:flex;flex-direction:column;gap:2px;min-width:0}
 .mega__title{font-family:var(--bindu-font-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bindu-ink-3);margin:0 0 8px}

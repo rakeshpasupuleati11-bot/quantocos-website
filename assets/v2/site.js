@@ -86,12 +86,91 @@
     el.textContent = String(new Date().getFullYear());
   });
 
-  /* close mega menus on Escape */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && document.activeElement && document.activeElement.blur) {
-      document.activeElement.blur();
+  /* mega menus: intent-based open, close delay across the trigger-to-panel gap,
+     click-to-open on touch, Escape and outside-click to close */
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.nav > li')).filter(function (li) {
+      return li.querySelector('.mega');
+    });
+    if (!items.length) return;
+    var timer = null;
+    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+    var suppress = new WeakSet(); /* keep Escape from instantly reopening via focus */
+
+    function closeItem(li) {
+      li.classList.remove('is-open');
+      var link = li.querySelector('.nav__link');
+      if (link && link.hasAttribute('aria-expanded')) link.setAttribute('aria-expanded', 'false');
     }
-  });
+    function openItem(li) {
+      items.forEach(function (o) { if (o !== li) closeItem(o); });
+      clearTimeout(timer);
+      li.classList.add('is-open');
+      var link = li.querySelector('.nav__link');
+      if (link) link.setAttribute('aria-expanded', 'true');
+    }
+    function closeAll() { items.forEach(closeItem); }
+    function scheduleClose(li) {
+      clearTimeout(timer);
+      timer = setTimeout(function () { closeItem(li); }, 320);
+    }
+
+    items.forEach(function (li) {
+      var link = li.querySelector('.nav__link');
+      var mega = li.querySelector('.mega');
+      if (link) {
+        link.setAttribute('aria-haspopup', 'true');
+        link.setAttribute('aria-expanded', 'false');
+      }
+      li.addEventListener('pointerenter', function (e) {
+        suppress.delete(li);
+        if (finePointer.matches && e.pointerType === 'mouse') openItem(li);
+      });
+      li.addEventListener('pointerleave', function () { scheduleClose(li); });
+      if (mega) {
+        mega.addEventListener('pointerenter', function () { clearTimeout(timer); openItem(li); });
+        mega.addEventListener('pointerleave', function () { scheduleClose(li); });
+      }
+      li.addEventListener('focusin', function () {
+        if (!suppress.has(li)) openItem(li);
+      });
+      if (link) {
+        link.addEventListener('keydown', function (e) {
+          if (e.key !== 'ArrowDown') return;
+          e.preventDefault();
+          suppress.delete(li);
+          openItem(li);
+          var first = mega && mega.querySelector('.mega__col a');
+          if (first) first.focus();
+        });
+        link.addEventListener('click', function (e) {
+          if (finePointer.matches) return; /* pointer devices: hover already opened it, click navigates */
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+          if (!li.classList.contains('is-open')) {
+            e.preventDefault();
+            openItem(li);
+          }
+        });
+      }
+      li.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape' || !li.contains(document.activeElement)) return;
+        e.preventDefault();
+        closeItem(li);
+        suppress.add(li);
+        if (link) link.focus();
+      });
+      li.addEventListener('focusout', function (e) {
+        if (!li.contains(e.relatedTarget)) { suppress.delete(li); scheduleClose(li); }
+      });
+    });
+
+    document.addEventListener('pointerdown', function (e) {
+      if (!items.some(function (li) { return li.contains(e.target); })) closeAll();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAll();
+    });
+  })();
 
   /* hero motion — offscreen and manual pause for the background light layers */
   var hero = document.querySelector('.hero');
