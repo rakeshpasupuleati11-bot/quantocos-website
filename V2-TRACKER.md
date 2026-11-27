@@ -151,7 +151,8 @@ sign-offs listed above.
   body content sits outside a landmark at phone width.
 - Note: axe reports mid-fade reveal text as low contrast. Every page is now measured after
   the reveal settles; `.pilot-note` samples at 5.8:1 once its 0.54 s delay completes.
-- Nine live Lighthouse runs 30s31s: accessibility, best-practices and SEO 100 in all nine;
+- Live Lighthouse, three runs per page with all four categories: accessibility,
+  best-practices and SEO 100 in all nine;
   performance median 95 index / 97 pricing / 99 contact (LCP 1.66–2.42 s, CLS 0.000).
   Outlier runs coincide with per-script totals the payload cannot explain (509 DOM nodes,
   136 KiB on pricing), so they are host contention, not page cost.
