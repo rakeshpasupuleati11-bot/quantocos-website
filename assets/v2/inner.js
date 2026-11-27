@@ -129,8 +129,25 @@
 
   /* ---- forms: honest handling, no simulated success ---- */
   function forms() {
+    var UNWIRED = "This form is not connected to a server yet, so nothing was submitted. Use the link to send the same details from your own mail app, or write to hello@quantocos.com.";
+    function say(status, state, text, linkText, linkHref) {
+      if (!status) return null;
+      status.hidden = false;
+      status.setAttribute("data-state", state);
+      status.textContent = "";
+      status.appendChild(document.createTextNode(text));
+      if (!linkText || !linkHref) return null;
+      var a = document.createElement("a");
+      a.href = linkHref;
+      a.textContent = linkText;
+      status.appendChild(document.createTextNode(" "));
+      status.appendChild(a);
+      status.appendChild(document.createTextNode("."));
+      return a;
+    }
     document.querySelectorAll("form[data-form]").forEach(function (form) {
       var status = form.querySelector(".pform__status");
+      var submit = form.querySelector('[type="submit"]');
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (!form.reportValidity()) return;
@@ -142,21 +159,38 @@
         var subject = (form.getAttribute("data-subject") || "Website enquiry") + " — " + (data.get("name") || "Quantocos");
         var href = "mailto:hello@quantocos.com?subject=" + encodeURIComponent(subject) +
                    "&body=" + encodeURIComponent(lines.join("\n") + "\n\nSent from " + location.href);
-        var mail = document.createElement("a");
-        mail.href = href;
-        mail.textContent = "Open your email app";
-        if (status) {
-          status.hidden = false;
-          status.setAttribute("data-state", "ok");
-          status.textContent = "";
-          status.appendChild(document.createTextNode("This form is not connected to a server yet, so nothing was submitted. Use the link to send the same details from your own mail app, or write to hello@quantocos.com. "));
-          status.appendChild(mail);
-          status.appendChild(document.createTextNode("."));
+        var endpoint = form.getAttribute("data-endpoint");
+
+        /* No endpoint configured: say so, and hand over the mailto. Nothing pretends to send. */
+        if (!endpoint) {
+          var mail = say(status, "ok", UNWIRED, "Open your email app", href);
+          if (window.console && console.info) {
+            console.info("[Quantocos] Form endpoint not configured — no submission occurred.");
+          }
+          if (mail) mail.focus();
+          return;
         }
-        if (window.console && console.info) {
-          console.info("[Quantocos] Form endpoint not configured — no submission occurred.");
-        }
-        mail.focus();
+
+        /* Endpoint contract: set data-endpoint on the form once a service is chosen.
+           POST application/json with every named field plus page and submittedAt;
+           2xx means accepted, any other response or a network failure is an error. */
+        var payload = { page: location.href, submittedAt: new Date().toISOString() };
+        data.forEach(function (v, k) { if (k !== "consent") payload[k] = v; });
+        if (submit) submit.disabled = true;
+        say(status, "pending", "Sending your details…");
+        fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          say(status, "ok", "Received. Your details reached the team; a written reply comes from hello@quantocos.com.");
+          form.reset();
+        }).catch(function () {
+          say(status, "error", "That did not send. Write to hello@quantocos.com, or", "send these details from your mail app", href);
+        }).then(function () {
+          if (submit) submit.disabled = false;
+        });
       });
     });
   }

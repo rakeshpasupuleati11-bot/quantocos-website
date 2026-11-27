@@ -150,7 +150,7 @@
   font-size: 10.5px;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(245, 244, 239, .34);
+  color: rgba(245, 244, 239, .62);
 }
 .presets__row { display: flex; flex-wrap: wrap; gap: 7px; }
 .preset {

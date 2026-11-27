@@ -23,6 +23,7 @@
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fonts/Inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/v2/tokens.css">
 <link rel="stylesheet" href="assets/v2/site.css?v=4">
 <link rel="stylesheet" href="assets/vendor/lenis.css">
@@ -30,9 +31,9 @@
 <link rel="stylesheet" href="assets/v2/section-story.css">
 <link rel="stylesheet" href="assets/v2/section-storycards.css">
 <link rel="stylesheet" href="assets/v2/section-capabilities.css">
-<link rel="stylesheet" href="assets/v2/section-pricing.css">
-<link rel="stylesheet" href="assets/v2/section-planner.css">
-<link rel="stylesheet" href="assets/v2/section-compare.css">
+<link rel="stylesheet" href="assets/v2/section-pricing.css?v=2">
+<link rel="stylesheet" href="assets/v2/section-planner.css?v=2">
+<link rel="stylesheet" href="assets/v2/section-compare.css?v=2">
 <link rel="stylesheet" href="assets/v2/section-trust.css">
 <link rel="stylesheet" href="assets/v2/section-human.css">
 <link rel="stylesheet" href="assets/v2/section-refine.css">
@@ -348,7 +349,7 @@
     <div class="hero__prism" aria-hidden="true">
       <img src="assets/v2/img/prism-hero.webp"
            srcset="assets/v2/img/prism-hero-900.webp 900w, assets/v2/img/prism-hero.webp 1672w"
-           sizes="100vw" width="1672" height="941" alt="" decoding="async" fetchpriority="low">
+           sizes="100vw" width="1672" height="941" alt="" decoding="async" fetchpriority="high">
     </div>
     <div class="wrap wrap--wide hero__inner">
       <svg class="hero__spark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 1.5l2.4 8.1 8.1 2.4-8.1 2.4L12 22.5l-2.4-8.1-8.1-2.4 8.1-2.4z" fill="currentColor"/></svg>
@@ -1514,7 +1515,7 @@
           <h2 class="h2" id="faq-title">The details, before the call.</h2>
           <p class="lead">If a question is missing, ask it directly. You will get a written answer, not a brochure.</p>
           <div class="faq__card">
-            <p class="mono" style="opacity:.6">Direct line</p>
+            <p class="mono" style="color:rgba(247,247,245,.62)">Direct line</p>
             <p>hello@quantocos.com</p>
             <a class="btn btn--primary btn--sm" href="contact.html">Book a 30-minute briefing</a>
           </div>
