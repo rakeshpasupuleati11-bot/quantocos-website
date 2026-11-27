@@ -393,3 +393,9 @@ a.pcard:hover .pcard__link svg{transform:translateX(4px)}
 .panel__label,.pod__tag,.pod__credits,.field label,.calc__stat dt,.compare thead th,
 .calc__fine,.cta__fine,.ftr__col h3,.ftr__legal-row .micro,.ftr__brands,.micro,.chip,
 .pform__note,.pp-foot{font-size:12px}
+.pform__req{font-size:13px;color:var(--bindu-ink-3);margin:0}
+.pform__error{margin:6px 0 0;font-size:13px;line-height:1.45;color:#8A1F19}
+.pform input[aria-invalid="true"],.pform select[aria-invalid="true"],.pform textarea[aria-invalid="true"]{border-color:#B3261E}
+.pform__next{margin-top:14px;padding:14px 16px;border-radius:var(--bindu-r-md);border:1px solid var(--bindu-line-strong);background:var(--bindu-paper)}
+.pform__next p{margin:0 0 6px;font-size:14px;line-height:1.55}
+.pform__next p:last-child{margin:0}

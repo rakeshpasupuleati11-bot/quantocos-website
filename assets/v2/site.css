@@ -692,3 +692,13 @@ table.compare{width:100%;border-collapse:collapse;min-width:820px;font-size:13.5
 @media (max-width:680px){
   .pods>.pod,.pods>.pod:nth-child(4),.pods>.pod:nth-child(5),.pods>.pod:nth-child(6){grid-column:span 12}
 }
+
+/* Sticky mobile action — thumb-zone primary CTA (conversion layer) */
+.qc-sticky{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;justify-content:center;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(5,5,5,.86);backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,.14);
+  transform:translateY(110%);visibility:hidden;transition:transform .3s var(--bindu-ease),visibility 0s .3s}
+.qc-sticky.is-on{transform:none;visibility:visible;transition:transform .3s var(--bindu-ease),visibility 0s}
+.qc-sticky .btn{width:100%;justify-content:center;min-height:48px}
+@media (max-width:768px){.qc-sticky{display:flex}}
+@media (prefers-reduced-motion:reduce){.qc-sticky,.qc-sticky.is-on{transition:none}}

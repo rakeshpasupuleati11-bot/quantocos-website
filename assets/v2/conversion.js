@@ -155,7 +155,16 @@
       form.addEventListener("input", function () {
         if (!started) { started = true; track("form_start", { form: subj }); }
       }, true);
-      form.addEventListener("invalid", function () { track("form_error", { kind: "invalid" }); }, true);
+      /* One field check fires one invalid event per field; report the failed attempt once. */
+      var lastErr = 0;
+      function err() {
+        var now = Date.now();
+        if (now - lastErr < 1000) return;
+        lastErr = now;
+        track("form_error", { kind: "invalid" });
+      }
+      form.addEventListener("invalid", err, true);
+      form.addEventListener("qc:invalid", err);
       form.addEventListener("qc:lead", function () { track("generate_lead", { form: subj }); });
       form.addEventListener("qc:error", function () { track("form_error", { kind: "network" }); });
     });
@@ -172,10 +181,40 @@
     });
   }
 
+  /* ---- sticky mobile action: one primary CTA in the thumb zone ---- */
+  function sticky() {
+    if (window.innerWidth > 768) return;
+    if (/contact\.html|talk-to-an-expert\.html/.test(location.pathname)) return;
+    var src = document.querySelector("a.btn.btn--primary");
+    if (!src) return;
+    var bar = document.createElement("div");
+    bar.className = "qc-sticky";
+    var a = document.createElement("a");
+    a.className = "btn btn--primary";
+    a.href = src.getAttribute("href") || "contact.html";
+    a.textContent = (src.textContent || "Book a Discovery Call").trim().replace(/\s+/g, " ");
+    bar.appendChild(a);
+    document.body.appendChild(bar);
+    function update() {
+      var y = window.scrollY || 0;
+      var doc = document.documentElement;
+      var nearFoot = y + window.innerHeight > doc.scrollHeight - 280;
+      var typing = document.activeElement &&
+        /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
+      bar.classList.toggle("is-on", y > 420 && !nearFoot && !typing);
+    }
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    document.addEventListener("focusin", update);
+    document.addEventListener("focusout", update);
+    update();
+  }
+
   function init() {
     analytics();
     booking();
     forms();
+    sticky();
     if (PAGE === "pricing.html") track("pricing_view", {});
     else if (HERE_CAP) track("capability_view", { capability: HERE_CAP });
     track("page_view", {});

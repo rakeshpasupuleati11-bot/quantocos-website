@@ -145,12 +145,66 @@
       status.appendChild(document.createTextNode("."));
       return a;
     }
+    var seq = 0;
+    function fieldError(el) {
+      el.setAttribute("aria-invalid", "true");
+      if (!el.id) el.id = "qc-f" + (++seq);
+      if (document.getElementById(el.id + "-err")) return;
+      var p = document.createElement("p");
+      p.className = "pform__error";
+      p.id = el.id + "-err";
+      p.textContent = el.validity.valueMissing ? "This field is needed to reply." :
+        el.validity.typeMismatch ? "Enter a valid email address, like name@company.com." :
+        (el.validationMessage || "Check this field.");
+      /* A checkbox label is a flex row; put its message under the whole label. */
+      (el.closest(".pform__check") || el).insertAdjacentElement("afterend", p);
+      el.setAttribute("aria-describedby", p.id);
+    }
+    function check(form) {
+      var bad = [];
+      form.querySelectorAll("input, select, textarea").forEach(function (el) {
+        el.removeAttribute("aria-invalid");
+        el.removeAttribute("aria-describedby");
+        var old = el.id && document.getElementById(el.id + "-err");
+        if (old) old.remove();
+        if (el.willValidate && !el.checkValidity()) { fieldError(el); bad.push(el); }
+      });
+      return bad;
+    }
+    function nextSteps(status) {
+      if (!status || !status.parentNode) return;
+      if (status.parentNode.querySelector(".pform__next")) return;
+      var box = document.createElement("div");
+      box.className = "pform__next";
+      var head = document.createElement("p"), strong = document.createElement("strong");
+      strong.textContent = "What happens next";
+      head.appendChild(strong);
+      var body = document.createElement("p");
+      body.textContent = "A written reply comes from hello@quantocos.com within one working day. If a scoping call is the right next step, the team will suggest a time in that reply.";
+      box.appendChild(head); box.appendChild(body);
+      status.insertAdjacentElement("afterend", box);
+    }
     document.querySelectorAll("form[data-form]").forEach(function (form) {
       var status = form.querySelector(".pform__status");
       var submit = form.querySelector('[type="submit"]');
+      /* Inline, aria-linked errors replace the native bubble so the message sits next to the field. */
+      form.setAttribute("novalidate", "");
+      form.addEventListener("input", function (e) {
+        var el = e.target;
+        if (!el.getAttribute || !el.getAttribute("aria-invalid")) return;
+        el.removeAttribute("aria-invalid");
+        el.removeAttribute("aria-describedby");
+        var p = el.id && document.getElementById(el.id + "-err");
+        if (p) p.remove();
+      });
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        if (!form.reportValidity()) return;
+        var bad = check(form);
+        if (bad.length) {
+          bad[0].focus();
+          form.dispatchEvent(new CustomEvent("qc:invalid"));
+          return;
+        }
         var data = new FormData(form);
         var lines = [];
         data.forEach(function (v, k) {
@@ -177,6 +231,7 @@
         var payload = { page: location.href, submittedAt: new Date().toISOString() };
         data.forEach(function (v, k) { if (k !== "consent") payload[k] = v; });
         if (submit) submit.disabled = true;
+        form.setAttribute("aria-busy", "true");
         say(status, "pending", "Sending your details…");
         fetch(endpoint, {
           method: "POST",
@@ -186,11 +241,13 @@
           if (!res.ok) throw new Error("HTTP " + res.status);
           say(status, "ok", "Received. Your details reached the team; a written reply comes from hello@quantocos.com.");
           form.dispatchEvent(new CustomEvent("qc:lead"));
+          nextSteps(status);
           form.reset();
         }).catch(function () {
           say(status, "error", "That did not send. Write to hello@quantocos.com, or", "send these details from your mail app", href);
           form.dispatchEvent(new CustomEvent("qc:error"));
         }).then(function () {
+          form.removeAttribute("aria-busy");
           if (submit) submit.disabled = false;
         });
       });
