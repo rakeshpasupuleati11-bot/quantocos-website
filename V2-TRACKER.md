@@ -105,3 +105,24 @@ sign-offs listed above.
 - Endpoint activation flips the "not connected" copy and button label in one place; live submission stays BLOCKED until an approved endpoint is configured.
 - Booking CTA rewires to a scheduler only when `QC_CONFIG.booking` is supplied; otherwise the interim form page remains.
 - Measured locally: prefill, cta_click, calc_use, intent carry-over, 2xx `generate_lead`, booking rewrite — all pass. Live analytics BLOCKED (no ID/consent), trust assets DEFERRED.
+
+## 2026-11-27 — Form usability and mobile action (deployed, 1f2be91)
+
+- Forms now validate on submit with `novalidate` + inline, aria-linked messages
+  (`.pform__error`, `aria-invalid`, `aria-describedby`, focus to first bad field);
+  messages clear on input. Required fields flagged once per attempt (`form_error`).
+- Legend on both forms: "All fields are required unless marked optional."
+- `aria-busy` and a disabled button during the request; success only on 2xx, with a
+  "What happens next" block; failure offers the mailto fallback and fires `form_error`.
+- Sticky mobile CTA (`≤768px`, one primary action, hidden on the two form pages, over
+  the footer, and while a field is focused). Suppressed under reduced motion.
+- Verified live at 390x844: sticky appears after 420px scroll, no console errors;
+  empty submit renders 5 inline messages; mocked 2xx yields exactly one `generate_lead`;
+  a 404 yields the error state and no lead. 0 px horizontal overflow at
+  360/390/768/1366/1440/1920 on 5 sampled routes. Gates: 80 pages, 0 errors, 0 warnings.
+- Live Lighthouse: contact 98/100/100/100 (LCP 2.0s, CLS 0), pricing 98/100/100/100
+  (1.8s). Homepage 76–94 across three runs (TBT 120–780 ms) — GSAP/ScrollTrigger
+  runs are variable on this host and need a dedicated pass; not caused by this change
+  (the added script is 9.8 KB deferred).
+- Still BLOCKED on external input: form endpoint, booking URL, analytics ID + consent,
+  trust assets, CRM. No conversion is measured yet.
