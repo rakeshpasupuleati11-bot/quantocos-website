@@ -322,8 +322,10 @@ body[data-page="home"] .section--paper .pilot-card--lead{box-shadow:0 18px 48px 
   max-width:980px;margin:0;text-wrap:balance;color:var(--bindu-shunya);
 }
 .hero__title em{font-style:normal;font-weight:700;color:var(--bindu-soma-light)}
-.hero__sub{font-size:clamp(16px,1.55vw,19.5px);line-height:1.6;color:rgba(250,248,242,.72);max-width:54ch;text-wrap:pretty;margin:0}
+.hero__sub{font-size:clamp(16px,1.55vw,19.5px);line-height:1.6;color:rgba(250,248,242,.78);max-width:56ch;text-wrap:pretty;margin:0}
 .hero__cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:8px}
+.hero__for{margin:2px 0 0;font-size:clamp(14px,1.1vw,15.5px);line-height:1.5;color:rgba(250,248,242,.84);max-width:64ch;text-wrap:pretty}
+.hero__note{margin:0;font-size:13px;line-height:1.55;color:rgba(250,248,242,.74);max-width:62ch;text-wrap:pretty}
 .hero .btn--ghost{color:var(--bindu-on-dark);border-color:rgba(250,248,242,.28);
   background:rgba(8,11,18,.66);-webkit-backdrop-filter:blur(14px) saturate(1.2);
   backdrop-filter:blur(14px) saturate(1.2)}

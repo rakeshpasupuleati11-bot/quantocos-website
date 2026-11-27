@@ -158,3 +158,42 @@ sign-offs listed above.
   136 KiB on pricing), so they are host contention, not page cost.
 - Still BLOCKED on external input: form endpoint, booking URL, analytics ID + consent,
   trust assets, CRM. No conversion is measured yet.
+
+### 2026-11-27 — Conversion pass (directive 0070, dimensions 1–9)
+
+- **Hero (D1).** Eyebrow now "Monthly communications team for US small businesses"; sub names the
+  deliverables and the price ("From $3,000 a month"); new "who it's for" line (owner-run US
+  companies, 10–200 people) and a pilot credit-back note. Primary CTA `contact.html?plan=pilot`
+  ("Start the 14-day pilot — $1,500"), secondary "Book a Discovery Call". Fourth fact pill is now
+  "14-day pilot for $1,500". Whole hero fits one screen at 1440×900 and 390×844.
+- **Head/SEO (D8).** `index.html` title is `Monthly communications team for US SMBs | Quantocos`
+  (51 chars, under the 60-char gate), with og/twitter titles identical and descriptions rewritten.
+  `pricing.html` title, H1, lead and hero CTAs reframed around the three published plans;
+  the old self-link to `pricing.html#calculator` is now `#calculator`, and the primary CTA goes
+  to `contact.html?plan=pilot`.
+- **JSON-LD (D8).** `index.html` graph now carries Organization, WebSite, WebPage, Service
+  (three monthly offers + Pilot Sprint offer) and FAQPage mirroring the five visible homepage
+  answers. Parses clean; gate 0 errors.
+- **Pricing clarity (D3).** Cards say "Includes 120/240/360 credits a month"; one example month
+  at published catalog rates (59.25 of 120 credits); a three-row terms block — unused credits
+  (policy marked `[CONFIRM]`), what is not included, and scoped pods priced per client.
+- **Problem/solution cards (D7).** All four storycards use Problem / Approach / Outcome, cite a
+  published gate or number, cover four different scenarios, and link to their own solution page.
+  Neither "fragmented" nor "disconnected" appears on the homepage.
+- **Trust (D5).** New "Who does the work / Who you contract with" block: named manager, human
+  specialists and AI agents, India shift overlapping the US business day; contracting entity
+  Quantocos Global Systems LLP, identifier ACY-3556. No overlap hours or US presence invented.
+- **Navigation (D6).** Nav reduced to Solutions (mega, 9 links), Pricing, How it works (mega, 9),
+  Resources (mega, 7) plus the single header CTA. Drawer mirrors it and opens on the pilot CTA.
+  GitHub Pages cannot serve a 301, so `contact.html` and `talk-to-an-expert.html` are not merged.
+- **Contact (D4).** Form cut from five fields to three (name, work email, what you need and by
+  when) plus consent; `?plan=pilot` still pre-fills the hidden `plan` field.
+- **CSS.** `.who-fund` added to `section-trust.css` (two columns, one at ≤760px);
+  `.pp-example` and `.pp-terms` added to `section-pricing.css`. Cache versions bumped on
+  `site.css` (v6), `section-pricing.css` (v3) and `section-refine.css` (v3) across all pages.
+- **Verification.** `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.
+  axe (WCAG 2.0/2.1/2.2 A+AA + best-practice) on all 30 indexable pages at 390 and 1440:
+  **0 violations, 0 console errors, no horizontal overflow**.
+- **Still BLOCKED on external input:** booking URL (calendar embed), form endpoint, GA4/Plausible
+  ID + consent banner copy, real proof assets/case studies, unused-credit policy, US presence
+  facts, real India↔US overlap hours, and the contact merge that needs server-side 301s.

@@ -243,3 +243,49 @@
     opacity: 1;
   }
 }
+
+/* ---------- who does the work / who you contract with ---------- */
+
+.who-fund {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 30px);
+  margin-top: clamp(26px, 3.6vw, 40px);
+  padding-top: clamp(24px, 3.2vw, 36px);
+  border-top: 1px solid rgba(250, 248, 242, .09);
+}
+
+.who-fund__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(20px, 2.2vw, 28px);
+  border-radius: 16px;
+  border: 1px solid rgba(250, 248, 242, .07);
+  background: linear-gradient(160deg, rgba(20, 20, 20, .92), rgba(13, 13, 13, .92));
+}
+
+.who-fund__col .eyebrow { margin: 0; }
+
+.who-fund__title {
+  margin: 0;
+  font-family: var(--bindu-font-display);
+  font-size: clamp(18px, 1.7vw, 21px);
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: #F5F4EF;
+  text-wrap: balance;
+}
+
+.who-fund__col > p:last-child {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(245, 244, 239, .74);
+}
+
+@media (max-width: 760px) {
+  .who-fund { grid-template-columns: 1fr; gap: 14px; }
+  .who-fund__col { padding: 20px; border-radius: 14px; }
+}

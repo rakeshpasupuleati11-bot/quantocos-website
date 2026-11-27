@@ -334,6 +334,43 @@
 .pp-card--hero .pp-btn::after { background: linear-gradient(105deg, transparent 32%, rgba(201,145,26, .14) 50%, transparent 68%); }
 
 /* commercial assurances — compact line, no new card */
+.pp-example {
+  max-width: 780px;
+  margin: 30px auto 0;
+  text-align: center;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, .74);
+}
+.pp-example strong { color: #F7F7F5; font-weight: 500; }
+
+.pp-terms {
+  max-width: 940px;
+  margin: 34px auto 0;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+.pp-terms__row {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 10px 32px;
+  padding: 16px 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+.pp-terms__k {
+  margin: 0;
+  font-family: var(--bindu-font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .62);
+}
+.pp-terms__v { margin: 0; font-size: 14.5px; line-height: 1.6; color: rgba(255, 255, 255, .82); }
+
+@media (max-width: 720px) {
+  .pp-terms__row { grid-template-columns: 1fr; gap: 4px; }
+}
+
 .pp-assure { margin: 42px auto 0; text-align: center; }
 .pp-assure__rate { font-size: 15px; letter-spacing: .01em; color: rgba(255, 255, 255, .74); }
 .pp-assure__list {
