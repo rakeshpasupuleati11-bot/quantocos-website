@@ -1,22 +1,91 @@
 /* Homepage scroll storytelling.
-   1. Five approval gates (#how): pins the two-column stage and steps the right-hand
-      panel through G1–G5 while the left rail tracks progress.
+   1. Five approval gates (#how): a clickable horizontal timeline drives one
+      stationary image-and-copy panel through G1–G5.
    2. Work and deliverables: stack four story cards that enter from below.
-   Both are progressive enhancements — without JS, on ≤900px and under reduced motion
-   every panel and card stays in the normal document flow, fully readable. */
+   Both are progressive enhancements — without JS every gate and card stays
+   in the normal document flow, fully readable. */
 (function () {
   'use strict';
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  /* ---------- reserved gate images: only reveal when a real file loaded ---------- */
-  Array.prototype.forEach.call(document.querySelectorAll('.gate-shot'), function (fig) {
-    var img = fig.querySelector('img');
-    if (!img) return;
-    function live() { if (img.naturalWidth > 0) fig.classList.add('is-live'); }
-    if (img.complete) live();
-    else img.addEventListener('load', live, { once: true });
-  });
+  /* ---------- five gates: clickable horizontal timeline ---------- */
+  var gateStage = document.querySelector('[data-gate-stage]');
+  var gateSteps = Array.prototype.slice.call(document.querySelectorAll('[data-gate-step]'));
+  var gatePanels = Array.prototype.slice.call(document.querySelectorAll('[data-gate-panel]'));
+  var gateFill = document.querySelector('[data-gate-fill]');
+  var gateLive = document.querySelector('[data-gate-live]');
+  var gatePrev = Array.prototype.slice.call(document.querySelectorAll('[data-gate-prev]'));
+  var gateNext = Array.prototype.slice.call(document.querySelectorAll('[data-gate-next]'));
+
+  if (gateStage && gateSteps.length === 5 && gatePanels.length === 5) {
+    var gateIndex = 0;
+
+    function paintGate(index) {
+      gateIndex = index;
+      gateSteps.forEach(function (step, k) {
+        step.classList.toggle('is-active', k === index);
+        step.classList.toggle('is-done', k < index);
+        step.setAttribute('aria-pressed', k === index ? 'true' : 'false');
+      });
+      gatePanels.forEach(function (panel, k) {
+        panel.classList.toggle('is-on', k === index);
+        panel.toggleAttribute('inert', k !== index);
+      });
+      if (gateFill) gateFill.style.width = (index / 4 * 100) + '%';
+      if (gateLive) {
+        var title = gatePanels[index].querySelector('.gate-panel__title');
+        gateLive.textContent = 'Gate ' + (index + 1) + ' of 5: ' + (title ? title.textContent : '');
+      }
+      gatePrev.forEach(function (b) { b.disabled = index === 0; });
+      gateNext.forEach(function (b) { b.disabled = index === 4; });
+    }
+
+    function goGate(index) {
+      index = Math.max(0, Math.min(4, index));
+      if (index !== gateIndex) paintGate(index);
+    }
+
+    gateStage.classList.add('is-live');
+    paintGate(0);
+
+    gateSteps.forEach(function (step, k) {
+      step.addEventListener('click', function () { goGate(k); });
+      step.addEventListener('keydown', function (e) {
+        var next = -1;
+        if (e.key === 'ArrowRight') next = (k + 1) % 5;
+        else if (e.key === 'ArrowLeft') next = (k + 4) % 5;
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = 4;
+        if (next < 0) return;
+        e.preventDefault();
+        goGate(next);
+        gateSteps[next].focus();
+      });
+    });
+
+    gatePrev.forEach(function (b) { b.addEventListener('click', function () { goGate(gateIndex - 1); }); });
+    gateNext.forEach(function (b) { b.addEventListener('click', function () { goGate(gateIndex + 1); }); });
+
+    /* swipe on the panel: 44px horizontal threshold, vertical intent ignored */
+    var panelList = document.querySelector('[data-gate-panels]');
+    var touchX = null, touchY = null;
+    if (panelList) {
+      panelList.addEventListener('touchstart', function (e) {
+        if (!e.touches.length) return;
+        touchX = e.touches[0].clientX; touchY = e.touches[0].clientY;
+      }, { passive: true });
+      panelList.addEventListener('touchend', function (e) {
+        if (touchX === null || !e.changedTouches.length) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        var dy = e.changedTouches[0].clientY - touchY;
+        touchX = touchY = null;
+        if (Math.abs(dx) > 44 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+          goGate(gateIndex + (dx < 0 ? 1 : -1));
+        }
+      }, { passive: true });
+    }
+  }
 
   if (reduce.matches) return;
   var gsap = window.gsap;
@@ -26,64 +95,7 @@
 
   var mm = gsap.matchMedia();
 
-  /* ---------- five gates ---------- */
-  var gateStage = document.querySelector('[data-gate-stage]');
-  var gateSteps = Array.prototype.slice.call(document.querySelectorAll('[data-gate-step]'));
-  var gatePanels = Array.prototype.slice.call(document.querySelectorAll('[data-gate-panel]'));
-  var gateFill = document.querySelector('[data-gate-fill]');
   var gatesSection = document.getElementById('how');
-
-  function gateState(index) {
-    gateSteps.forEach(function (step, k) {
-      step.classList.toggle('is-active', k === index);
-      step.classList.toggle('is-done', k < index);
-    });
-    gatePanels.forEach(function (panel, k) {
-      panel.classList.toggle('is-on', k === index);
-    });
-  }
-
-  if (gateStage && gateSteps.length === 5 && gatePanels.length === 5) {
-    mm.add('(min-width: 901px)', function () {
-      gateStage.classList.add('is-enhanced');
-      gateState(0);
-      if (gateFill) gateFill.style.height = '0%';
-
-      /* the pinned stage must fit one viewport, or we keep the readable sequence */
-      if (gateStage.offsetHeight > window.innerHeight - 100) {
-        gateStage.classList.remove('is-enhanced');
-        gateState(0);
-        return function () {};
-      }
-
-      var current = 0;
-      var trigger = ScrollTrigger.create({
-        trigger: gateStage,
-        start: 'top 88px',
-        end: function () {
-          return '+=' + Math.round(window.innerHeight * (window.innerWidth < 1200 ? 2.6 : 3.2));
-        },
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        onUpdate: function (self) {
-          var p = self.progress;
-          if (gateFill) gateFill.style.height = (p * 100).toFixed(2) + '%';
-          var i = Math.min(4, Math.floor(p * 5 + 0.0001));
-          if (i !== current) { current = i; gateState(i); }
-        }
-      });
-
-      return function () {
-        trigger.kill();
-        gateStage.classList.remove('is-enhanced');
-        gateSteps.forEach(function (step) { step.classList.remove('is-active', 'is-done'); });
-        gatePanels.forEach(function (panel) { panel.classList.remove('is-on'); });
-        if (gateFill) gateFill.style.height = '0%';
-      };
-    });
-  }
 
   /* ---------- four story cards ---------- */
   var storyStage = document.querySelector('[data-story-stage]');

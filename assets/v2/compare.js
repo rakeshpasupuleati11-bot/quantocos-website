@@ -8,7 +8,7 @@
 
   var switchEl = root.querySelector('.versus__switch');
   var glider = root.querySelector('.versus-glider');
-  var nameEl = root.querySelector('[data-them-name]');
+  var nameEls = Array.prototype.slice.call(root.querySelectorAll('[data-them-name]'));
   var valEls = Array.prototype.slice.call(root.querySelectorAll('.versus-val'));
   var tabs = Array.prototype.slice.call(root.querySelectorAll('.versus-tab'));
 
@@ -115,7 +115,7 @@
       }
     });
 
-    swap(nameEl, data.label);
+    nameEls.forEach(function (el) { swap(el, data.label); });
     valEls.forEach(function (el, i) {
       if (data.values[i] != null) swap(el, data.values[i]);
     });

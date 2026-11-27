@@ -87,18 +87,16 @@
 
 /* the highlighted pod */
 .pp-card--hero {
-  border-color: rgba(138, 126, 255, .42);
+  border-color: rgba(242,213,130, .42);
   background:
     linear-gradient(180deg,
-      #101033 0%,
-      #1E1B55 26%,
-      #30258B 52%,
-      #4835D5 78%,
-      #6548F5 100%);
+      #161616 0%,
+      #1C1C1C 44%,
+      #141414 100%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .14),
-    0 20px 60px rgba(88, 58, 235, .3),
-    0 0 90px rgba(110, 82, 255, .18);
+    inset 0 1px 0 rgba(255, 255, 255, .10),
+    0 20px 60px rgba(0, 0, 0, .55),
+    0 0 70px rgba(201, 145, 26, .10);
 }
 
 /* the ambient glow: a ring of light outside the card, breathing slowly */
@@ -109,27 +107,21 @@
   z-index: 0;
   border-radius: 40px;
   background: radial-gradient(closest-side,
-    rgba(101, 72, 245, 0) 56%,
-    rgba(101, 72, 245, .26) 72%,
-    rgba(101, 72, 245, 0) 90%);
+    rgba(201,145,26, 0) 56%,
+    rgba(201,145,26, .26) 72%,
+    rgba(201,145,26, 0) 90%);
   filter: blur(18px);
   pointer-events: none;
-  animation: pp-glow 8s ease-in-out infinite alternate;
 }
 
 .pp-card--hero > * { position: relative; z-index: 1; }
 
 .pp-card--hero:hover {
-  border-color: rgba(166, 234, 255, .6);
+  border-color: rgba(242, 213, 130, .72);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .18),
-    0 28px 76px rgba(88, 58, 235, .42),
-    0 0 110px rgba(110, 82, 255, .24);
-}
-
-@keyframes pp-glow {
-  from { opacity: .55; }
-  to { opacity: 1; }
+    inset 0 1px 0 rgba(255, 255, 255, .12),
+    0 28px 76px rgba(0, 0, 0, .6),
+    0 0 90px rgba(201, 145, 26, .16);
 }
 
 /* content ladder — identical start lines on all three cards */
@@ -187,16 +179,17 @@
 .pp-btn:active { transform: scale(.988); }
 
 .pp-card--hero .pp-btn {
-  background: #fff;
-  border-color: #fff;
-  color: #0B0B14;
+  background: #C9911A;
+  border-color: #C9911A;
+  color: #0A0A0A;
   font-weight: 600;
+  transition: background .2s ease, border-color .2s ease, transform .12s ease;
 }
 
-.pp-card--hero .pp-btn:hover { background: #F4F2FF; border-color: #F4F2FF; }
+.pp-card--hero .pp-btn:hover { background: #E7B94A; border-color: #E7B94A; }
 
 .pp-btn:focus-visible {
-  outline: 2px solid #A6EAFF;
+  outline: 2px solid #F2D582;
   outline-offset: 3px;
 }
 
@@ -252,7 +245,7 @@
   margin-left: 6px;
 }
 
-.pp-foot a:hover { border-bottom-color: #A6EAFF; }
+.pp-foot a:hover { border-bottom-color: #F2D582; }
 
 /* ---------- responsive ---------- */
 
@@ -325,9 +318,6 @@
 .reveal-armed .pp-grid.is-in .pp-list li:nth-child(4) { transition-delay: .55s; }
 .reveal-armed .pp-grid.is-in .pp-list li:nth-child(5) { transition-delay: .62s; }
 
-/* digital pod breathing light: keep the approved wash, slow it to 13s */
-.pp-card--hero::before { animation-duration: 13s; }
-
 /* CTA light sweep */
 .pp-btn { position: relative; overflow: hidden; isolation: isolate; }
 .pp-btn::after {
@@ -341,7 +331,7 @@
   pointer-events: none;
 }
 .pp-btn:hover::after, .pp-btn:focus-visible::after { transform: translateX(130%); }
-.pp-card--hero .pp-btn::after { background: linear-gradient(105deg, transparent 32%, rgba(101, 72, 245, .14) 50%, transparent 68%); }
+.pp-card--hero .pp-btn::after { background: linear-gradient(105deg, transparent 32%, rgba(201,145,26, .14) 50%, transparent 68%); }
 
 /* commercial assurances — compact line, no new card */
 .pp-assure { margin: 42px auto 0; text-align: center; }
@@ -381,16 +371,16 @@
   align-items: center;
   gap: 8px;
   font-size: 15px;
-  color: #A6EAFF;
+  color: #F2D582;
   text-decoration: none;
-  border-bottom: 1px solid rgba(166, 234, 255, .34);
+  border-bottom: 1px solid rgba(242, 213, 130, .4);
   padding-bottom: 2px;
   transition: border-color .25s var(--bindu-ease), color .25s var(--bindu-ease);
 }
 .pp-convert__cta svg { width: 14px; height: 14px; transition: transform .25s var(--bindu-ease); }
 .pp-convert__cta:hover { color: #fff; border-bottom-color: #fff; }
 .pp-convert__cta:hover svg { transform: translateX(4px); }
-.pp-convert__cta:focus-visible { outline: 2px solid #A6EAFF; outline-offset: 3px; border-radius: 2px; }
+.pp-convert__cta:focus-visible { outline: 2px solid #F2D582; outline-offset: 3px; border-radius: 2px; }
 .pp-convert__more { font-size: 14px; color: rgba(255, 255, 255, .55); text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .18); }
 .pp-convert__more:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, .5); }
 

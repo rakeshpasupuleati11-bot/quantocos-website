@@ -1,11 +1,10 @@
 # Reserved human photography
 
-**Status: awaiting client-supplied images. Do not publish the site with the placeholders visible.**
+**Status: awaiting client-supplied images. The homepage now shows information-led panels in these slots; no technical placeholders or filenames are displayed. Swap in the photographs when approved.**
 
 These three containers are built and reserved on the homepage. No stock, generated or
 illustrative human imagery has been inserted, and no `<img>` points at these paths yet —
-each placement is a graphite placeholder that states the filename and dimensions it expects.
-Until the approved photographs exist, the homepage must not be published publicly.
+each placement now holds a compact information panel describing the same business content.
 
 | File | Dimensions | Ratio | Placement | Page |
 |---|---|---|---|---|

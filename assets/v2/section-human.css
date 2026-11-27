@@ -1,8 +1,7 @@
-/* Homepage · human image placements.
-   Reserved containers for client photography. No image files are referenced here:
-   the placeholders are CSS surfaces marked "Image reserved" until approved
-   photographs are supplied. Aspect ratios reserve height, so swapping the
-   placeholder for an <img> produces no layout shift. */
+/* Homepage · image placements.
+   Photographs are client-supplied and pending. The two homepage slots show
+   information panels instead; no technical placeholder text is rendered.
+   Containers keep their edges so swapping in an <img> produces no layout shift. */
 
 /* ---------- split layout ---------- */
 .hp-split {
@@ -35,6 +34,11 @@
   font-weight: 600;
   color: var(--bindu-on-dark, #FAF8F2);
 }
+.section--paper .hp-probs li {
+  border-left-color: var(--bindu-line-strong);
+  color: var(--bindu-ink-2);
+}
+.section--paper .hp-probs strong { color: var(--bindu-ink); }
 
 /* ---------- reserved media container ---------- */
 .hp-media {
@@ -59,45 +63,82 @@
   margin: 0 auto clamp(36px, 5vw, 64px);
 }
 
-/* ---------- placeholder surface ---------- */
-.hp-ph {
-  position: absolute;
-  inset: 0;
+/* ---------- information panels (photo slot pending approved assets) ---------- */
+.hp-media--info {
+  aspect-ratio: auto;
+  display: flex;
+}
+.hp-info {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 24px;
-  text-align: center;
+  justify-content: flex-start;
+  gap: clamp(16px, 2vw, 26px);
+  width: 100%;
+  min-height: clamp(320px, 30vw, 430px);
+  padding: clamp(22px, 2.6vw, 32px);
   border-radius: inherit;
-  border: 1px dashed rgba(255, 255, 255, .16);
-  background:
-    radial-gradient(120% 80% at 50% 0%, rgba(255, 255, 255, .045), transparent 60%),
-    linear-gradient(160deg, #141418 0%, #0C0C0F 55%, #101015 100%);
-  color: rgba(250, 248, 242, .5);
-  font-family: var(--bindu-font-mono, ui-monospace, "SF Mono", Menlo, monospace);
+  border: 1px solid rgba(255, 255, 255, .10);
+  background: linear-gradient(165deg, #131316 0%, #0C0C0F 60%, #101013 100%);
+  color: var(--bindu-on-dark, #FAF8F2);
+}
+.hp-info__label {
+  margin: 0;
   font-size: 11px;
+  font-weight: 600;
   letter-spacing: .14em;
   text-transform: uppercase;
+  color: rgba(250, 248, 242, .5);
 }
-
-.hp-ph__tag {
-  padding: 5px 12px;
-  border: 1px solid rgba(255, 255, 255, .18);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .03);
-  color: rgba(250, 248, 242, .72);
+.hp-info__rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, .08);
 }
-
-.hp-ph__name {
-  font-size: 12px;
+.hp-info__rows li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.hp-info__idx {
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: .08em;
-  text-transform: none;
-  color: rgba(250, 248, 242, .58);
+  font-variant-numeric: tabular-nums;
+  color: var(--bindu-soma-light, #F2D582);
 }
-
-.hp-ph__dim { color: rgba(250, 248, 242, .38); }
+.hp-info__name {
+  font-weight: 600;
+  color: rgba(250, 248, 242, .92);
+}
+.hp-info__val {
+  font-size: 13px;
+  text-align: right;
+  color: rgba(250, 248, 242, .55);
+}
+.hp-info__foot {
+  margin: 0;
+  margin-top: auto;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(250, 248, 242, .64);
+}
+@media (max-width: 520px) {
+  .hp-info__rows li {
+    grid-template-columns: auto 1fr;
+    row-gap: 3px;
+  }
+  .hp-info__val {
+    grid-column: 2;
+    text-align: left;
+  }
+}
 
 /* ---------- centred section head (trust) ---------- */
 .section-head--center {
@@ -129,16 +170,14 @@
   width: 64%;
   height: 112%;
   transform: translateY(-50%);
-  background: radial-gradient(closest-side, rgba(6, 182, 212, .1), rgba(6, 182, 212, .035) 56%, transparent 80%);
-  animation: ws-breathe 18s ease-in-out infinite alternate;
+  background: radial-gradient(closest-side, rgba(201, 145, 26, .09), rgba(201, 145, 26, .03) 56%, transparent 80%);
 }
 .cws::after {
   right: -8%;
   top: -22%;
   width: 48%;
   height: 74%;
-  background: radial-gradient(closest-side, rgba(231, 185, 74, .075), rgba(231, 185, 74, .025) 55%, transparent 78%);
-  animation: ws-breathe 16s ease-in-out infinite alternate-reverse;
+  background: radial-gradient(closest-side, rgba(242, 213, 130, .07), rgba(242, 213, 130, .02) 55%, transparent 78%);
 }
 @keyframes ws-breathe {
   from { opacity: .55; }

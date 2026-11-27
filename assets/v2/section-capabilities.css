@@ -6,7 +6,7 @@
    ============================================================ */
 
 .cap-rail{position:relative;
-  --chrome:conic-gradient(from 210deg,#fff 0deg,#c9d3e6 38deg,#46536b 96deg,#0a1120 150deg,#8b9bb8 208deg,#fff 252deg,#66748f 306deg,#fff 360deg);
+  --chrome:conic-gradient(from 210deg,#fff 0deg,#D6D6D6 38deg,#5A5A5A 96deg,#0D0D0D 150deg,#9A9A9A 208deg,#fff 252deg,#7A7A7A 306deg,#fff 360deg);
   --cap-w:clamp(272px,25vw,344px);
   --cap-gap:20px}
 
@@ -21,8 +21,8 @@
 .cap-rail.is-live .cap-track{transform:translate3d(0,0,0)}
 
 /* ---------- card ---------- */
-.cap{position:relative;flex:0 0 var(--cap-w);min-height:380px;display:grid;
-  grid-template-rows:auto auto auto auto 1fr auto;gap:8px;padding:20px 20px 18px;
+.cap{position:relative;flex:0 0 var(--cap-w);min-height:320px;display:grid;
+  grid-template-rows:auto auto auto auto 1fr;gap:8px;padding:20px 20px 18px;
   border-radius:var(--bindu-r-lg);border:1px solid rgba(250,248,242,.1);
   background:linear-gradient(180deg,rgba(250,248,242,.062),rgba(250,248,242,.014));
   color:var(--bindu-on-dark);overflow:hidden;isolation:isolate;
@@ -51,7 +51,7 @@
 .cap__stage{position:relative;height:132px;margin:4px -6px 0;perspective:760px;overflow:hidden;
   border-radius:var(--bindu-r-md);
   background:radial-gradient(70% 90% at 50% 40%,rgba(201,145,26,.09),transparent 70%)}
-.cap__link{display:inline-flex;align-items:center;gap:8px;margin-top:2px;
+.cap__link{display:inline-flex;align-items:center;gap:8px;margin-top:2px;align-self:end;
   font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--bindu-soma-light);text-decoration:none}
 .cap__link svg{width:13px;height:13px;transition:transform var(--bindu-dur) var(--bindu-ease)}
 .cap__link:hover svg,.cap__link:focus-visible svg{transform:translateX(3px)}
