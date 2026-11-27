@@ -64,6 +64,10 @@ def text_of(html: str) -> str:
 def check_page(f: Path, rel: str, all_titles, all_descs, issues):
     raw = f.read_text(encoding="utf-8", errors="ignore")
     vis = visible(raw)
+    is_redirect = ('http-equiv="refresh"' in raw and 'content="noindex"' in raw)
+    if is_redirect:
+        # compatibility redirect: excluded from the 30-page architecture and facts checks
+        return
 
     def add(sev, rule, detail):
         issues.append({"page": rel, "sev": sev, "rule": rule, "detail": detail})
@@ -99,7 +103,8 @@ def check_page(f: Path, rel: str, all_titles, all_descs, issues):
         add("error", "canonical", "missing")
     else:
         want_tail = rel if rel != "index.html" else ""
-        if want_tail and not c.group(1).rstrip("/").endswith(want_tail):
+        is_redirect = ('http-equiv="refresh"' in raw and 'content="noindex"' in raw)
+        if want_tail and not is_redirect and not c.group(1).rstrip("/").endswith(want_tail):
             if "products/" in rel:  # documented duplicates: products/* consolidates to the root page
                 pass
             else:
@@ -173,7 +178,7 @@ def check_page(f: Path, rel: str, all_titles, all_descs, issues):
         add("warn", "fact-geography", "Singapore mentioned without 'delivery partner'")
 
     # 11b social image must resolve at 1200x630
-    og = re.search(r'property="og:image" content="https://quantocos\.com/([^"]+)"', raw)
+    og = re.search(r'property="og:image" content="https://(?:quantocos\.com|rakeshpasupuleati11-bot\.github\.io/quantocos-website)/([^"]+)"', raw)
     if not og:
         add("error", "og-image", "missing og:image")
     else:

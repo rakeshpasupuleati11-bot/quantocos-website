@@ -1,95 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<script>/* guard (Round 5): a legacy scroll handler calls getComputedStyle on a node that may be gone after a layout change; fall back to <html> instead of throwing */
-(function(){var g=window.getComputedStyle;window.getComputedStyle=function(el,p){try{return g(el,p)}catch(e){return g(document.documentElement,p)}};})();</script>
 <meta charset="utf-8">
-<meta name="view-transition" content="same-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insights — GC³ | Quantocos Global Systems LLP</title>
-<meta name="description" content="Perspectives and field notes on enterprise AI adoption, capability economics, the pod model and what Quantocos is building.">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="author" content="Quantocos Global Systems LLP">
-<meta name="publisher" content="Quantocos Global Systems LLP">
-<meta name="generator" content="Quantocos static build">
-<link rel="canonical" href="https://quantocos.com/insights.html">
+<title>Insights — notes on how the work runs — Quantocos GC³</title>
+<meta name="description" content="Four notes on the practical mechanics of capability subscriptions: cost, gates, pods and measurement. No client claims, no invented results.">
+<link rel="canonical" href="https://rakeshpasupuleati11-bot.github.io/quantocos-website/insights.html">
+<meta name="theme-color" content="#050505">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Quantocos Global Systems LLP">
-<meta property="og:locale" content="en_IN">
-<meta property="og:title" content="Insights — GC³ | Quantocos Global Systems LLP">
-<meta property="og:description" content="Perspectives and field notes on enterprise AI adoption, capability economics, the pod model and what Quantocos is building.">
-<meta property="og:url" content="https://quantocos.com/insights.html">
-<meta property="og:image" content="https://quantocos.com/assets/img/og/insights.jpg">
+<meta property="og:site_name" content="Quantocos GC³">
+<meta property="og:title" content="Insights — notes on how the work runs — Quantocos GC³">
+<meta property="og:description" content="Four notes on the practical mechanics of capability subscriptions: cost, gates, pods and measurement. No client claims, no invented results.">
+<meta property="og:url" content="https://rakeshpasupuleati11-bot.github.io/quantocos-website/insights.html">
+<meta property="og:image" content="https://rakeshpasupuleati11-bot.github.io/quantocos-website/assets/img/og-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Quantocos Global Systems LLP — GC³">
+<meta property="og:image:alt" content="Quantocos GC³ — one subscription, six capability tracks">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Insights — GC³ | Quantocos Global Systems LLP">
-<meta name="twitter:description" content="Perspectives and field notes on enterprise AI adoption, capability economics, the pod model and what Quantocos is building.">
-<meta name="twitter:image" content="https://quantocos.com/assets/img/og/insights.jpg">
-<meta name="twitter:image:alt" content="Quantocos Global Systems LLP — GC³">
-<meta name="theme-color" content="#080E18">
-<link rel="license" href="https://quantocos.com/licence">
-<link rel="alternate" type="application/ld+json" href="https://quantocos.com/insights.jsonld">
-<script>(function(){try{var d=document.documentElement,on=true;if(window.MOTION_ENABLED===false)on=false;if(/[?&]motion=off/.test(location.search))on=false;try{if(localStorage.getItem('q-motion')==='off')on=false;}catch(e){}if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)on=false;d.classList.toggle('has-motion',on);if(!on)d.classList.add('no-motion');}catch(e){}})();</script>
-  
-
-<link rel="icon" href="assets/img/favicon.png" sizes="32x32">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://quantocos.com/#organization","name":"Quantocos Global Systems LLP","alternateName":"Quantocos","legalName":"Quantocos Global Systems LLP","url":"https://quantocos.com/","logo":{"@type":"ImageObject","@id":"https://quantocos.com/#logo","url":"https://quantocos.com/assets/img/logo-light.png","contentUrl":"https://quantocos.com/assets/img/logo-light.png","caption":"Quantocos Global Systems LLP"},"image":{"@id":"https://quantocos.com/#logo"},"slogan":"Explore Possibilities.","description":"Quantocos Global Systems LLP operates GC³, a Global Cloud Capability Center that delivers creative, digital marketing, strategy, interactive, automation and back-office services to foreign SMB and mid-market clients through monthly subscription teams called pods, each combining human specialists with AI agents.","foundingDate":"2026-05-18","legalForm":"Limited Liability Partnership","identifier":"ACY-3556","naics":"541512","knowsAbout":["global capability centers","creative services subscriptions","answer engine optimization","generative engine optimization","digital marketing","brand and go-to-market strategy","AI agents and workflow automation","interactive 3D and XR development","real estate marketing","cloud platform engineering"],"areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"United Arab Emirates"},{"@type":"Country","name":"Australia"},{"@type":"Country","name":"Singapore"},{"@type":"AdministrativeArea","name":"European Union"}],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"hello@quantocos.com","availableLanguage":["en"],"areaServed":"US"}],"email":"hello@quantocos.com","sameAs":["https://quantocos.com/company.html","https://www.linkedin.com/company/quantocos","https://www.instagram.com/quantocos/","https://www.facebook.com/quantocos","https://x.com/QuantocosL","https://www.youtube.com/@quantocos"]},{"@type":"WebSite","@id":"https://quantocos.com/#website","url":"https://quantocos.com/","name":"Quantocos Global Systems LLP","alternateName":"GC³","publisher":{"@id":"https://quantocos.com/#organization"},"inLanguage":"en","description":"Quantocos Global Systems LLP — GC³ capability center: subscription pods of human specialists and AI agents for foreign businesses."},{"@type":"BreadcrumbList","@id":"https://quantocos.com/insights.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://quantocos.com/"},{"@type":"ListItem","position":2,"name":"Insights"}]},{"@type":"WebPage","@id":"https://quantocos.com/insights.html#webpage","url":"https://quantocos.com/insights.html","name":"Insights — GC³ | Quantocos Global Systems LLP","description":"Perspectives and field notes on enterprise AI adoption, capability economics, the pod model and what Quantocos is building.","isPartOf":{"@id":"https://quantocos.com/#website"},"about":{"@id":"https://quantocos.com/#organization"},"inLanguage":"en","dateModified":"2026-10-17","dateReviewed":"2026-10-17","breadcrumb":{"@id":"https://quantocos.com/insights.html#breadcrumb"},"author":{"@id":"https://quantocos.com/#organization"},"publisher":{"@id":"https://quantocos.com/#organization"},"license":"https://quantocos.com/licence"}]}</script>
-<script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/assets/*","/*.css","/*.js","/*.xml","/*.txt","/*.jsonld","/*?(.+)*"]}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"moderate"}]}</script>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/InstrumentSans-400-normal.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/SourceSerif4-400-normal.woff2">
-<link rel="stylesheet" href="assets/css/site.bundle.css?v=36">
-<link rel="stylesheet" href="assets/css/fonts.css?v=3">
-<script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('reveal-done')},1500);</script>
-<noscript><style>[data-reveal],[data-stagger] > *{opacity:1!important;transform:none!important}</style></noscript>
-<link rel="stylesheet" href="assets/css/rgb.css?v=2">
+<meta name="twitter:title" content="Insights — notes on how the work runs — Quantocos GC³">
+<meta name="twitter:description" content="Four notes on the practical mechanics of capability subscriptions: cost, gates, pods and measurement. No client claims, no invented results.">
+<meta name="twitter:image" content="https://rakeshpasupuleati11-bot.github.io/quantocos-website/assets/img/og-v2.jpg">
+<link rel="icon" href="assets/img/quantocos-mark.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/quantocos-mark.png">
+<link rel="stylesheet" href="assets/v2/tokens.css">
+<link rel="stylesheet" href="assets/v2/site.css">
+<link rel="stylesheet" href="assets/v2/section-inner.css">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://rakeshpasupuleati11-bot.github.io/quantocos-website/#org","name":"Quantocos Global Systems LLP","url":"https://rakeshpasupuleati11-bot.github.io/quantocos-website/","identifier":"ACY-3556","email":"hello@quantocos.com"},{"@type":"WebSite","@id":"https://rakeshpasupuleati11-bot.github.io/quantocos-website/#website","name":"Quantocos GC³","url":"https://rakeshpasupuleati11-bot.github.io/quantocos-website/"},{"@type":"WebPage","@id":"https://rakeshpasupuleati11-bot.github.io/quantocos-website/insights.html#webpage","url":"https://rakeshpasupuleati11-bot.github.io/quantocos-website/insights.html","name":"Insights — notes on how the work runs — Quantocos GC³","description":"Four notes on the practical mechanics of capability subscriptions: cost, gates, pods and measurement. No client claims, no invented results.","isPartOf":{"@id":"https://rakeshpasupuleati11-bot.github.io/quantocos-website/#website"},"about":{"@id":"https://rakeshpasupuleati11-bot.github.io/quantocos-website/#org"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rakeshpasupuleati11-bot.github.io/quantocos-website/"},{"@type":"ListItem","position":2,"name":"Notes on how the work actually runs.","item":"https://rakeshpasupuleati11-bot.github.io/quantocos-website/insights.html"}]}]}</script>
 </head>
-<body class="has-mobile-cta px-dense px-ledger" data-progress>
-<div data-scroll-progress aria-hidden="true"></div>
-<div class="scroll-rail" aria-hidden="true"><i data-scroll-rail></i></div>
-<a class="skip-link" aria-label="Skip to main content" href="#main">Skip to main content</a>
-
+<body class="v2" data-page="insights">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" data-scroll-progress aria-hidden="true"></div>
 <header class="hdr">
   <div class="wrap wrap--wide hdr__inner">
-      <a class="brand" href="index.html" aria-label="Quantocos Global Systems LLP — home"><img src="assets/img/quantocos-mark.png" alt="" width="24" height="24"><span>uantocos</span></a>
+    <a class="brand" href="index.html" aria-label="Quantocos Global Systems LLP — home">
+      <img src="assets/img/quantocos-mark.png" alt="" width="24" height="24"><span>Quantocos</span>
+    </a>
     <nav aria-label="Primary">
       <ul class="nav">
-      <li>
-        <a class="nav__link" href="solutions.html">Pods &amp; pricing
-          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-        </a>
-        <div class="mega">
-          <div class="wrap wrap--wide">
-            <div class="mega__grid" style="--mega-cols:3">
-          <div class="mega__col">
-            <p class="mega__title">Published price</p>
-            <a href="solutions/creative-pod.html">Creative Pod — $3,000/month</a>
-            <a href="solutions/digital-pod.html">Digital Pod — $6,000/month</a>
-            <a href="solutions/strategy-pod.html">Strategy Pod — $9,000/month</a>
-          </div>
-          <div class="mega__col">
-            <p class="mega__title">Scoped per client</p>
-            <a href="solutions/automation-pod.html">Automation Pod</a>
-            <a href="solutions/interactive-pod.html">Interactive Pod</a>
-            <a href="solutions/remau.html">REMAU — real estate</a>
-            <a href="solutions.html#custom">Build a custom pod</a>
-          </div>
-          <div class="mega__col">
-            <p class="mega__title">Commercials</p>
-            <a href="solutions.html#credits">Credits &amp; pricing basis</a>
-            <a href="solutions.html#zero-credit">What is never charged</a>
-            <a href="compare.html">Pod vs agency vs freelancer</a>
-            <a href="solutions.html#alternatives">Why not an agency</a>
-          </div>
-            </div>
-            <div class="mega__foot"><span class="eyebrow">Featured</span><a class="link-arrow" href="index.html#pricing">The price table</a></div>
-          </div>
-        </div>
-      </li>
       <li>
         <a class="nav__link" href="capabilities.html">Capabilities
           <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -98,23 +46,49 @@
           <div class="wrap wrap--wide">
             <div class="mega__grid" style="--mega-cols:2">
           <div class="mega__col">
-            <p class="mega__title">Six service catalogs</p>
+            <p class="mega__title">Six capability tracks</p>
             <a href="capabilities/creative.html">Creative</a>
-            <a href="capabilities/growth.html">Growth &amp; digital marketing</a>
-            <a href="capabilities/strategy.html">Strategy &amp; consulting</a>
-            <a href="capabilities/interactive.html">Interactive &amp; XR</a>
-            <a href="capabilities/automation.html">AI &amp; automation</a>
-            <a href="capabilities/backoffice.html">Back office &amp; operations</a>
+            <a href="capabilities/digital.html">Digital</a>
+            <a href="capabilities/strategy.html">Strategy</a>
+            <a href="capabilities/interactive.html">Interactive</a>
+            <a href="capabilities/automation.html">Automation</a>
+            <a href="capabilities/remau.html">REMAU — real estate media</a>
           </div>
           <div class="mega__col">
-            <p class="mega__title">How we deliver</p>
-            <a href="gc3.html#pods">The pod model</a>
-            <a href="gc3.html#how">Human review and the gates</a>
-            <a href="solutions.html#credits">Credits &amp; turnaround</a>
-            <a href="company.html#guilds">Guilds &amp; quality</a>
+            <p class="mega__title">How delivery works</p>
+            <a href="gc3.html">The GC³ model</a>
+            <a href="how-it-works.html">Stages and approval gates</a>
+            <a href="pricing.html">Credits and published prices</a>
+            <a href="why-quantocos.html">Pod vs agency vs freelancer</a>
           </div>
             </div>
-            <div class="mega__foot"><span class="eyebrow">Featured</span><a class="link-arrow" href="capabilities.html">Every catalog, one model</a></div>
+            <div class="mega__foot"><span class="eyebrow">Every track, one model</span><a class="link-arrow" href="capabilities.html">Capabilities overview</a></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a class="nav__link" href="solutions.html">Solutions
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        </a>
+        <div class="mega">
+          <div class="wrap wrap--wide">
+            <div class="mega__grid" style="--mega-cols:2">
+          <div class="mega__col">
+            <p class="mega__title">By business outcome</p>
+            <a href="solutions/internal-communications.html">Internal communications</a>
+            <a href="solutions/external-communications.html">External communications</a>
+            <a href="solutions/growth-marketing.html">Growth and marketing</a>
+            <a href="solutions/business-operations.html">Business operations</a>
+          </div>
+          <div class="mega__col">
+            <p class="mega__title">Start from the engagement</p>
+            <a href="pricing.html">Plans and pricing</a>
+            <a href="pricing.html#pilot">Pilot Sprint — $1,500</a>
+            <a href="how-it-works.html">Onboarding and gates</a>
+            <a href="solutions.html#scoping">Scope a custom pod</a>
+          </div>
+            </div>
+            <div class="mega__foot"><span class="eyebrow">Four outcomes</span><a class="link-arrow" href="solutions.html">Solutions overview</a></div>
           </div>
         </div>
       </li>
@@ -126,24 +100,74 @@
           <div class="wrap wrap--wide">
             <div class="mega__grid" style="--mega-cols:2">
           <div class="mega__col">
-            <p class="mega__title">Who we serve</p>
-            <a href="industries/smb.html">Foreign SMBs &amp; mid-market</a>
-            <a href="industries/agencies.html">Agencies &amp; consultancies</a>
-            <a href="industries/real-estate.html">Real estate &amp; property</a>
-            <a href="industries/saas.html">Software &amp; SaaS</a>
+            <p class="mega__title">Four sector pages</p>
+            <a href="industries/real-estate.html">Real estate and property</a>
+            <a href="industries/professional.html">Professional services</a>
+            <a href="industries/retail.html">Retail and e-commerce</a>
+            <a href="industries/technology.html">Technology and startups</a>
           </div>
           <div class="mega__col">
-            <p class="mega__title">Sectors</p>
-            <a href="industries/professional.html">Professional services</a>
-            <a href="industries/retail.html">E-commerce &amp; retail</a>
+            <p class="mega__title">Who we are built for</p>
+            <a href="industries.html#fit">US SMBs and mid-market teams</a>
+            <a href="industries.html#scope">Where a pod fits</a>
+            <a href="industries.html#outside">Where it does not</a>
+            <a href="talk-to-an-expert.html">Qualify your requirement</a>
           </div>
             </div>
-            <div class="mega__foot"><span class="eyebrow">Ten industries</span><a class="link-arrow" href="industries.html">See every sector</a></div>
+            <div class="mega__foot"><span class="eyebrow">Sector fit</span><a class="link-arrow" href="industries.html">Industries overview</a></div>
           </div>
         </div>
       </li>
       <li>
-        <a class="nav__link" href="proof.html">Proof</a>
+        <a class="nav__link" href="gc3.html">GC³
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        </a>
+        <div class="mega">
+          <div class="wrap wrap--wide">
+            <div class="mega__grid" style="--mega-cols:2">
+          <div class="mega__col">
+            <p class="mega__title">The model</p>
+            <a href="gc3.html">What GC³ is</a>
+            <a href="gc3.html#pods">How a pod is staffed</a>
+            <a href="gc3.html#tracks">Six tracks</a>
+            <a href="gc3.html#credit">The credit ledger</a>
+          </div>
+          <div class="mega__col">
+            <p class="mega__title">Working with us</p>
+            <a href="how-it-works.html">How it works</a>
+            <a href="pricing.html">Plans and pricing</a>
+            <a href="pricing.html#pilot">Pilot Sprint</a>
+            <a href="pricing.html#terms">Terms in summary</a>
+          </div>
+            </div>
+            <div class="mega__foot"><span class="eyebrow">Subscription capability</span><a class="link-arrow" href="pricing.html">Published prices</a></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a class="nav__link" href="resources.html">Resources
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        </a>
+        <div class="mega">
+          <div class="wrap wrap--wide">
+            <div class="mega__grid" style="--mega-cols:2">
+          <div class="mega__col">
+            <p class="mega__title">Read and research</p>
+            <a href="resources.html">Resource library</a>
+            <a href="insights.html">Insights</a>
+            <a href="faq.html">Questions and answers</a>
+          </div>
+          <div class="mega__col">
+            <p class="mega__title">Useful before you brief</p>
+            <a href="resources.html#glossary">Glossary of terms</a>
+            <a href="resources.html#checklists">Briefing checklists</a>
+            <a href="pricing.html#calculator">Credit calculator</a>
+            <a href="why-quantocos.html">Compare the options</a>
+          </div>
+            </div>
+            <div class="mega__foot"><span class="eyebrow">Plain answers</span><a class="link-arrow" href="faq.html">Read the FAQ</a></div>
+          </div>
+        </div>
       </li>
       <li>
         <a class="nav__link" href="company.html">Company
@@ -154,218 +178,135 @@
             <div class="mega__grid" style="--mega-cols:2">
           <div class="mega__col">
             <p class="mega__title">The group</p>
-            <a href="company.html">Who we are</a>
-            <a href="company.html#organization">How GC³ is organised</a>
-            <a href="company.html#guilds">Guilds &amp; quality</a>
-            <a href="company.html#structure">Corporate structure</a>
+            <a href="company.html">About Quantocos</a>
+            <a href="company.html#structure">Structure and identity</a>
+            <a href="company.html#guilds">How quality is held</a>
+            <a href="why-quantocos.html">Why Quantocos</a>
           </div>
           <div class="mega__col">
-            <p class="mega__title">Accountability</p>
-            <a href="security.html">Security &amp; compliance</a>
-            <a href="contracts.html">The contract pack</a>
-            <a href="careers.html">Careers</a>
-            <a href="contact.html">Talk to us</a>
+            <p class="mega__title">Next step</p>
+            <a href="contact.html">Contact</a>
+            <a href="talk-to-an-expert.html">Talk to an expert</a>
+            <a href="privacy.html">Privacy policy</a>
+            <a href="terms.html">Terms of service</a>
           </div>
             </div>
-            <div class="mega__foot"><span class="eyebrow">All products</span><a class="link-arrow" href="products.html">Platform &amp; products</a></div>
+            <div class="mega__foot"><span class="eyebrow">Written terms</span><a class="link-arrow" href="terms.html">The engagement letter</a></div>
           </div>
         </div>
       </li>
       </ul>
     </nav>
+
     <div class="hdr__actions">
-      <div class="qsearch" data-qsearch>
-        <button class="hdr__search" type="button" aria-label="Search this site" aria-expanded="false" aria-controls="qsearch-panel" data-qsearch-open>
-          <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.6" cy="6.6" r="4.9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.4 10.4L15 15" stroke="currentColor" stroke-width="1.5"/></svg>
-          Search
-        </button>
-        <div class="qsearch__panel" id="qsearch-panel" hidden data-qsearch-panel role="search">
-          <input class="qsearch__input" type="search" placeholder="Search pods, catalogs, pages…" autocomplete="off" aria-label="Search this site" data-qsearch-input>
-          <ul class="qsearch__results" data-qsearch-results></ul>
-        </div>
-      </div>
-      <a class="btn btn--primary btn--sm" href="contact.html">Start a conversation</a>
-      <button class="hdr__burger" type="button" data-drawer-open aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
-        <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 1h18M0 6h18M0 11h18" stroke="currentColor" stroke-width="1.6"/></svg>
+      <a class="hdr__tel" href="contact.html">Talk to us</a>
+      <a class="btn btn--primary btn--sm" href="talk-to-an-expert.html">Book a briefing</a>
+      <button class="burger" type="button" data-drawer-open aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
     </div>
   </div>
 </header>
-<main id="main">
-<section data-reveal class="hero hero--short" data-anim="hero">
-  <div class="hero__scrim" aria-hidden="true"></div>
-  <div class="hero-grain" aria-hidden="true"></div>
-  <div class="wrap wrap--wide">
-    <div class="hero__inner">
-      <div>
-      <p class="hero__crumb"><a href="index.html">Home</a> <span>/</span> Insights</p>
-        <span class="eyebrow eyebrow--light">Insights</span>
-        <h1 class="hero__title mt-5">We publish the argument, <em>including the parts that are unsettled.</em></h1>
-        <p class="hero__sub">Field notes from inside a capability center that is being built while it runs: what works, what does not, and what the market gets wrong about enterprise AI.</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary btn--lg" href="#adoption">Read the AI adoption note</a>
-          <a class="btn btn--onDark btn--lg" href="contact.html">Book a briefing</a>
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="drawer__head">
+      <a class="brand" href="index.html" aria-label="Quantocos Global Systems LLP — home">
+        <img src="assets/img/quantocos-mark.png" alt="" width="24" height="24"><span>Quantocos</span>
+      </a>
+      <button class="drawer__close" type="button" data-drawer-close aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer__body">
+    <div class="drawer__group"><a href="pricing.html">Plans and pricing</a></div>
+      <div class="drawer__group">
+        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-capabilities">Capabilities <span aria-hidden="true">+</span></button>
+        <div class="drawer__sub" id="dg-capabilities">
+            <p class="mega__title">Six capability tracks</p>
+            <a href="capabilities/creative.html">Creative</a>
+            <a href="capabilities/digital.html">Digital</a>
+            <a href="capabilities/strategy.html">Strategy</a>
+            <a href="capabilities/interactive.html">Interactive</a>
+            <a href="capabilities/automation.html">Automation</a>
+            <a href="capabilities/remau.html">REMAU — real estate media</a>
+            <a href="capabilities.html">Capabilities overview</a>
         </div>
       </div>
-
+      <div class="drawer__group">
+        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-solutions">Solutions <span aria-hidden="true">+</span></button>
+        <div class="drawer__sub" id="dg-solutions">
+            <p class="mega__title">By business outcome</p>
+            <a href="solutions/internal-communications.html">Internal communications</a>
+            <a href="solutions/external-communications.html">External communications</a>
+            <a href="solutions/growth-marketing.html">Growth and marketing</a>
+            <a href="solutions/business-operations.html">Business operations</a>
+            <a href="solutions.html">Solutions overview</a>
+        </div>
+      </div>
+      <div class="drawer__group">
+        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-industries">Industries <span aria-hidden="true">+</span></button>
+        <div class="drawer__sub" id="dg-industries">
+            <p class="mega__title">Four sector pages</p>
+            <a href="industries/real-estate.html">Real estate and property</a>
+            <a href="industries/professional.html">Professional services</a>
+            <a href="industries/retail.html">Retail and e-commerce</a>
+            <a href="industries/technology.html">Technology and startups</a>
+            <a href="industries.html">Industries overview</a>
+        </div>
+      </div>
+      <div class="drawer__group">
+        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-gc3">GC³ <span aria-hidden="true">+</span></button>
+        <div class="drawer__sub" id="dg-gc3">
+            <p class="mega__title">The model</p>
+            <a href="gc3.html">What GC³ is</a>
+            <a href="how-it-works.html">How it works</a>
+            <a href="pricing.html">Plans and pricing</a>
+            <p class="mega__title">Commercials</p>
+            <a href="pricing.html#pilot">Pilot Sprint — $1,500</a>
+            <a href="pricing.html#terms">Terms in summary</a>
+            <a href="pricing.html#calculator">Credit calculator</a>
+        </div>
+      </div>
+      <div class="drawer__group">
+        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-resources">Resources <span aria-hidden="true">+</span></button>
+        <div class="drawer__sub" id="dg-resources">
+            <a href="resources.html">Resource library</a>
+            <a href="insights.html">Insights</a>
+            <a href="faq.html">Questions and answers</a>
+            <a href="resources.html#glossary">Glossary of terms</a>
+        </div>
+      </div>
+      <div class="drawer__group">
+        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-company">Company <span aria-hidden="true">+</span></button>
+        <div class="drawer__sub" id="dg-company">
+            <p class="mega__title">The group</p>
+            <a href="company.html">About Quantocos</a>
+            <a href="why-quantocos.html">Why Quantocos</a>
+            <a href="contact.html">Contact</a>
+            <a href="talk-to-an-expert.html">Talk to an expert</a>
+            <p class="mega__title">Written terms</p>
+            <a href="privacy.html">Privacy policy</a>
+            <a href="terms.html">Terms of service</a>
+        </div>
+      </div>
+  </div><div class="drawer__foot">
+      <a class="btn btn--primary" href="talk-to-an-expert.html">Book a briefing</a>
+      <a class="btn btn--ghost" href="mailto:hello@quantocos.com">hello@quantocos.com</a>
     </div>
   </div>
-  <div class="statbar">
-    <div class="wrap wrap--wide">
-      <div class="statbar__inner">
-    <div class="statbar__item">
-      <div class="statbar__num" data-count>6</div>
-      <div class="statbar__label">notes published</div>
-    </div>
-    <div class="statbar__item">
-      <div class="statbar__num" data-count>0</div>
-      <div class="statbar__label">press releases, so far</div>
-    </div>
-    <div class="statbar__item">
-      <div class="statbar__num" data-count>4</div>
-      <div class="statbar__label">practices contributing</div>
-    </div>
-    <div class="statbar__item">
-      <div class="statbar__num" data-count>1</div>
-      <div class="statbar__label">argument we keep making</div>
-    </div>
-      </div>
-    </div>
-  </div>
+</div>
+<main id="main">
+<section class="phero" id="top"><div class="wrap wrap--wide"><div class="phero__grid"><div class="phero__copy"><nav class="phero__crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Insights</span></nav><p class="eyebrow">Insights</p><h1 class="phero__title">Notes on how the work actually runs.</h1><p class="phero__lead">These are working notes, not thought-leadership. Each one explains a mechanic of the model in plain language, with the trade-off stated rather than hidden.</p><div class="phero__cta"><a class="btn btn--primary" href="talk-to-an-expert.html">Talk to an expert</a><a class="btn btn--ghost" href="pricing.html">See plans and pricing</a></div><div class="chips phero__chips"><span class="chip">Cost</span><span class="chip">Gates</span><span class="chip">Pods</span><span class="chip">Measurement</span></div></div><div class="phero__art" data-reveal><img src="assets/img/hero-quantocos-insights.webp" alt="Editorial spreads and notes arranged in low light" width="1600" height="840" loading="eager" fetchpriority="high"><span class="phero__tag">GC³ capability subscription</span></div></div><div class="phero__stats"><div class="phero__stat"><b>4</b><span>notes, each on one mechanic</span></div><div class="phero__stat"><b>0</b><span>client claims or invented benchmarks</span></div></div></div></section>
+<nav class="pnav" aria-label="On this page"><div class="wrap wrap--wide"><div class="pnav__inner"><a href="#cost">What work costs</a><a href="#gates">Gates vs deadlines</a><a href="#pods">Pods vs agencies</a><a href="#measure">Measuring creative</a></div></div></nav>
+<section class="section section--tight" id="index"><div class="wrap"><nav class="ptoc" aria-label="On this page" data-reveal><a href="#cost">What work costs <span aria-hidden="true">→</span></a><a href="#gates">Gates vs deadlines <span aria-hidden="true">→</span></a><a href="#pods">Pods vs agencies <span aria-hidden="true">→</span></a><a href="#measure">Measuring creative <span aria-hidden="true">→</span></a></nav></div></section>
+<section class="section" id="notes"><div class="wrap"><div class="pprose" data-reveal><h2 id="cost">What work costs when it is priced in credits</h2><p>A credit price is only useful if it makes comparison easier. At $25 per credit, a pod with 120 credits costs $3,000 and a pod with 360 costs $9,000, with no setup fee in either case.</p><p>The trade-off is that a credit is not a minute. Two deliverables that look similar can draw different amounts because the work behind them differs, and the estimate at G1 is what makes that visible before production.</p><p>What credits do not solve is the value question. A pool can be priced clearly and still be the wrong purchase if the brief is vague, which is why G1 exists before any production starts.</p><h2 id="gates">Gates are slower than deadlines, on purpose</h2><p>A deadline creates pressure to skip the decision points that keep work aligned. The gates are deliberately fixed, because the cost of a rebuild is almost always higher than the cost of a review.</p><p>G4 is often misunderstood. It is your review window, not a delivery promise: the pod commits to having work ready for review, and the review itself takes time that the calendar must hold.</p><p>The exception is a genuine emergency, and the model handles it by re-scoping at the next gate rather than by removing the gate. That keeps the audit trail intact when the pressure eases.</p><h2 id="pods">Why a pod is not a small agency</h2><p>An agency usually sells you a team and then allocates it across clients. A pod is staffed against your brief for the subscription period, with one manager holding the context between deliverables.</p><p>The trade-off is flexibility. A pod is less able to absorb a sudden tenfold increase in volume than an agency that can surge staff, which is why volume is agreed in the brief rather than assumed.</p><p>What a pod does better is continuity. The same people see the last draft, the last review comment and the last decision, so the brief does not have to be rebuilt every month.</p><h2 id="measure">Measuring creative work without inventing numbers</h2><p>Creative work can be measured, but only against a definition agreed before it starts. Impressions and clicks measure distribution; whether the work changed a belief needs a different instrument.</p><p>The honest approach is to state the measure at G1 and report it as agreed. Anything observed outside that definition is an observation, not a result, and should be labelled that way.</p><p>This is why the site does not publish case-study percentages. Without the brief, the baseline and the attribution rules, a percentage is a decoration rather than evidence.</p></div></div></section>
+<section class="section" id="faq"><div class="wrap"><div class="faq"><div class="faq__side" data-reveal><p class="eyebrow">Questions</p><h2 class="h2">About these notes.</h2><p class="lead">They are reviewed when the model changes, not on a content calendar.</p><div class="faq__card"><p class="mono" style="opacity:.6">Direct line</p><p>hello@quantocos.com</p><a class="btn btn--primary btn--sm" href="talk-to-an-expert.html">Book a briefing</a></div></div><div class="acc" data-reveal data-acc-group><details><summary>Will you publish client work here?</summary><div><p>Only with written permission, and only with the measure and the context attached. Until then, the notes stay general.</p></div></details><details><summary>Can I quote these notes?</summary><div><p>Yes, with attribution to Quantocos Global Systems LLP and a link to this page.</p></div></details></div></div></div></section>
+<section class="section" id="next-step"><div class="wrap"><div class="cta" data-reveal><div class="cta__inner"><p class="eyebrow" style="color:rgba(250,248,242,.64)">Next step</p><h2 class="h2">Disagree with a note? Say so.</h2><p>A good objection is more useful than a compliment. We will answer it in writing, and correct the note if it is wrong.</p><div class="cta__actions"><a class="btn btn--primary" href="talk-to-an-expert.html">Talk to an expert <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><a class="btn btn--ghost" href="pricing.html">See plans and pricing</a></div><p class="cta__fine">Quantocos Global Systems LLP &middot; GC³ &middot; services under a written engagement letter</p></div></div></div></section>
 
-</section>
-
-<section data-reveal class="band band--paper band--hairline-top">
-  <div class="wrap wrap--wide split">
-    <div class="stack">
-      <span class="eyebrow eyebrow--signal">Lead perspective · 14 October 2026</span>
-      <h2 class="display" style="font-size:clamp(1.9rem,1.3rem+2.2vw,3rem)">Enterprise AI adoption is a procurement problem, not a model problem</h2>
-      <p class="lead">Every stalled AI program fails the same way. A capability arrives with a license, an integration and a specialist attached — and none of the three can be scaled across the business. The models were never the constraint.</p>
-      <p class="body-lg">The consequence is structural: if every new capability needs its own vendor relationship, then the ceiling on AI adoption is the procurement department's capacity, not the technology's. Our answer is one environment, one license and one memory — and we are building it in the open rather than describing it in a deck.</p>
-      <div class="row mt-6">
-        <a class="btn btn--primary" href="#adoption">Read the full note</a>
-        <a class="btn btn--ghost" href="products.html">See what we are building</a>
-      </div>
-    </div>
-    <div class="card card--tint">
-      <span class="eyebrow">The four moves</span>
-      <ul class="card__list mt-4">
-        <li>Collapse the license surface to one subscription</li>
-        <li>Put memory and knowledge in one place, not in chat histories</li>
-        <li>Give agents a runtime they can be built against</li>
-        <li>Keep a named human accountable for every output</li>
-      </ul>
-      <div class="card__foot"><a class="link-arrow" href="products.html#apara">The platform that does it</a></div>
-    </div>
-  </div>
-</section>
-
-<section data-reveal class="band band--alt" id="notes">
-  <div class="wrap wrap--wide">
-    <div class="sec-head sec-head--split">
-      <div class="stack">
-        <span class="eyebrow">All notes</span>
-        <h2>Perspectives, research and field notes</h2>
-      </div>
-      <div class="row">
-        <span class="eyebrow">Perspectives</span><span class="eyebrow">Research</span><span class="eyebrow">Field notes</span>
-      </div>
-    </div>
-    <div class="grid grid--3" data-stagger data-stagger>
-      <article class="card reveal" id="adoption">
-        <div class="card__media art art--1" aria-hidden="true"></div>
-        <div class="card__meta"><span>Perspective</span><span>14 October 2026</span><span>9 min read</span></div>
-        <h3 class="card__title">Enterprise AI adoption is a procurement problem, not a model problem</h3>
-        <p class="card__body">Every stalled AI program fails the same way: a capability arrives with a license, an integration and a specialist attached, and none of the three can be scaled across the business. The fix is architectural before it is technical.</p>
-        <div class="card__foot"><a class="link-arrow" href="#adoption">Read the note</a></div>
-      </article>
-      <article class="card reveal" id="license">
-        <div class="card__media art art--2" aria-hidden="true"></div>
-        <div class="card__meta"><span>Perspective</span><span>30 September 2026</span><span>7 min read</span></div>
-        <h3 class="card__title">The license problem nobody budgets for</h3>
-        <p class="card__body">Forty seats across twenty tools is how enterprise capability quietly becomes unmanageable. One license, one memory and one runtime is not a slogan — it is the only shape that survives a second year.</p>
-        <div class="card__foot"><a class="link-arrow" href="#license">Read the note</a></div>
-      </article>
-      <article class="card reveal" id="economics">
-        <div class="card__media art art--3" aria-hidden="true"></div>
-        <div class="card__meta"><span>Research</span><span>18 September 2026</span><span>12 min read</span></div>
-        <h3 class="card__title">What a pod actually costs against the alternatives</h3>
-        <p class="card__body">Fractional CMO retainers sit at $10,000–$12,000/month, with most engagements between $8,000 and $15,000; a strategy-only engagement runs $5,000–$8,000; the largest US fractional-CMO firm goes to $30,000. A $9,000 Strategy Pod covers strategy, creative and digital execution inside that range.</p>
-        <div class="card__foot"><a class="link-arrow" href="#economics">Read the note</a></div>
-      </article>
-      <article class="card reveal" id="pods">
-        <div class="card__media art art--1" aria-hidden="true"></div>
-        <div class="card__meta"><span>Perspective</span><span>02 September 2026</span><span>6 min read</span></div>
-        <h3 class="card__title">Why a pod beats a project, and an agency beats neither</h3>
-        <p class="card__body">A statement of work prices a deliverable and ignores the month after it. A pod prices a function. That distinction is why the second month is cheaper to run than the first, and why scope creep mostly stops being a negotiation.</p>
-        <div class="card__foot"><a class="link-arrow" href="#pods">Read the note</a></div>
-      </article>
-      <article class="card reveal" id="human">
-        <div class="card__media art art--2" aria-hidden="true"></div>
-        <div class="card__meta"><span>Field note</span><span>21 August 2026</span><span>5 min read</span></div>
-        <h3 class="card__title">Human-in-the-loop is a delivery model, not a disclaimer</h3>
-        <p class="card__body">April completes roughly half the work. A specialist completes the rest and signs it off. Written as a disclaimer it is meaningless; written as a workflow it is the reason the output survives a client review.</p>
-        <div class="card__foot"><a class="link-arrow" href="#human">Read the note</a></div>
-      </article>
-      <article class="card reveal" id="building">
-        <div class="card__media art art--3" aria-hidden="true"></div>
-        <div class="card__meta"><span>Field note</span><span>08 August 2026</span><span>8 min read</span></div>
-        <h3 class="card__title">What we are building, and why we are saying so in public</h3>
-        <p class="card__body">Most of our platform is in development. Publishing that, product by product, keeps us honest with clients and stops the roadmap from quietly becoming a promise.</p>
-        <div class="card__foot"><a class="link-arrow" href="#building">Read the note</a></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section data-reveal class="band band--light" id="newsroom">
-  <div class="wrap wrap--wide split">
-    <div class="stack">
-      <span class="eyebrow">Newsroom</span>
-      <h2>No press releases yet. Here is why that is on the page.</h2>
-      <p class="lead">The company was incorporated in May 2026. We could fill this section with announcements about partnerships and milestones, and it would read well. It would also be invented, so this section will stay empty until there is something real to put in it.</p>
-      <div class="stack stack--sm mt-5">
-        <a class="link-arrow" href="contact.html">Media enquiries</a>
-        <a class="link-arrow" href="company.html#structure">Corporate structure and facts</a>
-      </div>
-    </div>
-    <div class="card">
-      <span class="eyebrow">Events &amp; briefings</span>
-      <h3 class="card__title mt-4">Pod briefings, on request</h3>
-      <p class="card__body">We run short working sessions rather than seminars: bring a live brief, watch the portal and a pod take it apart, and leave with a credit estimate whether or not you subscribe.</p>
-      <div class="card__foot"><a class="link-arrow" href="contact.html">Book a briefing</a></div>
-    </div>
-  </div>
-</section>
-
-<section data-reveal class="band band--deep cta-band">
-  <div class="cta__aurora" aria-hidden="true"></div>
-  <div class="cta__grain" aria-hidden="true"></div>
-  <div class="wrap wrap--wide cta">
-
-    <div class="stack">
-      <span class="eyebrow eyebrow--light">Next step</span>
-      <h2 class="cta__title">Disagree with the argument? That is more useful than agreeing.</h2>
-    </div>
-    <div class="stack">
-      <p class="lead">If you think one license and one operating model is the wrong answer for your business, tell us why. It is the most useful conversation we can have.</p>
-      <div class="cta__actions">
-        <a class="btn btn--primary btn--lg" href="contact.html">Argue with us</a>
-        <a class="btn btn--onDark btn--lg" href="solutions.html">See the pods</a>
-      </div>
-      <p class="small">Delivery partners across the US, UK, EU, UAE and ANZ</p>
-    </div>
-  </div>
-</section>
 </main>
-<a class="mobile-cta" href="contact.html" data-mobile-cta>
-  <span>Book a pod briefing</span><span class="mobile-cta__arrow" aria-hidden="true">&#8594;</span>
-</a>
 <footer class="ftr">
   <div class="wrap wrap--wide ftr__top">
     <div class="ftr__brand">
       <a class="brand" href="index.html" aria-label="Quantocos Global Systems LLP — home"><img src="assets/img/quantocos-mark.png" alt="" width="24" height="24"><span>Quantocos</span></a>
-      <p class="small">GC³ — the Global Capability Center (GCC). Digital, creative, interactive, strategy and automation.</p>
+      <p class="small">GC³ — the Global Cloud Capability Center. Creative, digital, strategy, interactive, automation and real estate media on one subscription model.</p>
         <p class="micro">Named specialists work from India, overlapping your business day; some markets are served through independent delivery partners (for example Singapore).</p>
       <p class="micro"><a href="mailto:hello@quantocos.com">hello@quantocos.com</a></p>
       <div class="ftr__social">
@@ -375,176 +316,60 @@
         <a href="https://x.com/QuantocosL" aria-label="Quantocos on X (opens in new tab)" target="_blank" rel="noopener noreferrer">X</a>
         <a href="https://www.youtube.com/@quantocos" aria-label="Quantocos on YouTube (opens in new tab)" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
-      <div class="ftr__social">
-        <a href="https://www.linkedin.com/company/quantocos" aria-label="Quantocos on LinkedIn (opens in new tab)" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.youtube.com/@quantocos" aria-label="Quantocos on YouTube (opens in new tab)" target="_blank" rel="noopener noreferrer">YouTube</a>
-      </div>
-      <a class="btn btn--primary btn--sm" href="contact.html">Start a conversation</a>
+      <a class="btn btn--primary btn--sm" href="talk-to-an-expert.html">Start a conversation</a>
     </div>
     <div class="ftr__cols">
       <div class="ftr__col">
-        <h3>Pods</h3>
-        <a href="solutions/creative-pod.html">Creative — $3,000/month</a>
-        <a href="solutions/digital-pod.html">Digital — $6,000/month</a>
-        <a href="solutions/strategy-pod.html">Strategy — $9,000/month</a>
-        <a href="solutions.html">All pods</a>
+        <h3>Capabilities</h3>
+        <a href="capabilities/creative.html">Creative</a>
+        <a href="capabilities/digital.html">Digital</a>
+        <a href="capabilities/strategy.html">Strategy</a>
+        <a href="capabilities/interactive.html">Interactive</a>
+        <a href="capabilities/automation.html">Automation</a>
+        <a href="capabilities/remau.html">REMAU</a>
       </div>
       <div class="ftr__col">
         <h3>Company</h3>
-        <a href="company.html">Who we are</a>
-        <a href="onboarding.html">Onboarding: first 90 days</a>
-        <a href="contracts.html">Contract pack</a>
-        <a href="people.html">People</a>
+        <a href="company.html">About Quantocos</a>
+        <a href="why-quantocos.html">Why Quantocos</a>
+        <a href="contact.html">Contact</a>
+        <a href="resources.html">Resources</a>
       </div>
       <div class="ftr__col">
         <h3>Start here</h3>
-        <a href="pricing.html">Pricing</a>
-        <a href="gc3.html#how">How it works</a>
-        <a href="pilot.html">Pilot Sprint — $1,500</a>
-        <a href="compare.html">Pod vs agency vs freelancer</a>
-        <a href="sample-statement.html">Sample statement</a>
+        <a href="pricing.html">Plans and pricing</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="pricing.html#pilot">Pilot Sprint — $1,500</a>
         <a href="industries.html">Industries</a>
+        <a href="insights.html">Insights</a>
+        <a href="faq.html">FAQ</a>
       </div>
     </div>
   </div>
   <div class="wrap wrap--wide">
     <div class="ftr__brands">
-      <span>Products &amp; platforms</span>
-      <span>GC³</span><span>Prism</span><span>Apara</span><span>April</span><span>CoBridge</span><span>Qore</span>
+      <span>Capability tracks</span>
+      <span>Creative</span><span>Digital</span><span>Strategy</span><span>Interactive</span><span>Automation</span><span>REMAU</span>
     </div>
   </div>
   <div class="wrap wrap--wide ftr__legal">
     <div class="ftr__legal-row">
       <div class="ftr__legal-links">
-        <a href="legal.html#terms">Terms of use</a>
-        <a href="legal.html#privacy">Privacy notice</a>
-        <a href="legal.html#cookies">Cookie settings</a>
-        <a href="legal.html#accessibility">Accessibility</a>
-        <a href="legal.html#modern-slavery">Modern slavery statement</a>
+        <a href="terms.html">Terms of service</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="privacy.html#cookies">Cookies</a>
+        <a href="privacy.html#accessibility">Accessibility</a>
+        <a href="privacy.html#modern-slavery">Modern slavery statement</a>
         <a href="sitemap.xml">Sitemap</a>
       </div>
       <p class="micro" style="margin:0">© <span data-year>2026</span> Quantocos Global Systems LLP · registered identifier ACY-3556</p>
     </div>
-    <p class="ftr__legal-note">Quantocos Global Systems LLP is the parent entity of GC³ and is responsible for the services delivered through it. In some markets, services are performed by independent contracted delivery partners: they are not group offices, subsidiaries or agents of Quantocos Global Systems LLP, and they do not speak for it. GC³, Prism, Apara, April, Friday, CoBridge, Sigma, Qore, HPCF, ASTX, Caksh, QREK, QRT, D3 and the E2E framework are products and marks of Quantocos Global Systems LLP. Products described as in development are not generally available, and no roadmap date should be read as a commitment. Services are provided under a written engagement letter. See the <a href="legal.html">legal and privacy pages</a>.</p>
+    <p class="ftr__legal-note">Quantocos Global Systems LLP is the parent entity of GC³ and is responsible for the services delivered through it. In some markets, services are performed by independent contracted delivery partners: they are not group offices, subsidiaries or agents of Quantocos Global Systems LLP, and they do not speak for it. GC³, Prism, Apara, April, Friday, CoBridge, Sigma, Qore, HPCF, ASTX, Caksh, QREK, QRT, D3 and the E2E framework are products and marks of Quantocos Global Systems LLP. Products described as in development are not generally available, and no roadmap date should be read as a commitment. Services are provided under a written engagement letter. See the <a href="privacy.html">privacy policy</a> and <a href="terms.html">terms of service</a>.</p>
   </div>
 </footer>
-<div class="drawer" id="drawer" hidden>
-  <div class="drawer__head">
-      <a class="brand" href="index.html" aria-label="Quantocos Global Systems LLP — home">
-        <span class="brand__type">
-          <span class="brand__word">Quantocos</span>
-          <span class="brand__sub">Explore Possibilities.</span>
-        </span>
-      </a>
-    <button type="button" class="hdr__burger" data-drawer-close aria-label="Close menu">
-      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.6"/></svg>
-    </button>
-  </div>
-  <div class="drawer__body">
-    <div class="drawer__group"><a href="search.html">Search the site</a></div>
-    <div class="drawer__group"><a href="solutions.html">Pods &amp; pricing</a></div>
-      <div class="drawer__group">
-        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-capabilities">Capabilities <span aria-hidden="true">+</span></button>
-        <div class="drawer__sub" id="dg-capabilities">
-            <p class="mega__title">Six service catalogs</p>
-            <a href="capabilities/creative.html">Creative</a>
-            <a href="capabilities/growth.html">Growth &amp; digital marketing</a>
-            <a href="capabilities/strategy.html">Strategy &amp; consulting</a>
-            <a href="capabilities/interactive.html">Interactive &amp; XR</a>
-            <a href="capabilities/automation.html">AI &amp; automation</a>
-            <a href="capabilities/backoffice.html">Back office &amp; operations</a>
-            <p class="mega__title">How we deliver</p>
-            <a href="gc3.html#pods">The pod model</a>
-            <a href="gc3.html#how">Human review and the gates</a>
-            <a href="solutions.html#credits">Credits &amp; turnaround</a>
-            <a href="company.html#guilds">Guilds &amp; quality</a>
-        </div>
-      </div>
-      <div class="drawer__group">
-        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-industries">Industries <span aria-hidden="true">+</span></button>
-        <div class="drawer__sub" id="dg-industries">
-            <p class="mega__title">Who we serve</p>
-            <a href="industries/smb.html">Foreign SMBs &amp; mid-market</a>
-            <a href="industries/agencies.html">Agencies &amp; consultancies</a>
-            <a href="industries/real-estate.html">Real estate &amp; property</a>
-            <a href="industries/saas.html">Software &amp; SaaS</a>
-            <p class="mega__title">Sectors</p>
-            <a href="industries/professional.html">Professional services</a>
-            <a href="industries/retail.html">E-commerce &amp; retail</a>
-            <a href="industries.html">Healthcare &amp; life sciences</a>
-            <a href="industries.html">Manufacturing &amp; industrial</a>
-            <a href="industries.html">Education &amp; skilling</a>
-            <a href="industries.html">Travel &amp; hospitality</a>
-        </div>
-      </div>
-      <div class="drawer__group"><a href="gc3.html#how">How it works</a></div>
-      <div class="drawer__group">
-        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-company">Company <span aria-hidden="true">+</span></button>
-        <div class="drawer__sub" id="dg-company">
-            <p class="mega__title">The group</p>
-            <a href="company.html">Who we are</a>
-            <a href="company.html#organization">How GC³ is organised</a>
-            <a href="company.html#guilds">Guilds &amp; quality</a>
-            <a href="company.html#structure">Corporate structure</a>
-            <p class="mega__title">Accountability</p>
-            <a href="security.html">Security &amp; compliance</a>
-            <a href="contracts.html">The contract pack</a>
-            <a href="careers.html">Careers</a>
-            <a href="contact.html">Talk to us</a>
-        </div>
-      </div>
-      <div class="drawer__group">
-        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-platform">Platform <span aria-hidden="true">+</span></button>
-        <div class="drawer__sub" id="dg-platform">
-            <p class="mega__title">Capability center</p>
-            <a href="gc3.html">GC³ Capability Center</a>
-            <a href="prism.html">Prism — seven surfaces</a>
-            <a href="products/portal.html">GC³ Portal</a>
-            <p class="mega__title">Agents &amp; layers</p>
-            <a href="products/april.html">April — company agent</a>
-            <a href="products/apara.html">Apara — cloud layer</a>
-            <a href="products/friday.html">Friday — device agent</a>
-            <a href="products/cobridge.html">CoBridge — agent comms</a>
-            <a href="products/sigma.html">Sigma — memory layer</a>
-            <a href="products/qore.html">Qore — knowledge</a>
-            <a href="products/cpiu.html">CPIU — pod intelligence</a>
-            <p class="mega__title">Systems &amp; instruments</p>
-            <a href="products/d3.html">D3 — document verification</a>
-            <a href="products/hpcf.html">HPCF — people &amp; culture</a>
-            <a href="products/astx.html">ASTX — systems thinking</a>
-            <a href="products/caksh.html">Caksh — ontological research</a>
-            <a href="products/qrek.html">QREK &amp; QRT</a>
-            <a href="products/lxp.html">LXP — E2E learning</a>
-            <a href="products.html">Every product</a>
-        </div>
-      </div>
-      <div class="drawer__group">
-        <button type="button" data-drawer-toggle aria-expanded="false" aria-controls="dg-more">More <span aria-hidden="true">+</span></button>
-        <div class="drawer__sub" id="dg-more">
-            <p class="mega__title">Reading</p>
-            <a href="insights.html">Insights</a>
-            <a href="insights.html#newsroom">Newsroom</a>
-            <a href="glossary.html">Glossary</a>
-            <p class="mega__title">Compare</p>
-            <a href="compare.html">Pod vs agency vs freelancer</a>
-            <a href="proof.html">Proof</a>
-            <a href="legal.html">Legal &amp; privacy</a>
-        </div>
-      </div>
-  </div><div class="drawer__foot">
-    <a class="btn btn--primary btn--block" href="contact.html">Start a conversation</a>
-    <a class="btn btn--ghost btn--block" href="contact.html">Request portal access</a>
-  </div>
-</div>
-  <script src="assets/js/site.bundle.js?v=20261124" defer></script>
-<script src"assets/js/page-extras.js?v=20261124c" defer></script>
-  <script src"assets/js/motion.js?v=20261124e" defer></script>
-<script src="assets/js/site-2026.js?v=20261124" defer></script>
-<script src="assets/js/components.js?v=20261124" defer></script>
-<div class="mcta" aria-label="Quick actions"><a class="btn btn--primary" href="contact.html" data-cta="mcta-briefing">Book a briefing</a><a class="btn btn--ghost" href="pricing.html" data-cta="mcta-pricing">Pricing</a></div>
-<script src="assets/js/a11y.js?v=1"></script>
-<script src="assets/js/motion-fx.js?v=7" defer></script>
-<script src="assets/js/contrast-guard.js?v=4" defer></script>
-<script src="assets/js/rgb.js?v=1" defer></script>
+
+<script src="assets/js/motion.js" defer></script>
+<script src="assets/v2/site.js" defer></script>
+<script src="assets/v2/inner.js" defer></script>
 </body>
 </html>

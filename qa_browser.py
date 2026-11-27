@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""qa_browser.py — browser QA for every page at 1440 and 390.
+"""qa_browser.py — browser QA for every page at 7 viewport widths.
 
 Requires: pip install playwright && playwright install chromium
 Run:      python qa_browser.py            (all pages)
           python qa_browser.py index.html  (one page)
 
-Checks per page/width: console errors = 0 · wheel scroll moves the page · every
-inter-page link has target=_blank + rel · no horizontal overflow · animation hooks
-present · contrast failures (computed) · CLS via PerformanceObserver.
+Checks per page/width (1920/1440/1280/1024/768/430/390): console errors = 0 ·
+wheel scroll moves the page · internal links stay in the same tab, external
+links open in a new tab with rel noopener noreferrer · no horizontal overflow ·
+animation hooks present · contrast failures (alpha-composited) · CLS via
+PerformanceObserver. Redirect stubs and non-page HTML are skipped.
 Writes screenshots to QA/shots/<page>-<width>.png and, on the first run, a 15 s
 scroll recording of the homepage to QA/home-scroll.webm.
 """
@@ -26,10 +28,28 @@ CONTRAST_JS = r"""
   function lum(c){const [r,g,b]=c.map(v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)});
     return .2126*r+.7152*g+.0722*b}
   function parse(s){const m=s.match(/[\d.]+/g);return m?m.slice(0,4).map(Number):null}
-  function bg(el){let n=el;while(n&&n!==document.documentElement){const cs=getComputedStyle(n);
-    if(cs.backgroundImage!=='none')return null;const b=parse(cs.backgroundColor);
-    if(b&&(b[3]===undefined||b[3]>.9))return b;n=n.parentElement}return [255,255,255]}
-  let bad=0, tot=0;
+  /* composite translucent backgrounds up the ancestor chain instead of
+     skipping them: the fixed header is rgba(8,11,18,.72) glass over the page */
+  function bg(el){
+    const layers=[];
+    for(let n=el;n;n=n.parentElement){
+      const cs=getComputedStyle(n);
+      if(cs.backgroundImage!=='none'&&!layers.some(l=>l[3]>=0.999)) return null; // text over imagery: skip
+      const c=parse(cs.backgroundColor);
+      if(c){
+        const a=c[3]===undefined?1:c[3];
+        if(a>0){layers.push([c[0],c[1],c[2],a]); if(a>=0.999) break;}
+      }
+      if(n===document.documentElement) break;
+    }
+    let base=[255,255,255];
+    for(let i=layers.length-1;i>=0;i--){
+      const [r,g,b,a]=layers[i];
+      base=[r*a+base[0]*(1-a), g*a+base[1]*(1-a), b*a+base[2]*(1-a)];
+    }
+    return base;
+  }
+  let bad=0, tot=0, samples=[];
   document.querySelectorAll('p,h1,h2,h3,h4,li,a,span,summary,button,td,th,small,b').forEach(el=>{
     const t=(el.textContent||'').trim(); if(!t||el.children.length)return;
     if(el.classList.contains('sr-only'))return;
@@ -40,9 +60,9 @@ CONTRAST_JS = r"""
     const r=(Math.max(L1,L2)+.05)/(Math.min(L1,L2)+.05);
     const size=parseFloat(cs.fontSize), bold=parseInt(cs.fontWeight)>=600;
     const need=(size>=24||(size>=18.66&&bold))?3:4.5;
-    if(r<need) bad++;
+    if(r<need){bad++; if(samples.length<5) samples.push((el.tagName+' '+(el.className||'')).trim()+': '+t.slice(0,40)+' ratio '+Math.round(r*100)/100);}
   });
-  return {checked: tot, failing: bad};
+  return {checked: tot, failing: bad, samples};
 })()
 """
 
@@ -55,7 +75,7 @@ async def run_one(ctx, page_path: Path, width: int, rec: bool):
             return
         # file:// loads report missing optional assets as console errors; keep them
         # separately so a real script error is never hidden by that noise
-        if "Failed to load resource" in m.text:
+        if "Failed to load resource" in m.text or ("blocked by CORS policy" in m.text and "font at" in m.text):
             errors.append("RESOURCE " + m.text)
         else:
             errors.append("JS " + m.text)
@@ -77,14 +97,18 @@ async def run_one(ctx, page_path: Path, width: int, rec: bool):
         progress: !!document.querySelector('[data-scroll-progress]'),
         motion: !!window.__motion })""")
     contrast = await page.evaluate(CONTRAST_JS)
-    links = await page.evaluate("""(() => {
+    links = await page.evaluate(r"""(() => {
         const bad = [];
         document.querySelectorAll('a[href]').forEach(a => {
           const h = a.getAttribute('href');
           if (!h || h.startsWith('#') || /^(mailto:|tel:|javascript:)/.test(h)) return;
-          if (a.classList.contains('brand')) return;
-          if (a.target !== '_blank') bad.push('target ' + h);
-          else if (!/noopener/.test(a.rel) || !/noreferrer/.test(a.rel)) bad.push('rel ' + h);
+          const ext = /^(https?:)?\/\//.test(h) && !/quantocos\.com/.test(h);
+          if (ext) {
+            if (a.target !== '_blank') bad.push('ext target ' + h);
+            else if (!/noopener/.test(a.rel) || !/noreferrer/.test(a.rel)) bad.push('ext rel ' + h);
+          } else if (a.target === '_blank') {
+            bad.push('internal new tab ' + h);
+          }
         });
         return bad.slice(0, 8);
     })()""")
@@ -116,15 +140,25 @@ async def main():
         print("playwright not installed: pip install playwright && playwright install chromium")
         return 2
 
-    pages = sorted(p for p in ROOT.rglob("*.html")
-                   if not p.name.endswith(".backup.html") and "partials" not in p.parts)
+    pages = []
+    for p in sorted(ROOT.rglob("*.html")):
+        rel = p.relative_to(ROOT)
+        if len(rel.parts) > 2 or "partials" in rel.parts or "_planning" in rel.parts:
+            continue  # internal planning artefacts and non-page HTML are not website pages
+        if p.name.endswith(".backup.html"):
+            continue
+        if 'http-equiv="refresh"' in p.read_text(encoding="utf-8", errors="ignore"):
+            continue  # compatibility redirect stub
+        pages.append(p)
     if len(sys.argv) > 1:
         pages = [p for p in pages if p.name == sys.argv[1]]
 
     results = []
     async with async_playwright() as pw:
         browser = await pw.chromium.launch()
-        for width, height, mobile in ((1440, 900, False), (390, 844, True)):
+        for width, height, mobile in ((1920, 1080, False), (1440, 900, False),
+                                      (1280, 800, False), (1024, 768, False),
+                                      (768, 1024, True), (430, 932, True), (390, 844, True)):
             ctx = await browser.new_context(viewport={"width": width, "height": height},
                                             is_mobile=mobile, has_touch=mobile,
                                             record_video_dir=str(QA / "video") if width == 1440 else None,

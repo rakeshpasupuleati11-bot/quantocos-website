@@ -115,22 +115,17 @@
   window.addEventListener('resize', onScroll);
 
 
-  /* ---------- 9. internal links open in a new tab ---------- */
+  /* ---------- 9. external links open in a new tab ---------- */
+  /* Internal links stay in the same tab (back button, no 30 "opens in a new
+     tab" announcements per page). Only off-site destinations get a new tab;
+     target=_blank is also declared in the markup, this is the JS fallback. */
   (function newTab(){
-    var here = location.pathname.split('/').pop() || 'index.html';
     [].slice.call(document.querySelectorAll('a[href]')).forEach(function (a) {
       var h = a.getAttribute('href');
-      if (!h || h.charAt(0) === '#' || /^(mailto:|tel:|javascript:)/i.test(h)) return;
-      if (!/\.html/i.test(h)) return;
-      if (h.split('#')[0].split('/').pop() === here) return;
-      a.target = '_blank';
-      a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener';
-      if (!a.querySelector('.sr-only')) {
-        var s = document.createElement('span');
-        s.className = 'sr-only';
-        s.textContent = ' (opens in a new tab)';
-        a.appendChild(s);
-      }
+      if (!h || !/^https?:/i.test(h)) return;
+      if (!/^https?:\/\/(www\.)?(linkedin|instagram|facebook|x|youtube)\./i.test(h)) return;
+      if (a.target !== '_blank') a.target = '_blank';
+      if (!/noopener/.test(a.rel || '')) a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
     });
   })();
 

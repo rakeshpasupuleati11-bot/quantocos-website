@@ -65,6 +65,8 @@ def main(check_only: bool) -> int:
     written, drift = [], []
     for f, rel in pages():
         html = f.read_text(encoding="utf-8")
+        if 'http-equiv="refresh"' in html:
+            continue  # compatibility redirect stub: no shared chrome
         prefix = "../" if len(rel.parts) == 2 else ""
         home_pricing = "#pricing" if rel.as_posix() == "index.html" else f"{prefix}index.html#pricing"
         want = {
@@ -75,13 +77,12 @@ def main(check_only: bool) -> int:
         out = html
         # replace from the end so earlier offsets stay valid
         spots = blocks(html)
-        for key in ("drawer", "footer", "nav"):
-            span = spots[key]
-            if not span:
-                print(f"  ! {rel}: no {key} block found")
-                continue
-            a, b = span
+        for key, (a, b) in sorted(
+                ((k, v) for k, v in spots.items() if v), key=lambda kv: kv[1][0], reverse=True):
             out = out[:a] + want[key] + out[b:]
+        for key in ("drawer", "footer", "nav"):
+            if not spots[key]:
+                print(f"  ! {rel}: no {key} block found")
         if out != html:
             if check_only:
                 drift.append(str(rel))
