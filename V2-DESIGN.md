@@ -52,3 +52,15 @@ five seconds: what it is, what it solves, what it costs, how to start.
 One H1; semantic headings; body contrast ≥4.5:1 (footer greys ≥.58 on void); visible
 focus; skip link; 44px targets; alt + width + height on every image; keyboard-operable
 nav, mega menu, drawer, calculator and FAQ.
+
+## Type floor and CTA hierarchy
+
+Functional micro text (labels, eyebrows, breadcrumbs, table headers, legal notes, chips,
+form labels, calculator notes) is **12px minimum**; the footer legal note is 12.5px.
+This floor lives at the end of `assets/v2/section-inner.css`; do not reintroduce 10–11.5px
+functional text on inner pages.
+
+One primary action label across all pages: **Book a Discovery Call** → `contact.html`.
+Secondary labels stay specific to their action ("Explore Pods & Pricing", "See the full
+delivery model", "Discuss my configuration"). The footer CTA label matches its destination:
+"Talk to an expert" → `talk-to-an-expert.html`. Never pair one label with two destinations.

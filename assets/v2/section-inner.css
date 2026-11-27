@@ -383,3 +383,10 @@ a.pcard:hover .pcard__link svg{transform:translateX(4px)}
   .pcalc__row--out{grid-template-columns:1fr;gap:6px}
   .pform__actions .btn{width:100%}
 }
+
+/* Legibility floor (WCAG 2.2 AA): functional micro text at 12px or above */
+.ftr__legal-note{font-size:12.5px}
+.phero__crumb,.pnav a,.phero__tag,.problem__n,.eyebrow,.pcard__meta,.card__index,.terms,
+.panel__label,.pod__tag,.pod__credits,.field label,.calc__stat dt,.compare thead th,
+.calc__fine,.cta__fine,.ftr__col h3,.ftr__legal-row .micro,.ftr__brands,.micro,.chip,
+.pform__note,.pp-foot{font-size:12px}
