@@ -533,3 +533,7 @@ html.rgb-paused #problems .hp-probs li::after { animation-play-state: paused; }
 .eyebrow,.story-block__label,.storycard__vlabel,.storycard__label,.panel__fine,.panel__rec,
 .versus-note,.dctrl__rate,.micro,.chip,.podsel__meta,.cap__tag,.hp-info__label,
 .storycard__theme,.presets__label,.ftr__legal-note{font-size:12px}
+/* Contrast on the labels raised to 12px */
+.dctrl__rate{color:rgba(245,244,239,.64)}
+.podsel__meta{color:rgba(245,244,239,.64)}
+.podsel.is-on .podsel__meta{color:rgba(245,244,239,.92)}
