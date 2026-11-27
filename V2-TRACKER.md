@@ -80,3 +80,19 @@ Live Lighthouse (mobile, lab): home 96/100/100/100, pricing 99/100/96/100, creat
 
 Blocked on the owner: form endpoint URL, booking service, analytics IDs, and the people/terms
 sign-offs listed above.
+
+## 2026-11-27 — Legibility, CTA and font-shift closure (deployed)
+
+- Type floor: functional micro text ≥12px on all inner pages (footer legal note 12.5px);
+  homepage labels raised to 12px. Lighthouse font-size: home 73.1 → 98.0%, pricing
+  59.1 → 99.2%, creative 52.6 → 99.6%. Best Practices 96 → 100 on both inner pages.
+- One primary action label: "Book a Discovery Call" → contact.html on all 30 pages;
+  footer CTA now reads "Talk to an expert" and matches its destination.
+- Font shift: metric-matched `'Inter Fallback'` (Arial, size-adjust 107.36%) in every
+  stack; live homepage CLS 0.288 → 0 with the preload intact.
+- Governance: `UI-UX-CHECKLIST.md` added; `V2-DESIGN.md` records the type floor, CTA rule
+  and font-loading contract.
+- Live Lighthouse (mobile lab): home 97/100/100/100 (LCP 2.3s, CLS 0, TBT 0 ms),
+  pricing 99/100/100/100 (1.6s), creative 99/100/100/100 (1.8s). 30/30 routes 200.
+- Commits: 6c4ef76, d8ae55c, 18dc490, d1f1991.
+- Owner-blocked: form endpoint, booking link, analytics ID, trust assets.
