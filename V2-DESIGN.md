@@ -64,3 +64,9 @@ One primary action label across all pages: **Book a Discovery Call** → `contac
 Secondary labels stay specific to their action ("Explore Pods & Pricing", "See the full
 delivery model", "Discuss my configuration"). The footer CTA label matches its destination:
 "Talk to an expert" → `talk-to-an-expert.html`. Never pair one label with two destinations.
+
+## Font loading
+
+One variable Inter file, preloaded, `font-display:swap`, with a metric-matched
+`'Inter Fallback'` face (`local('Arial')`, size-adjust 107.36%) in every stack so the swap
+causes no layout shift. Keep the preload and the fallback together; either alone lets CLS return.
