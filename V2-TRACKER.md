@@ -58,3 +58,25 @@ Updated 2026-11-25. Branch `redesign-v2` (baseline `edc5bf0`, cleanup `3cd643e`)
 1. Apply the V2 template to the ~21 primary commercial pages; merge thin pages with redirects.
 2. Full QA: Lighthouse (95+ desktop, 90+ mobile), contrast sweep, unused CSS, responsive, broken links.
 3. Deploy on explicit approval to `srinivasgonam/quantocos-gc3-website`.
+
+## 2026-11-27 — Measured quality gap closure (deployed)
+
+Commits `eea8f09`, `f63d335`, `034b0b6` on `main`, live at
+https://rakeshpasupuleati11-bot.github.io/quantocos-website/.
+
+- **Contrast.** Four homepage strings below WCAG AA raised to token values (pricing foot note,
+  planner preset label, comparison note, FAQ mono label). Lighthouse color-contrast now 1.0.
+- **CLS.** Inter variable WOFF2 preloaded ahead of the stylesheets; hero LCP image changed from
+  `fetchpriority="low"` to `high`. Live homepage CLS 0.288 → 0.
+- **Manifest.** Icon and `start_url` paths made relative (they 404'd on the project URL) and the
+  missing 512 icon entry removed. Live homepage best practices 96 → 100.
+- **Forms.** `inner.js` now posts JSON to `data-endpoint` when one is set, with only real
+  pending/error/success states. No endpoint is set, so the honest mailto fallback remains.
+- **Copy.** Hero names the buyer (owner-run company) and the published-price property; the pricing
+  calculator lists five catalog line items at $25 a credit (credits and USD from `services.json`).
+
+Live Lighthouse (mobile, lab): home 96/100/100/100, pricing 99/100/96/100, creative 99/100/96/100
+(perf/a11y/BP/SEO). Remaining BP deduction is the sub-12px type heuristic only.
+
+Blocked on the owner: form endpoint URL, booking service, analytics IDs, and the people/terms
+sign-offs listed above.
