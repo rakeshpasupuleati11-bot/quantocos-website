@@ -203,3 +203,18 @@ sign-offs listed above.
 - **Still BLOCKED on external input:** booking URL (calendar embed), form endpoint, GA4/Plausible
   ID + consent banner copy, real proof assets/case studies, unused-credit policy, US presence
   facts, real India↔US overlap hours, and the contact merge that needs server-side 301s.
+
+### 2026-11-27 — Live verification and launch decision (directive 0070 follow-up)
+
+- Live commit `ffbbe51`. 30/30 routes return 200; every route has one canonical and one H1;
+  sitemap serves 30 URLs; robots.txt references it; homepage JSON-LD graph parses as
+  Organization, WebSite, WebPage, Service, FAQPage.
+- `terms.html` meta/og/twitter description trimmed 156 → 142 characters to meet the 155 limit.
+- Lighthouse mobile, live homepage: 98 performance / 100 accessibility / 100 best-practices /
+  100 SEO; LCP 2.2 s, CLS 0, TBT 0 ms. Single run.
+- axe on the live homepage and contact page at 1440 and 390: 0 violations, 0 console errors,
+  no horizontal overflow.
+- `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.
+- **Decision: conditional GO.** Publish now for organic and direct traffic. NO-GO for paid or
+  campaign traffic until a form endpoint, GA4/Plausible with a consent banner, a booking URL and
+  real proof assets exist — without them the funnel cannot capture a pilot request or be measured.
