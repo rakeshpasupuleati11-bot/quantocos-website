@@ -70,3 +70,46 @@ delivery model", "Discuss my configuration"). The footer CTA label matches its d
 One variable Inter file, preloaded, `font-display:swap`, with a metric-matched
 `'Inter Fallback'` face (`local('Arial')`, size-adjust 107.36%) in every stack so the swap
 causes no layout shift. Keep the preload and the fallback together; either alone lets CLS return.
+
+## Conversion layer (`assets/v2/conversion.js`)
+
+One file, loaded on every content page before the other v2 scripts. It activates only
+from an approved config object placed **before** it on the page; with no config it is inert
+except for local event capture.
+
+```html
+<script>window.QC_CONFIG={endpoint:"https://…",booking:"https://cal.com/…",
+ga4:"G-XXXXXXXX",plausibleDomain:"quantocos.com",consent:true};</script>
+<script src="assets/v2/conversion.js?v=1" defer></script>
+```
+
+| Key | Effect when set | Required |
+|---|---|---|
+| `endpoint` | Sets `data-endpoint` on every `form[data-form]`; hides the "not connected" copy, shows `[data-when-wired]`, relabels the button "Send enquiry". POST JSON, 2xx = received. | HTTPS, CORS for the Pages origin |
+| `booking` | Rewrites every "Book a Discovery Call" anchor to the scheduler (new tab). | Cal.com/Calendly link |
+| `ga4` + `consent:true` | Loads gtag once, `anonymize_ip`. | `G-` ID |
+| `plausibleDomain` + `consent:true` | Loads the Plausible script. | domain |
+
+Never place a secret in `QC_CONFIG` — the endpoint URL is public by nature; tokens are not.
+
+**Events** (`window.__qcEvents` locally, `dataLayer`, gtag and Plausible when active):
+`page_view`, `pricing_view`, `capability_view`, `cta_click`, `pod_select`, `calc_use`,
+`form_start`, `form_error`, `generate_lead`. No personal data is included; values are
+whitelisted, capped at 64 characters.
+
+**What is not a conversion:** `cta_click`, `mailto` hand-off and form preparation are
+interactions. `generate_lead` fires only on a 2xx endpoint response. `booking_complete` and
+`subscription_started` need scheduler/CRM confirmation and are not emitted client-side.
+
+**Funnel definitions** — same period, same denominator:
+visitor→inquiry = `generate_lead` ÷ sessions; inquiry→qualified = qualified ÷ inquiries (CRM);
+qualified→discovery = discovery held ÷ qualified (CRM); visitor→subscription = new paid pods ÷ sessions.
+Form abandonment = `form_start` − `generate_lead`. Pricing engagement = `pricing_view` ÷ sessions.
+
+**Intent carry-over:** `?plan=` / `?cap=` win; otherwise the last pod selection, capability page
+or referrer capability is used. The form shows "Enquiry about: …", carries hidden `plan`/
+`capability` fields and appends the context to the email subject.
+
+**Trust components (prepared, not rendered):** `.trust` band with `.trust__item` slots for
+verified logo, quote + attribution, or case-study link; place directly above the pricing table
+and beside the consultation form. Publish only approved assets — empty slots stay out of the DOM.

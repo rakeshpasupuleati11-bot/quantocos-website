@@ -185,9 +185,11 @@
         }).then(function (res) {
           if (!res.ok) throw new Error("HTTP " + res.status);
           say(status, "ok", "Received. Your details reached the team; a written reply comes from hello@quantocos.com.");
+          form.dispatchEvent(new CustomEvent("qc:lead"));
           form.reset();
         }).catch(function () {
           say(status, "error", "That did not send. Write to hello@quantocos.com, or", "send these details from your mail app", href);
+          form.dispatchEvent(new CustomEvent("qc:error"));
         }).then(function () {
           if (submit) submit.disabled = false;
         });

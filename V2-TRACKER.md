@@ -96,3 +96,12 @@ sign-offs listed above.
   pricing 99/100/100/100 (1.6s), creative 99/100/100/100 (1.8s). 30/30 routes 200.
 - Commits: 6c4ef76, d8ae55c, 18dc490, d1f1991.
 - Owner-blocked: form endpoint, booking link, analytics ID, trust assets.
+
+
+## 2026-11-27 — Conversion readiness layer (deployed)
+
+- `assets/v2/conversion.js`: event bus (`__qcEvents`, dataLayer, gtag/Plausible when configured), intent carry-over, endpoint/booking activation, CTA/pod/calculator/form events.
+- Contact and expert forms: capability context from `?plan`/`?cap`, pod selection or capability referrer; hidden plan/capability fields; subject carries context; constraints field now optional.
+- Endpoint activation flips the "not connected" copy and button label in one place; live submission stays BLOCKED until an approved endpoint is configured.
+- Booking CTA rewires to a scheduler only when `QC_CONFIG.booking` is supplied; otherwise the interim form page remains.
+- Measured locally: prefill, cta_click, calc_use, intent carry-over, 2xx `generate_lead`, booking rewrite — all pass. Live analytics BLOCKED (no ID/consent), trust assets DEFERRED.

@@ -242,6 +242,9 @@ a.pcard:hover .pcard__link svg{transform:translateX(4px)}
 .pform input:user-invalid,.pform select:user-invalid,.pform textarea:user-invalid{border-color:#B3261E}
 .pform__actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:4px}
 .pform__note{font-size:12.5px;color:var(--bindu-ink-3);max-width:52ch}
+.phero__stat[hidden]{display:none}
+.pform__context{margin:0;padding:10px 14px;border-radius:var(--bindu-r-md);border:1px solid rgba(201,145,26,.35);background:var(--bindu-soma-wash);font-size:14px;line-height:1.5;color:var(--bindu-ink)}
+.optional{font-weight:400;color:var(--bindu-ink-3)}
 .pform__status{font-size:14px;line-height:1.6;padding:12px 14px;border-radius:var(--bindu-r-md);border:1px solid var(--bindu-line-strong)}
 .pform__status[data-state="error"]{border-color:rgba(179,38,30,.5);background:rgba(179,38,30,.06);color:#7A1A15}
 .pform__status[data-state="ok"]{border-color:rgba(139,100,16,.5);background:var(--bindu-soma-wash);color:var(--bindu-ink)}
