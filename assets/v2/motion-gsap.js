@@ -79,6 +79,16 @@
     });
   });
 
-  /* keep scrubbed values correct after fonts and images settle */
-  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+  /* Only refresh triggers that are on screen; the rest measure on entry. */
+  ScrollTrigger.config({ limitCallbacks: true });
+
+  /* keep scrubbed values correct after fonts and images settle — off the critical path,
+     so the refresh never lands inside the load task. */
+  window.addEventListener('load', function () {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(function () { ScrollTrigger.refresh(); }, { timeout: 2500 });
+    } else {
+      window.setTimeout(function () { ScrollTrigger.refresh(); }, 300);
+    }
+  });
 })();
