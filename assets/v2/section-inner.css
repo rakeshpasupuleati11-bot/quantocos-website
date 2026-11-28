@@ -268,6 +268,11 @@ a.pcard:hover .pcard__link svg{transform:translateX(4px)}
 .pdiagram svg{width:100%;height:auto}
 .pdiagram--dark{background:var(--bindu-void);border-color:rgba(255,255,255,.1)}
 .pdiagram{width:100%}
+/* below 768px a diagram keeps a legible scale and scrolls inside its frame */
+@media (max-width:768px){
+  .psplit__art{overflow-x:auto;place-items:center start}
+  .psplit__art>.pdiagram{min-width:520px}
+}
 .pdiagram figcaption{margin-top:14px;font-family:var(--bindu-font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--bindu-ink-3);text-transform:uppercase}
 .pdiagram--dark figcaption{color:rgba(250,248,242,.5)}
 .dg-line{stroke:rgba(10,10,10,.34);stroke-width:1.2}
