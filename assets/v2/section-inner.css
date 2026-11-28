@@ -274,7 +274,7 @@ a.pcard:hover .pcard__link svg{transform:translateX(4px)}
 .dg-node{fill:var(--bindu-paper);stroke:rgba(10,10,10,.3);stroke-width:1.2}
 .dg-node--gold{fill:var(--bindu-soma-wash);stroke:rgba(201,164,76,.45)}
 .dg-text{font-family:'Inter',system-ui,sans-serif;font-size:12px;font-weight:500;fill:var(--bindu-ink)}
-.dg-label{font-family:'Inter',system-ui,sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;fill:var(--bindu-ink-3)}
+.dg-label{font-family:'Inter',system-ui,sans-serif;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;fill:var(--bindu-ink-3)}
 .pdiagram--dark .dg-line{stroke:rgba(201,164,76,.5)}
 .pdiagram--dark .dg-node{fill:rgba(250,248,242,.05);stroke:rgba(250,248,242,.3)}
 .pdiagram--dark .dg-text{fill:var(--bindu-on-dark)}
