@@ -301,3 +301,32 @@ sign-offs listed above.
   proof `clip-path` reaches `inset(0%)`; reduced motion `animationName=none` and
   zero split words; zero horizontal overflow at 1440 / 820 / 390; 6 cards on mobile.
 - `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.
+
+- Deployed 229f795, 8d1b7f1 and 344a7b4. Live index.html and both signature assets are
+  byte-identical to local (SHA-256); live Lighthouse 100 performance, 100 accessibility,
+  100 best practices, 100 SEO; LCP 0.5 s, CLS 0, TBT 0 ms.
+
+### 2026-11-28 — Inner-page motion presets (29 routes)
+
+- One shared layer, `assets/v2/page-motion.css`, loaded after `section-inner-dark.css`
+  on the 29 canonical inner routes (homepage keeps `home-signature.css`); no new JS,
+  no second observer. Hidden states exist only under `html.reveal-armed`, which
+  `motion.js` adds when it will also reveal, and reduced motion removes every clip,
+  filter and transition.
+- Family treatments replace the generic rise: creative plates open upward from a mat;
+  digital sweeps in from the right edge; strategy wipes section headings left to right;
+  interactive pulls copy into focus from blur; automation fills track steps upward;
+  REMAU wipes architecture down from the top; solutions and industries reveal from
+  the side; company, insights and resources use the editorial plate wipe; pricing
+  lights the existing gold card rule and wipes each plate open in sequence; GC³
+  energises diagram nodes and lines with the adjacent copy (gated by `:has()` support,
+  visible without it).
+- QA (`QA/page_motion_check.py`, local file://): every revealed target ends at
+  `clip-path:none` / `filter:none` / opacity 1; GC³ nodes 0 → 1 as their copy enters;
+  pricing animation `pm-plate-in` with the gold rule at opacity 1 and hover lift still
+  working; reduced motion animation `none`, clip `none`; zero horizontal overflow at
+  1440 / 820 / 390 on creative and pricing; no console errors beyond file:// font CORS.
+- `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.
+- Blocker: this is a family-level system, not 30 bespoke pages. Per-page compositions
+  from the reference library remain phased work; no booking/CRM endpoint, approved
+  team photography, testimonials or client logos exist, and forms are still unwired.

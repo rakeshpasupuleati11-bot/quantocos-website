@@ -1,0 +1,114 @@
+/* page-motion.css — one motion language across the inner routes.
+   Loaded after site.css, so these are deliberate replacements for the
+   generic rise, not additions to it. Every hidden state is gated on
+   `.reveal-armed`, which motion.js adds only when it will also reveal;
+   without JS the page renders complete. */
+
+/* ── shared: each family moves one kind of edge ───────────────── */
+body[data-page] .phero__art { transition: opacity .7s var(--bindu-ease), clip-path 1s var(--bindu-ease), filter .8s var(--bindu-ease); }
+body[data-page] .section-head { transition: opacity .7s var(--bindu-ease), clip-path 1s var(--bindu-ease), transform .7s var(--bindu-ease), filter .8s var(--bindu-ease); }
+body[data-page] .pbento__cell { transition: opacity .6s var(--bindu-ease), clip-path .8s var(--bindu-ease), transform var(--bindu-dur-slow) var(--bindu-ease), box-shadow var(--bindu-dur-slow), border-color var(--bindu-dur) var(--bindu-ease); }
+body[data-page] .pbento__cell:hover { border-color: rgba(201,164,76,.42); }
+
+/* ── capability-creative: gallery mat, plates open upward ─────── */
+.reveal-armed body[data-page="capability-creative"] .phero__art:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(0 0 100% 0);
+}
+.reveal-armed body[data-page="capability-creative"] .pbento__cell:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(0 0 100% 0);
+}
+
+/* ── capability-digital: scan from the right edge ─────────────── */
+.reveal-armed body[data-page="capability-digital"] .phero__art:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(0 0 0 100%);
+}
+.reveal-armed body[data-page="capability-digital"] .section-head:not(.is-in) {
+  opacity: 0; transform: none; clip-path: inset(0 0 0 100%);
+}
+
+/* ── capability-strategy: typographic wipes, left to right ────── */
+.reveal-armed body[data-page="capability-strategy"] .section-head:not(.is-in) {
+  opacity: 0; transform: none; clip-path: inset(0 100% 0 0);
+}
+.reveal-armed body[data-page="capability-strategy"] .phero__art:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(0 0 100% 0);
+}
+
+/* ── capability-interactive: focus pull ───────────────────────── */
+.reveal-armed body[data-page="capability-interactive"] .section-head:not(.is-in),
+.reveal-armed body[data-page="capability-interactive"] .psplit__copy:not(.is-in) {
+  opacity: 0; transform: none; filter: blur(9px);
+}
+.reveal-armed body[data-page="capability-interactive"] .phero__art:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(6% 6% 6% 6% round 14px);
+}
+body[data-page="capability-interactive"] .psplit__copy { transition: opacity .7s var(--bindu-ease), filter .8s var(--bindu-ease); }
+
+/* ── capability-automation: pipeline fills upward ─────────────── */
+.reveal-armed body[data-page="capability-automation"] .phero__art:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(0 0 100% 0);
+}
+.reveal-armed body[data-page="capability-automation"] .ptrack__step:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(0 0 100% 0);
+}
+body[data-page="capability-automation"] .ptrack__step { transition: opacity .6s var(--bindu-ease), clip-path .7s var(--bindu-ease); }
+
+/* ── capability-remau: architectural wipe from the top ────────── */
+.reveal-armed body[data-page="capability-remau"] .phero__art:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(100% 0 0 0);
+}
+.reveal-armed body[data-page="capability-remau"] .section-head:not(.is-in) {
+  opacity: 0; transform: none; clip-path: inset(100% 0 0 0);
+}
+
+/* ── solutions and industries: narrative side reveal ──────────── */
+.reveal-armed body:is([data-page^="solution-"],[data-page^="industry-"]) .phero__art:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(0 0 0 100%);
+}
+.reveal-armed body:is([data-page^="solution-"],[data-page^="industry-"]) .section-head:not(.is-in) {
+  opacity: 0; transform: none; clip-path: inset(0 100% 0 0);
+}
+
+/* ── company, insights, resources: editorial plate reveal ─────── */
+.reveal-armed body:is([data-page="company"],[data-page="insights"],[data-page="resources"],[data-page="how-it-works"],[data-page="why-quantocos"],[data-page="expert"]) .phero__art:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(0 0 100% 0);
+}
+
+/* ── pricing: the published price gets the gold rule ──────────── */
+.reveal-armed body[data-page="pricing"] .phero__art:not(.is-in) {
+  opacity: 1; transform: none; clip-path: inset(0 0 100% 0);
+}
+/* the cards already carry a gold grain rule that only lit on hover;
+   on reveal it lights in sequence, and each plate wipes open */
+body[data-page="pricing"] .pgrid.is-in .pcard::before { opacity: 1; }
+body[data-page="pricing"] .pgrid.is-in .pcard:nth-child(2)::before { transition-delay: .08s; }
+body[data-page="pricing"] .pgrid.is-in .pcard:nth-child(3)::before { transition-delay: .16s; }
+@keyframes pm-plate-in { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+body[data-page="pricing"] .pgrid.is-in .pcard { animation: pm-plate-in .75s var(--bindu-ease) both; }
+body[data-page="pricing"] .pgrid.is-in .pcard:nth-child(2) { animation-delay: .09s; }
+body[data-page="pricing"] .pgrid.is-in .pcard:nth-child(3) { animation-delay: .18s; }
+
+/* ── gc3: the architecture energises with the copy beside it ───── */
+.reveal-armed body[data-page="gc3"] .psplit__art :is(.dg-node,.dg-line) {
+  transition: opacity .6s var(--bindu-ease);
+}
+.reveal-armed body[data-page="gc3"] .psplit__art .dg-line { transition-delay: .12s; }
+@supports selector(:has(*)) {
+  .reveal-armed body[data-page="gc3"] .psplit:has(.psplit__copy:not(.is-in)) .psplit__art :is(.dg-node,.dg-line) {
+    opacity: 0;
+  }
+}
+
+/* ── contact: no decorative motion, only a calmer focus ring ──── */
+body[data-page="contact"] :is(input,textarea,select):focus-visible {
+  outline: 2px solid var(--bindu-soma); outline-offset: 2px;
+}
+
+/* ── reduced motion: no masks, no filters, no transitions ─────── */
+@media (prefers-reduced-motion: reduce) {
+  body[data-page] :is(.phero__art,.section-head,.pbento__cell,.psplit__copy,.ptrack__step) {
+    clip-path: none !important; filter: none !important; transition: none !important;
+  }
+  body[data-page="pricing"] .pgrid.is-in .pcard { animation: none; }
+  .reveal-armed body[data-page="gc3"] .psplit__art :is(.dg-node,.dg-line) { opacity: 1; }
+}
