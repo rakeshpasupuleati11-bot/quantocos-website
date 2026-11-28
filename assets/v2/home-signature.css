@@ -193,8 +193,13 @@ html.sig-armed .h6-hero__title .sig-w { display: inline-block; will-change: tran
 }
 @media (max-width: 768px) {
   .h6-deck__nav { grid-template-columns: repeat(2, 1fr); }
-  .h6-proof { grid-template-columns: 1fr; }
-  .h6-proof figure:nth-child(2) { display: none; }
+  /* all three plates stay: a snap row instead of a stack */
+  .h6-proof {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%;
+    overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    padding-bottom: 6px; scrollbar-width: thin;
+  }
+  .h6-proof figure { scroll-snap-align: start; }
   .sig-liquid i { filter: blur(44px); }
   .h6-deck__stack { gap: 12px; }
   .h6-card { position: static; box-shadow: none; }
