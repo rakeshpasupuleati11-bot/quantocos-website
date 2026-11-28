@@ -279,3 +279,25 @@ sign-offs listed above.
 - Live Lighthouse (GitHub Pages): index, pricing and contact all 100 performance, 100
   accessibility (index 97 before the caption fix), 100 best practices, 100 SEO; LCP 1.1–1.6 s,
   CLS 0. Untested: automated axe run, screen-reader pass, Safari and Firefox.
+
+### 2026-11-28 — Homepage six signature experiences
+
+- One engine (`assets/v2/home-signature.js`) and one stylesheet
+  (`assets/v2/home-signature.css`); GSAP + ScrollTrigger only, no new library.
+  01 liquid-gold hero (masked word reveal, drifting gold/silk layers, CTA sheen);
+  02 chaos→order chips assembling inside the gold pod frame on scroll;
+  03 sticky capability deck with six overlapping panels, index strips, counter and
+  anchor nav (replaces the old tabs; all pod copy, credits and links retained);
+  04 MinIO-style architecture: need → pod modules → five gates → deliverables,
+  activated in sequence on scroll; 05 expanding pricing panels with approved
+  deliverable/credit rows; 06 masked proof plates revealing on entry.
+- Essential content stays visible without JS: hero words hide only after an inline
+  GSAP set; proof masks self-reveal after 3.2 s; diagrams are stroke/position
+  animation, and are hidden below 768 px where the five-node flow carries the same
+  information. Reduced motion exits the script, stops the liquid CSS animation and
+  disables the accordion transition.
+- QA (`QA/sig_check.py`, `QA/review/sig-*.png`): 6 armed words; deck active
+  "Strategy 03" with counter 03; accordion `aria-expanded=true`, region 147.5 px;
+  proof `clip-path` reaches `inset(0%)`; reduced motion `animationName=none` and
+  zero split words; zero horizontal overflow at 1440 / 820 / 390; 6 cards on mobile.
+- `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.

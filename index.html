@@ -27,6 +27,7 @@
 <link rel="stylesheet" href="assets/v2/tokens.css?v=2">
 <link rel="stylesheet" href="assets/v2/site.css?v=6">
 <link rel="stylesheet" href="assets/v2/section-home6.css?v=1">
+<link rel="stylesheet" href="assets/v2/home-signature.css?v=1">
 <link rel="stylesheet" href="assets/vendor/lenis.css">
 <link rel="stylesheet" href="assets/v2/section-refine.css?v=3">
 <script>document.documentElement.classList.add('js');</script>
@@ -334,7 +335,7 @@
 
   <!-- 01 · HERO — what we sell -->
   <section class="h6 h6-hero" id="hero" aria-labelledby="hero-title">
-    <div class="h6-hero__aura" aria-hidden="true"><span></span><span></span></div>
+    <div class="sig-liquid" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
     <div class="wrap wrap--wide">
       <div class="h6-hero__copy">
         <p class="h6-hero__eyebrow">GC&sup3; &middot; Global Cloud Capability Center</p>
@@ -358,6 +359,21 @@
         <p class="h6-num"><span>02</span> Why one team</p>
         <h2 class="h6-title" id="problems-title">Stop coordinating vendors. <em>Start directing one team.</em></h2>
         <p class="h6-lead">A designer, a writer, a web shop and a freelancer each deliver something. The coordination between them is your job.</p>
+      </div>
+
+      <div class="sig-chaos" data-chaos aria-hidden="true">
+        <svg viewBox="0 0 960 320" focusable="false">
+          <g class="c-chip"><rect x="234" y="180" width="94" height="40" rx="8"/><text x="281" y="205">FREELANCER</text></g>
+          <g class="c-chip"><rect x="335" y="180" width="94" height="40" rx="8"/><text x="382" y="205">AGENCY</text></g>
+          <g class="c-chip"><rect x="436" y="180" width="94" height="40" rx="8"/><text x="483" y="205">TOOL STACK</text></g>
+          <g class="c-chip"><rect x="537" y="180" width="94" height="40" rx="8"/><text x="584" y="205">BRIEFS</text></g>
+          <g class="c-chip"><rect x="638" y="180" width="94" height="40" rx="8"/><text x="685" y="205">DEADLINES</text></g>
+          <rect class="c-frame" x="210" y="150" width="540" height="100" rx="16"/>
+          <text class="c-frame-sub" x="480" y="112">five inputs, no owner</text>
+          <text class="c-frame-label" x="480" y="136">ONE POD &middot; ONE MANAGER</text>
+          <path class="c-rule" d="M234 270H726"/>
+          <text class="c-frame-sub" x="480" y="292">one calendar &middot; one approval path</text>
+        </svg>
       </div>
 
       <div class="h6-split" data-reveal>
@@ -396,19 +412,21 @@
         <p class="h6-lead">Six pods. Choose the one that matches the work this quarter, or combine pods when a program needs more than one discipline.</p>
       </div>
 
-      <div class="h6-exp">
-        <div class="h6-tabs" role="tablist" aria-label="Capability pods" aria-orientation="vertical" data-h6-tabs>
-          <button class="h6-tab" role="tab" id="h6-tab-1" aria-controls="h6-cap-1" aria-selected="true" tabindex="0">Creative <span>01</span></button>
-          <button class="h6-tab" role="tab" id="h6-tab-2" aria-controls="h6-cap-2" aria-selected="false" tabindex="-1">Digital <span>02</span></button>
-          <button class="h6-tab" role="tab" id="h6-tab-3" aria-controls="h6-cap-3" aria-selected="false" tabindex="-1">Strategy <span>03</span></button>
-          <button class="h6-tab" role="tab" id="h6-tab-4" aria-controls="h6-cap-4" aria-selected="false" tabindex="-1">Interactive <span>04</span></button>
-          <button class="h6-tab" role="tab" id="h6-tab-5" aria-controls="h6-cap-5" aria-selected="false" tabindex="-1">Automation <span>05</span></button>
-          <button class="h6-tab" role="tab" id="h6-tab-6" aria-controls="h6-cap-6" aria-selected="false" tabindex="-1">REMAU <span>06</span></button>
-        </div>
-
-        <div class="h6-panel" role="tabpanel" id="h6-cap-1" aria-labelledby="h6-tab-1" tabindex="0">
+      <div class="h6-deck" data-h6-deck>
+        <nav class="h6-deck__nav" aria-label="Capability pods">
+          <p class="h6-deck__count"><span data-deck-count>01</span> / 06</p>
+          <a href="#h6-cap-1">Creative <span>01</span></a>
+          <a href="#h6-cap-2">Digital <span>02</span></a>
+          <a href="#h6-cap-3">Strategy <span>03</span></a>
+          <a href="#h6-cap-4">Interactive <span>04</span></a>
+          <a href="#h6-cap-5">Automation <span>05</span></a>
+          <a href="#h6-cap-6">REMAU <span>06</span></a>
+        </nav>
+        <div class="h6-deck__stack">
+          <article class="h6-panel h6-card" id="h6-cap-1" aria-labelledby="h6-cap-1-name" data-deck-card style="--i:0">
+          <span class="h6-card__idx" aria-hidden="true">01 &middot; Creative</span>
           <div class="h6-panel__top">
-            <h3 class="h6-panel__name">Creative Pod</h3>
+            <h3 class="h6-panel__name" id="h6-cap-1-name">Creative Pod</h3>
             <p class="h6-panel__price"><b>$3,000</b> a month &middot; 120 credits</p>
           </div>
           <div class="h6-panel__body">
@@ -436,11 +454,12 @@
             <a class="link-arrow" href="capabilities/creative.html">See the Creative Pod <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
             <small>120 credits &middot; $25 a credit</small>
           </div>
-        </div>
+        </article>
 
-        <div class="h6-panel" role="tabpanel" id="h6-cap-2" aria-labelledby="h6-tab-2" tabindex="0" hidden>
+          <article class="h6-panel h6-card" id="h6-cap-2" aria-labelledby="h6-cap-2-name" data-deck-card style="--i:1">
+          <span class="h6-card__idx" aria-hidden="true">02 &middot; Digital</span>
           <div class="h6-panel__top">
-            <h3 class="h6-panel__name">Digital Pod</h3>
+            <h3 class="h6-panel__name" id="h6-cap-2-name">Digital Pod</h3>
             <p class="h6-panel__price"><b>$6,000</b> a month &middot; 240 credits</p>
           </div>
           <div class="h6-panel__body">
@@ -468,11 +487,12 @@
             <a class="link-arrow" href="capabilities/digital.html">See the Digital Pod <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
             <small>240 credits &middot; $25 a credit</small>
           </div>
-        </div>
+        </article>
 
-        <div class="h6-panel" role="tabpanel" id="h6-cap-3" aria-labelledby="h6-tab-3" tabindex="0" hidden>
+          <article class="h6-panel h6-card" id="h6-cap-3" aria-labelledby="h6-cap-3-name" data-deck-card style="--i:2">
+          <span class="h6-card__idx" aria-hidden="true">03 &middot; Strategy</span>
           <div class="h6-panel__top">
-            <h3 class="h6-panel__name">Strategy Pod</h3>
+            <h3 class="h6-panel__name" id="h6-cap-3-name">Strategy Pod</h3>
             <p class="h6-panel__price"><b>$9,000</b> a month &middot; 360 credits</p>
           </div>
           <div class="h6-panel__body">
@@ -500,11 +520,12 @@
             <a class="link-arrow" href="capabilities/strategy.html">See the Strategy Pod <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
             <small>360 credits &middot; $25 a credit</small>
           </div>
-        </div>
+        </article>
 
-        <div class="h6-panel" role="tabpanel" id="h6-cap-4" aria-labelledby="h6-tab-4" tabindex="0" hidden>
+          <article class="h6-panel h6-card" id="h6-cap-4" aria-labelledby="h6-cap-4-name" data-deck-card style="--i:3">
+          <span class="h6-card__idx" aria-hidden="true">04 &middot; Interactive</span>
           <div class="h6-panel__top">
-            <h3 class="h6-panel__name">Interactive Pod</h3>
+            <h3 class="h6-panel__name" id="h6-cap-4-name">Interactive Pod</h3>
             <p class="h6-panel__price">Scoped per client</p>
           </div>
           <div class="h6-panel__body">
@@ -532,11 +553,12 @@
             <a class="link-arrow" href="capabilities/interactive.html">See the Interactive Pod <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
             <small>Scope and price agreed in writing before work starts</small>
           </div>
-        </div>
+        </article>
 
-        <div class="h6-panel" role="tabpanel" id="h6-cap-5" aria-labelledby="h6-tab-5" tabindex="0" hidden>
+          <article class="h6-panel h6-card" id="h6-cap-5" aria-labelledby="h6-cap-5-name" data-deck-card style="--i:4">
+          <span class="h6-card__idx" aria-hidden="true">05 &middot; Automation</span>
           <div class="h6-panel__top">
-            <h3 class="h6-panel__name">Automation Pod</h3>
+            <h3 class="h6-panel__name" id="h6-cap-5-name">Automation Pod</h3>
             <p class="h6-panel__price">Scoped per client</p>
           </div>
           <div class="h6-panel__body">
@@ -564,11 +586,12 @@
             <a class="link-arrow" href="capabilities/automation.html">See the Automation Pod <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
             <small>Scope and price agreed in writing before work starts</small>
           </div>
-        </div>
+        </article>
 
-        <div class="h6-panel" role="tabpanel" id="h6-cap-6" aria-labelledby="h6-tab-6" tabindex="0" hidden>
+          <article class="h6-panel h6-card" id="h6-cap-6" aria-labelledby="h6-cap-6-name" data-deck-card style="--i:5">
+          <span class="h6-card__idx" aria-hidden="true">06 &middot; REMAU</span>
           <div class="h6-panel__top">
-            <h3 class="h6-panel__name">REMAU</h3>
+            <h3 class="h6-panel__name" id="h6-cap-6-name">REMAU</h3>
             <p class="h6-panel__price">Scoped per client</p>
           </div>
           <div class="h6-panel__body">
@@ -596,6 +619,7 @@
             <a class="link-arrow" href="capabilities/remau.html">See REMAu <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
             <small>Scope and price agreed in writing before work starts</small>
           </div>
+        </article>
         </div>
       </div>
     </div>
@@ -608,6 +632,48 @@
         <p class="h6-num"><span>04</span> How it works</p>
         <h2 class="h6-title" id="gates-title">From business need <em>to finished work.</em></h2>
         <p class="h6-lead">One path, the same five gates on every job. You always know which gate the work is sitting at.</p>
+      </div>
+
+      <div class="sig-arch" data-arch aria-hidden="true">
+        <svg viewBox="0 0 1100 380" focusable="false">
+          <defs>
+            <linearGradient id="arch-pod-fill" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#141414"/><stop offset="1" stop-color="#0a0a0a"/>
+            </linearGradient>
+          </defs>
+          <path class="a-wire" d="M214 190H298"/>
+          <path class="a-wire" d="M800 190H878"/>
+          <path class="a-trace" d="M214 190H298"/>
+          <path class="a-trace" d="M800 190H878"/>
+          <g class="a-node a-need">
+            <rect class="a-box" x="16" y="150" width="198" height="80" rx="10"/>
+            <text class="a-label" x="36" y="180">YOUR NEED</text>
+            <text class="a-sub" x="36" y="200">One outcome, one date</text>
+          </g>
+          <g class="a-node a-pod">
+            <rect class="a-box a-box--pod" x="300" y="58" width="500" height="266" rx="18"/>
+            <text class="a-label" x="324" y="88">GC&sup3; POD</text>
+            <text class="a-sub" x="324" y="106">six modules, one named manager</text>
+            <g class="a-mod"><rect x="324" y="118" width="138" height="36" rx="8"/><text class="a-mod-label" x="393" y="140">CREATIVE</text></g>
+            <g class="a-mod"><rect x="476" y="118" width="138" height="36" rx="8"/><text class="a-mod-label" x="545" y="140">DIGITAL</text></g>
+            <g class="a-mod"><rect x="628" y="118" width="138" height="36" rx="8"/><text class="a-mod-label" x="697" y="140">STRATEGY</text></g>
+            <g class="a-mod"><rect x="324" y="164" width="138" height="36" rx="8"/><text class="a-mod-label" x="393" y="186">INTERACTIVE</text></g>
+            <g class="a-mod"><rect x="476" y="164" width="138" height="36" rx="8"/><text class="a-mod-label" x="545" y="186">AUTOMATION</text></g>
+            <g class="a-mod"><rect x="628" y="164" width="138" height="36" rx="8"/><text class="a-mod-label" x="697" y="186">REMAU</text></g>
+            <g class="a-gate"><circle cx="350" cy="228" r="12"/><text x="350" y="232">1</text><text x="350" y="258">BRIEF</text></g>
+            <g class="a-gate"><circle cx="450" cy="228" r="12"/><text x="450" y="232">2</text><text x="450" y="258">DIRECTION</text></g>
+            <g class="a-gate"><circle cx="550" cy="228" r="12"/><text x="550" y="232">3</text><text x="550" y="258">QA</text></g>
+            <g class="a-gate"><circle cx="650" cy="228" r="12"/><text x="650" y="232">4</text><text x="650" y="258">REVIEW</text></g>
+            <g class="a-gate"><circle cx="750" cy="228" r="12"/><text x="750" y="232">5</text><text x="750" y="258">LIVE</text></g>
+          </g>
+          <g class="a-node a-out">
+            <rect class="a-box" x="880" y="118" width="204" height="150" rx="12"/>
+            <text class="a-label" x="896" y="144">DELIVERABLES</text>
+            <rect class="a-plate" x="896" y="158" width="172" height="28" rx="6"/><text class="a-plate-label" x="906" y="176">Campaign kit</text>
+            <rect class="a-plate" x="896" y="192" width="172" height="28" rx="6"/><text class="a-plate-label" x="906" y="210">Website build</text>
+            <rect class="a-plate" x="896" y="226" width="172" height="28" rx="6"/><text class="a-plate-label" x="906" y="244">Monthly report</text>
+          </g>
+        </svg>
       </div>
 
       <div class="h6-flow" data-reveal>
@@ -666,29 +732,62 @@
         </div>
 
         <div>
-          <div class="h6-plans">
-            <article class="h6-plan" data-pod="creative">
+            <div class="h6-plans">
+            <article class="h6-plan" data-pod="creative" data-sub>
               <span class="h6-plan__n">01 &middot; PUBLISHED</span>
-              <h3>Creative Pod</h3>
+              <h3 class="h6-plan__name" id="plan-creative">Creative Pod</h3>
               <p class="h6-plan__price"><b>$3,000</b> / month &middot; 120 credits</p>
               <p>Brand, campaigns and everyday communications.</p>
+              <button class="h6-plan__toggle" type="button" aria-expanded="false" aria-controls="sub-creative">What the pod includes <i aria-hidden="true">+</i></button>
+              <div class="h6-plan__more" id="sub-creative" role="region" aria-labelledby="plan-creative">
+                <div>
+                  <ul>
+                    <li>Social static post <b>1.5 cr</b></li>
+                    <li>Carousel <b>3.5 cr</b></li>
+                    <li>Monthly social pack <b>17.25 cr</b></li>
+                    <li>Brand guidelines <b>28.75 cr</b></li>
+                  </ul>
+                </div>
+              </div>
               <a href="capabilities/creative.html">Pod details</a>
             </article>
-            <article class="h6-plan" data-pod="digital">
+            <article class="h6-plan" data-pod="digital" data-sub>
               <span class="h6-plan__n">02 &middot; PUBLISHED</span>
-              <h3>Digital Pod</h3>
+              <h3 class="h6-plan__name" id="plan-digital">Digital Pod</h3>
               <p class="h6-plan__price"><b>$6,000</b> / month &middot; 240 credits</p>
               <p>Search visibility, content and digital demand.</p>
+              <button class="h6-plan__toggle" type="button" aria-expanded="false" aria-controls="sub-digital">What the pod includes <i aria-hidden="true">+</i></button>
+              <div class="h6-plan__more" id="sub-digital" role="region" aria-labelledby="plan-digital">
+                <div>
+                  <ul>
+                    <li>On-page optimization <b>2.25 cr</b></li>
+                    <li>SEO article <b>5.75 cr</b></li>
+                    <li>Keyword research &amp; cluster map <b>7.25 cr</b></li>
+                    <li>Technical SEO audit <b>11.5 cr</b></li>
+                  </ul>
+                </div>
+              </div>
               <a href="capabilities/digital.html">Pod details</a>
             </article>
-            <article class="h6-plan" data-pod="strategy">
+            <article class="h6-plan" data-pod="strategy" data-sub>
               <span class="h6-plan__n">03 &middot; PUBLISHED</span>
-              <h3>Strategy Pod</h3>
+              <h3 class="h6-plan__name" id="plan-strategy">Strategy Pod</h3>
               <p class="h6-plan__price"><b>$9,000</b> / month &middot; 360 credits</p>
               <p>Research, positioning and business decisions.</p>
+              <button class="h6-plan__toggle" type="button" aria-expanded="false" aria-controls="sub-strategy">What the pod includes <i aria-hidden="true">+</i></button>
+              <div class="h6-plan__more" id="sub-strategy" role="region" aria-labelledby="plan-strategy">
+                <div>
+                  <ul>
+                    <li>Messaging framework <b>11.5 cr</b></li>
+                    <li>Competitive landscape analysis <b>14.5 cr</b></li>
+                    <li>Market research report <b>23 cr</b></li>
+                    <li>Brand strategy &amp; positioning <b>28.75 cr</b></li>
+                  </ul>
+                </div>
+              </div>
               <a href="capabilities/strategy.html">Pod details</a>
             </article>
-          </div>
+            </div>
 
           <ul class="h6-scoped" aria-label="Scoped pods">
             <li>Interactive &mdash; scoped per client</li>
@@ -714,6 +813,21 @@
         <p class="h6-num"><span>06</span> What you can check</p>
         <h2 class="h6-title" id="trust-title">Built on commitments, <em>not adjectives.</em></h2>
         <p class="h6-lead">Every statement on this page is drawn from the published commercial terms.</p>
+      </div>
+
+      <div class="h6-proof" data-proof aria-label="Published commitments">
+        <figure>
+          <img src="assets/v2/art/gates.svg" alt="Gold line plate representing the five approval gates" width="800" height="640" loading="lazy">
+          <figcaption>Five gates on every job</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/v2/art/pricing.svg" alt="Gold line plate representing published pod pricing" width="800" height="640" loading="lazy">
+          <figcaption>Three published prices</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/v2/art/capabilities.svg" alt="Gold line plate representing six connected capability pods" width="800" height="640" loading="lazy">
+          <figcaption>Six capability pods</figcaption>
+        </figure>
       </div>
 
       <div class="h6-trust" data-reveal>
@@ -833,6 +947,7 @@
 <script src="assets/v2/planner.js" defer></script>
 <script src="assets/v2/site.js?v=2" defer></script>
 <script src="assets/v2/home6.js?v=1" defer></script>
+<script src="assets/v2/home-signature.js?v=1" defer></script>
 <script src="assets/v2/motion-gsap.js?v=2" defer></script>
 <script src="assets/v2/capabilities.js" defer></script>
 <script src="assets/v2/refine.js" defer></script>
