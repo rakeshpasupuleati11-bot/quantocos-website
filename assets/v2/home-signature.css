@@ -5,15 +5,15 @@
 /* ── 01 · liquid gold ───────────────────────────────────────── */
 .h6-hero__aura { display: none; }
 .sig-liquid { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-.sig-liquid i { position: absolute; display: block; border-radius: 50%; filter: blur(64px); will-change: transform; }
+.sig-liquid i { position: absolute; display: block; border-radius: 50%; filter: blur(58px); will-change: transform; }
 .sig-liquid i:nth-child(1) {
   top: -14%; right: -8%; width: 72vw; height: 58vw; max-width: 1180px; max-height: 860px;
-  background: radial-gradient(closest-side, rgba(242,213,130,.52), rgba(201,164,76,.22) 44%, rgba(201,164,76,.06) 64%, transparent 78%);
+  background: radial-gradient(closest-side, rgba(242,213,130,.62), rgba(201,164,76,.28) 44%, rgba(201,164,76,.08) 64%, transparent 78%);
   animation: sig-flow-a 38s ease-in-out infinite alternate;
 }
 .sig-liquid i:nth-child(2) {
   bottom: -26%; right: 6%; width: 52vw; height: 42vw; max-width: 860px; max-height: 620px;
-  background: radial-gradient(closest-side, rgba(242,213,130,.32), rgba(201,164,76,.10) 52%, transparent 78%);
+  background: radial-gradient(closest-side, rgba(242,213,130,.40), rgba(201,164,76,.14) 52%, transparent 78%);
   animation: sig-flow-b 46s ease-in-out infinite alternate;
 }
 .sig-liquid i:nth-child(3) {
@@ -23,7 +23,7 @@
 }
 .sig-liquid b {
   position: absolute; inset: -22% -12%; display: block;
-  background: repeating-linear-gradient(112deg, transparent 0 46px, rgba(242,213,130,.09) 46px 48px, transparent 48px 132px);
+  background: repeating-linear-gradient(112deg, transparent 0 46px, rgba(242,213,130,.13) 46px 49px, transparent 49px 132px);
   filter: blur(4px);
   -webkit-mask-image: radial-gradient(58% 62% at 68% 42%, #000 10%, transparent 72%);
   mask-image: radial-gradient(58% 62% at 68% 42%, #000 10%, transparent 72%);
