@@ -29,11 +29,11 @@
 
   /* somA gold — the action colour. Never a decoration. */
   --bindu-soma:#C9A44C; --bindu-soma-light:#F2D582; --bindu-soma-deep:#8B6410;
-  --bindu-soma-wash:rgba(201,145,26,.12);
+  --bindu-soma-wash:rgba(201,164,76,.12);
 
   /* spectrum — prism refractions, hairlines and washes only */
-  --bindu-spectrum:linear-gradient(90deg,rgba(201,145,26,.35),rgba(242,213,130,.85) 50%,rgba(201,145,26,.35));
-  --bindu-spectrum-soft:linear-gradient(135deg,rgba(201,145,26,.14),rgba(242,213,130,.08) 55%,rgba(201,145,26,.12));
+  --bindu-spectrum:linear-gradient(90deg,rgba(201,164,76,.35),rgba(242,213,130,.85) 50%,rgba(201,164,76,.35));
+  --bindu-spectrum-soft:linear-gradient(135deg,rgba(201,164,76,.14),rgba(242,213,130,.08) 55%,rgba(201,164,76,.12));
   --bindu-violet:#7B00FF; --bindu-blue:#0099FF; --bindu-teal:#00DDAA; --bindu-green:#AAFF00;
   --bindu-orange:#FF8800; --bindu-yellow:#FFDD00;
 

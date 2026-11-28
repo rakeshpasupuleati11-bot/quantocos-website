@@ -30,7 +30,7 @@
              transform var(--bindu-dur) var(--bindu-ease),
              box-shadow var(--bindu-dur) var(--bindu-ease)}
 .cap::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;
-  background:radial-gradient(120% 70% at 50% 118%,rgba(201,145,26,.16),transparent 62%)}
+  background:radial-gradient(120% 70% at 50% 118%,rgba(201,164,76,.16),transparent 62%)}
 .cap:hover,.cap:focus-within{border-color:rgba(242,213,130,.4);transform:translateY(-3px);
   box-shadow:0 24px 54px rgba(0,0,0,.45)}
 
@@ -50,7 +50,7 @@
 
 .cap__stage{position:relative;height:132px;margin:4px -6px 0;perspective:760px;overflow:hidden;
   border-radius:var(--bindu-r-md);
-  background:radial-gradient(70% 90% at 50% 40%,rgba(201,145,26,.09),transparent 70%)}
+  background:radial-gradient(70% 90% at 50% 40%,rgba(201,164,76,.09),transparent 70%)}
 .cap__link{display:inline-flex;align-items:center;gap:8px;margin-top:2px;align-self:end;
   font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--bindu-soma-light);text-decoration:none}
 .cap__link svg{width:13px;height:13px;transition:transform var(--bindu-dur) var(--bindu-ease)}

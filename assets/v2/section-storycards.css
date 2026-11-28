@@ -31,7 +31,7 @@
   top: 34%;
   width: 56%;
   height: 92%;
-  background: radial-gradient(closest-side, rgba(201,145,26, .08), rgba(201,145,26, .026) 56%, transparent 80%);
+  background: radial-gradient(closest-side, rgba(201,164,76, .08), rgba(201,164,76, .026) 56%, transparent 80%);
   animation: story-breathe 19s ease-in-out infinite alternate-reverse;
 }
 @keyframes story-breathe {
@@ -100,8 +100,8 @@ html.rgb-paused .story-section::after { animation-play-state: paused; }
   box-shadow: 0 34px 90px rgba(0, 0, 0, .5);
 }
 .storycard + .storycard { margin-top: 24px; }
-.storycard--2 { --sc-bg: #141414; --sc-accent: #F2D582; --sc-accent-soft: rgba(201,145,26, .17); }
-.storycard--3 { --sc-bg: #1C1C1C; --sc-accent: #F2D582; --sc-accent-soft: rgba(201,145,26, .18); }
+.storycard--2 { --sc-bg: #141414; --sc-accent: #F2D582; --sc-accent-soft: rgba(201,164,76, .17); }
+.storycard--3 { --sc-bg: #1C1C1C; --sc-accent: #F2D582; --sc-accent-soft: rgba(201,164,76, .18); }
 .storycard--4 { --sc-bg: #30291E; --sc-accent: #F2D582; --sc-accent-soft: rgba(231, 185, 74, .16); }
 
 .storycard__top {

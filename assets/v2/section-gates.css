@@ -5,8 +5,8 @@
 #how .gate::after{
   content:"";position:absolute;left:-1px;top:-1px;bottom:-1px;width:2px;
   border-radius:3px;transform-origin:50% 0;transform:scaleY(var(--lit));
-  background:linear-gradient(180deg,rgba(242,213,130,.95),rgba(201,145,26,.85));
-  box-shadow:0 0 16px rgba(201,145,26,.55);
+  background:linear-gradient(180deg,rgba(242,213,130,.95),rgba(201,164,76,.85));
+  box-shadow:0 0 16px rgba(201,164,76,.55);
   pointer-events:none}
 #how .gate__tag{transition:color .45s var(--bindu-ease,cubic-bezier(.16,1,.3,1))}
 

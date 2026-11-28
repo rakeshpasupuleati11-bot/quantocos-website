@@ -9,17 +9,17 @@
 .rgb-ring { display: none; }
 
 .rgb-host:focus-visible {
-  outline: 2px solid #C9911A;
+  outline: 2px solid #C9A44C;
   outline-offset: 3px;
 }
 
 /* form fields take the focus ring directly: they cannot hold a child span */
 .rgb-field:focus-visible {
   box-shadow:
-    0 0 0 1px rgba(201, 145, 26, .9),
-    0 0 18px rgba(201, 145, 26, .25);
+    0 0 0 1px rgba(201, 164, 76, .9),
+    0 0 18px rgba(201, 164, 76, .25);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rgb-field:focus-visible { box-shadow: 0 0 0 1px rgba(201, 145, 26, .9); }
+  .rgb-field:focus-visible { box-shadow: 0 0 0 1px rgba(201, 164, 76, .9); }
 }

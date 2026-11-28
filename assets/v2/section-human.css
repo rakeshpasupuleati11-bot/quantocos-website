@@ -170,7 +170,7 @@
   width: 64%;
   height: 112%;
   transform: translateY(-50%);
-  background: radial-gradient(closest-side, rgba(201, 145, 26, .09), rgba(201, 145, 26, .03) 56%, transparent 80%);
+  background: radial-gradient(closest-side, rgba(201, 164, 76, .09), rgba(201, 164, 76, .03) 56%, transparent 80%);
 }
 .cws::after {
   right: -8%;

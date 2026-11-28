@@ -96,7 +96,7 @@
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, .10),
     0 20px 60px rgba(0, 0, 0, .55),
-    0 0 70px rgba(201, 145, 26, .10);
+    0 0 70px rgba(201, 164, 76, .10);
 }
 
 /* the ambient glow: a ring of light outside the card, breathing slowly */
@@ -107,9 +107,9 @@
   z-index: 0;
   border-radius: 40px;
   background: radial-gradient(closest-side,
-    rgba(201,145,26, 0) 56%,
-    rgba(201,145,26, .26) 72%,
-    rgba(201,145,26, 0) 90%);
+    rgba(201,164,76, 0) 56%,
+    rgba(201,164,76, .26) 72%,
+    rgba(201,164,76, 0) 90%);
   filter: blur(18px);
   pointer-events: none;
 }
@@ -121,7 +121,7 @@
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, .12),
     0 28px 76px rgba(0, 0, 0, .6),
-    0 0 90px rgba(201, 145, 26, .16);
+    0 0 90px rgba(201, 164, 76, .16);
 }
 
 /* content ladder — identical start lines on all three cards */
@@ -179,8 +179,8 @@
 .pp-btn:active { transform: scale(.988); }
 
 .pp-card--hero .pp-btn {
-  background: #C9911A;
-  border-color: #C9911A;
+  background: #C9A44C;
+  border-color: #C9A44C;
   color: #0A0A0A;
   font-weight: 600;
   transition: background .2s ease, border-color .2s ease, transform .12s ease;
@@ -331,7 +331,7 @@
   pointer-events: none;
 }
 .pp-btn:hover::after, .pp-btn:focus-visible::after { transform: translateX(130%); }
-.pp-card--hero .pp-btn::after { background: linear-gradient(105deg, transparent 32%, rgba(201,145,26, .14) 50%, transparent 68%); }
+.pp-card--hero .pp-btn::after { background: linear-gradient(105deg, transparent 32%, rgba(201,164,76, .14) 50%, transparent 68%); }
 
 /* commercial assurances — compact line, no new card */
 .pp-example {

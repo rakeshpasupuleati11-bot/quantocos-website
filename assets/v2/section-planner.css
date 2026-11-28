@@ -19,8 +19,8 @@
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(38% 46% at 14% 18%, rgba(201, 145, 26, .06), transparent 70%),
-    radial-gradient(34% 42% at 86% 26%, rgba(201, 145, 26, .04), transparent 72%),
+    radial-gradient(38% 46% at 14% 18%, rgba(201, 164, 76, .06), transparent 70%),
+    radial-gradient(34% 42% at 86% 26%, rgba(201, 164, 76, .04), transparent 72%),
     radial-gradient(46% 54% at 62% 92%, rgba(242, 213, 130, .04), transparent 74%);
 }
 
@@ -101,8 +101,8 @@
   left: 5px;
   width: calc((100% - 10px - 20px) / 3);
   border-radius: 13px;
-  background: linear-gradient(135deg, rgba(201, 145, 26, .16), rgba(28, 28, 28, .55));
-  border: 1px solid rgba(201, 145, 26, .38);
+  background: linear-gradient(135deg, rgba(201, 164, 76, .16), rgba(28, 28, 28, .55));
+  border: 1px solid rgba(201, 164, 76, .38);
   box-shadow: 0 8px 26px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .06);
   transform: translateX(calc(var(--pod-i, 0) * (100% + 10px)));
   transition: transform .42s var(--bindu-ease);
@@ -164,7 +164,7 @@
   cursor: pointer;
   transition: color .22s var(--bindu-ease), border-color .22s var(--bindu-ease), background .22s var(--bindu-ease);
 }
-.preset:hover { color: #F5F4EF; border-color: rgba(201,145,26, .42); }
+.preset:hover { color: #F5F4EF; border-color: rgba(201,164,76, .42); }
 .preset[aria-pressed="true"] { color: #111111; background: #E7B94A; border-color: #E7B94A; }
 .preset:focus-visible { outline: 2px solid #F2D582; outline-offset: 2px; }
 
@@ -268,7 +268,7 @@
   height: 22px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(201, 145, 26, .24), rgba(201, 145, 26, .08) 65%, transparent);
+  background: radial-gradient(closest-side, rgba(201, 164, 76, .24), rgba(201, 164, 76, .08) 65%, transparent);
   pointer-events: none;
   transition: left .16s ease-out;
 }
@@ -287,14 +287,14 @@
 .ruler__range::-webkit-slider-runnable-track {
   height: 2px;
   border-radius: 1px;
-  background: linear-gradient(to right, #C9911A 0, #C9911A var(--p, 10%), rgba(255, 255, 255, .14) var(--p, 10%));
+  background: linear-gradient(to right, #C9A44C 0, #C9A44C var(--p, 10%), rgba(255, 255, 255, .14) var(--p, 10%));
 }
 .ruler__range::-moz-range-track {
   height: 2px;
   border-radius: 1px;
   background: rgba(255, 255, 255, .14);
 }
-.ruler__range::-moz-range-progress { height: 2px; background: #C9911A; }
+.ruler__range::-moz-range-progress { height: 2px; background: #C9A44C; }
 .ruler__range::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 13px;
@@ -302,7 +302,7 @@
   margin-top: -5.5px;
   border-radius: 50%;
   background: #F5F4EF;
-  box-shadow: 0 0 0 3px rgba(201,145,26, .18), 0 0 12px rgba(201,145,26, .5);
+  box-shadow: 0 0 0 3px rgba(201,164,76, .18), 0 0 12px rgba(201,164,76, .5);
 }
 .ruler__range::-moz-range-thumb {
   width: 13px;
@@ -310,11 +310,11 @@
   border: 0;
   border-radius: 50%;
   background: #F5F4EF;
-  box-shadow: 0 0 0 3px rgba(201,145,26, .18), 0 0 12px rgba(201,145,26, .5);
+  box-shadow: 0 0 0 3px rgba(201,164,76, .18), 0 0 12px rgba(201,164,76, .5);
 }
 .ruler__range:focus-visible { outline: none; }
-.ruler__range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px rgba(166, 234, 255, .5), 0 0 14px rgba(201,145,26, .7); }
-.ruler__range:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px rgba(166, 234, 255, .5), 0 0 14px rgba(201,145,26, .7); }
+.ruler__range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px rgba(166, 234, 255, .5), 0 0 14px rgba(201,164,76, .7); }
+.ruler__range:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px rgba(166, 234, 255, .5), 0 0 14px rgba(201,164,76, .7); }
 
 .ruler__bubble {
   position: absolute;
@@ -446,7 +446,7 @@
   transition: background .25s ease, transform .25s var(--bindu-ease), box-shadow .25s ease;
 }
 .panel__cta svg { width: 14px; height: 14px; transition: transform .25s var(--bindu-ease); }
-.panel__cta:hover { background: #fff; box-shadow: 0 0 0 1px rgba(201,145,26, .55), 0 8px 26px rgba(201,145,26, .3); }
+.panel__cta:hover { background: #fff; box-shadow: 0 0 0 1px rgba(201,164,76, .55), 0 8px 26px rgba(201,164,76, .3); }
 .panel__cta:hover svg { transform: translateX(4px); }
 .panel__cta:focus-visible { outline: 2px solid #F2D582; outline-offset: 3px; }
 
