@@ -330,3 +330,32 @@ sign-offs listed above.
 - Blocker: this is a family-level system, not 30 bespoke pages. Per-page compositions
   from the reference library remain phased work; no booking/CRM endpoint, approved
   team photography, testimonials or client logos exist, and forms are still unwired.
+
+### 2026-11-28 — P0 render pass: diagrams, chart data, mobile proof, hero gold
+
+Commits `ce3eb44`, `0912010`, `0177fb1`, `3555518`, `ea4ff9f`; pushed to `main` and
+verified byte-identical on the live site.
+
+- `.pdiagram` was shrink-wrapped to its 300px intrinsic width inside `.psplit__art`
+  (`place-items:center`), scaling 12px SVG text to ~5.6px. `width:100%` now fills the
+  497px content box; dark-mode connectors are gold, node strokes and labels raised.
+- `.dg-label` raised from 10 to 11.5 SVG units (10.2 effective screen pixels; every label
+  still inside its viewBox, checked by bbox on all 30 routes).
+- The "Monthly credit pool" chart on pricing, why-quantocos, solutions and gc3 had all
+  labels at y=320 in a 300-high viewBox (clipped) and bars drawn past the axis. Its four
+  invented values were replaced with published pools: Creative 120, Digital 240,
+  Strategy 360 credits, drawn from the baseline; aria-label updated.
+- Homepage proof section hid the second art plate below 768px. All three now sit in a
+  snap-scrolling row at 78% width; no page overflow.
+- Hero gold field, second wash and silk lines raised so the liquid reads as the single
+  dominant form; headline side stays dark.
+- Rendered audit re-run: 31 routes x 1440/390, 0 flagged viewports (overflow, clipped
+  headings, hidden text, broken images, JS errors). `build.py --check` clean,
+  `check_site.py` 80 pages 0 errors 0 warnings.
+- Lighthouse live: homepage 99/100/100/100 (LCP 1.1s, CLS 0, TBT 100ms); pricing
+  99/100/100/100 (LCP 1.3s, CLS 0, TBT 100ms). Performance fluctuates 99-100 per run.
+
+Known gap: `.sig-chaos` and `.sig-arch` remain hidden below 768px. Both are
+`aria-hidden="true"` decorative diagrams whose facts are carried by the adjacent text
+lists at every width; a mobile-specific static drawing is not built.
+
