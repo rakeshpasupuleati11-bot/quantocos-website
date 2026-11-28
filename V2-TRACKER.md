@@ -358,4 +358,5 @@ verified byte-identical on the live site.
 Known gap: `.sig-chaos` and `.sig-arch` remain hidden below 768px. Both are
 `aria-hidden="true"` decorative diagrams whose facts are carried by the adjacent text
 lists at every width; a mobile-specific static drawing is not built.
-
+Follow-up `ce2f022`: below 768px inner diagrams keep a 520px minimum and scroll inside
+their bordered frame, holding labels at 10.7 effective pixels with no sideways page scroll.
