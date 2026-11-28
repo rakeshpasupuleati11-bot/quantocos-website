@@ -231,3 +231,18 @@ sign-offs listed above.
   both buttons are 44px, focus ring present, axe reports 0 violations, "Allow" stores
   `qc_consent=granted` and loads gtag once, and it stays hidden on reload.
 - `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.
+
+### 2026-11-28 — Homepage rebuilt as six sections
+
+- `index.html` main content rebuilt from 17 sections to 6: hero, why-one-team, capability
+  explorer, architecture and five gates, team builder and pricing, commitments and conversion.
+  Chrome untouched; rebuilt from partials.
+- New `assets/v2/section-home6.css` and `assets/v2/home6.js` (accessible tabs, pod matcher).
+  Nine homepage-only section stylesheets and the unused prism-hero preload removed.
+- Measured against the live baseline: main words 2,467 → 1,177 (−52%); desktop scroll
+  18,365 → 5,627 px (−69%); mobile 24,596 → 9,108 px (−63%).
+- Prices taken from `site-facts.json`: Creative $3,000/120, Digital $6,000/240, Strategy
+  $9,000/360; Interactive, Automation and REMAU remain "scoped per client".
+- Open blockers: no client logos, testimonials, case studies or team photographs to publish;
+  "live in 14 days" not claimed because onboarding timing is not in `site-facts.json`.
+- `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.
