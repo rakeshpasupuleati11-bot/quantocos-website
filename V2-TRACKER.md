@@ -246,3 +246,16 @@ sign-offs listed above.
 - Open blockers: no client logos, testimonials, case studies or team photographs to publish;
   "live in 14 days" not claimed because onboarding timing is not in `site-facts.json`.
 - `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.
+
+### 2026-11-28 — P0/P1 typography-led homepage
+
+- P0: `--ed-*` editorial scale added to `assets/v2/tokens.css`; accent aligned to `#C9A44C`.
+- P1: homepage `<main>` rebuilt as six typographic sections (hero, problem, solution,
+  capabilities as oversized links, experience, close). No cards, pricing tables, calculators,
+  comparison tables or statistics on the homepage; `id="pricing"` moved onto the hero price link.
+- New `assets/v2/ed-home.css`; `section-home6.css` and `home6.js` deleted. Head now loads
+  `tokens.css`, `site.css`, `ed-home.css`, `lenis.css`, `section-refine.css` only.
+- Measured: main words 1,177 → 205; desktop scroll 5,627 → 5,614 px; mobile 9,108 → 4,428 px;
+  zero horizontal overflow at 1920/1440/1024/768/430/390/360. Pilot terms and `$1,500` /
+  `60 credits` retained on the page for the fact gate.
+- `build.py --check` clean; `check_site.py` 80 pages · 0 errors · 0 warnings.

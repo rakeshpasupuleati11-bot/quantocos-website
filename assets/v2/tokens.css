@@ -28,7 +28,7 @@
   --bindu-on-dark-2:rgba(247,247,245,.68);
 
   /* somA gold — the action colour. Never a decoration. */
-  --bindu-soma:#C9911A; --bindu-soma-light:#F2D582; --bindu-soma-deep:#8B6410;
+  --bindu-soma:#C9A44C; --bindu-soma-light:#F2D582; --bindu-soma-deep:#8B6410;
   --bindu-soma-wash:rgba(201,145,26,.12);
 
   /* spectrum — prism refractions, hairlines and washes only */
@@ -68,4 +68,17 @@
   --bindu-ease:cubic-bezier(.16,1,.3,1);
   --bindu-ease-out:cubic-bezier(.25,.46,.45,.94);
   --bindu-dur-fast:120ms; --bindu-dur:220ms; --bindu-dur-slow:420ms; --bindu-dur-enter:700ms;
+}
+
+/* P0 — editorial type scale (all pages) */
+:root{
+  --ed-fs-hero:clamp(40px,9.4vw,128px);
+  --ed-fs-h2:clamp(34px,7.4vw,96px);
+  --ed-fs-h3:clamp(24px,3vw,40px);
+  --ed-fs-body:clamp(16px,1.35vw,20px);
+  --ed-fs-micro:12px;
+  --ed-lh-display:.95;
+  --ed-lh-body:1.6;
+  --ed-track:-.035em;
+  --ed-text-2:#A3A3A3;
 }
