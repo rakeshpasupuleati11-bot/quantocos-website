@@ -400,3 +400,14 @@ a.pcard:hover .pcard__link svg{transform:translateX(4px)}
 .pform__next{margin-top:14px;padding:14px 16px;border-radius:var(--bindu-r-md);border:1px solid var(--bindu-line-strong);background:var(--bindu-paper)}
 .pform__next p{margin:0 0 6px;font-size:14px;line-height:1.55}
 .pform__next p:last-child{margin:0}
+
+/* ---------- motion: tab crossfade, media reveal, state change ---------- */
+.ptabs__panel.is-active{animation:qc-tab-in 260ms var(--bindu-ease) both}
+@keyframes qc-tab-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.pbento__cell--media img{transition:transform 520ms var(--bindu-ease),opacity 520ms var(--bindu-ease)}
+.reveal-armed .pbento__cell--media:not(.is-in) img{opacity:.001;transform:scale(1.045)}
+@media (prefers-reduced-motion:reduce){
+  .ptabs__panel.is-active{animation:none}
+  .pbento__cell--media img{transition:none}
+  .reveal-armed .pbento__cell--media:not(.is-in) img{opacity:1;transform:none}
+}

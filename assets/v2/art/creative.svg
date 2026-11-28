@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" width="800" height="640" role="img" aria-hidden="true">
+<defs>
+<radialGradient id="glow" cx="0.79" cy="0.04" r="0.8">
+<stop offset="0" stop-color="#C9A44C" stop-opacity=".20"/>
+<stop offset=".55" stop-color="#C9A44C" stop-opacity=".05"/>
+<stop offset="1" stop-color="#C9A44C" stop-opacity="0"/>
+</radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40 0H0V40" fill="none" stroke="#F7F7F5" stroke-opacity=".045" stroke-width="1"/>
+</pattern>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5"
+ markerHeight="6.5" orient="auto-start-reverse">
+<path d="M0 0L10 5L0 10z" fill="#C9A44C" fill-opacity=".75"/>
+</marker>
+</defs>
+<rect width="800" height="640" fill="#0B0D11"/>
+<rect width="800" height="640" fill="url(#glow)"/>
+<rect width="800" height="640" fill="url(#grid)"/>
+<rect x="36" y="36" width="728" height="568" rx="2" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".10" stroke-width="1.2"/>
+<path d="M36 60V36h24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M740 36h24v24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M36 580v24h24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M740 604h24v-24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<circle cx="62" cy="72" r="4" fill="#C9A44C" fill-opacity=".9"/>
+<text x="76" y="79" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="400" letter-spacing="3.4" fill="#C9A44C" fill-opacity=".9" text-anchor="start">GC³ · CREATIVE</text>
+<text x="740" y="79" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="400" letter-spacing="2.6" fill="#F7F7F5" fill-opacity=".34" text-anchor="end">PLATE 02</text>
+<line x1="60" y1="544" x2="740" y2="544" stroke="#F7F7F5" stroke-opacity=".10" stroke-width="1.2"/>
+<text x="60" y="572" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" font-weight="400" letter-spacing="2.2" fill="#F7F7F5" fill-opacity=".38" text-anchor="start">ARTBOARD TO CAMPAIGN SYSTEM</text>
+<text x="740" y="572" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" font-weight="400" letter-spacing="2.2" fill="#F7F7F5" fill-opacity=".28" text-anchor="end">QUANTOCOS.COM</text>
+<g transform="translate(0,34)">
+<rect x="60" y="118" width="150" height="226" rx="4" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.2"/>
+<rect x="74" y="132" width="52" height="7" rx="2" fill="#C9A44C" fill-opacity=".8" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="74" y="148" width="84" height="5" rx="2" fill="#F7F7F5" fill-opacity=".28" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="74" y="178" width="122" height="104" rx="3" fill="#C9A44C" fill-opacity=".07" stroke="#C9A44C" stroke-opacity=".32" stroke-width="1.2"/>
+<path d="M74 262l30-34 22 24 26-32 44 46" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".35" stroke-width="1.4"/>
+<rect x="74" y="300" width="96" height="5" rx="2" fill="#F7F7F5" fill-opacity=".22" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="74" y="314" width="60" height="5" rx="2" fill="#F7F7F5" fill-opacity=".14" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="224" y="118" width="150" height="150" rx="8" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".2" stroke-width="1.2"/>
+<circle cx="299" cy="186" r="38" fill="none" stroke="#C9A44C" stroke-opacity=".45" stroke-width="1.2"/>
+<circle cx="299" cy="186" r="18" fill="#C9A44C" fill-opacity=".14" stroke="#C9A44C" stroke-opacity=".4"/>
+<rect x="240" y="244" width="70" height="5" rx="2" fill="#F7F7F5" fill-opacity=".22" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="224" y="284" width="260" height="140" rx="6" fill="#C9A44C" fill-opacity=".035" stroke="#C9A44C" stroke-opacity=".42" stroke-width="1.2"/>
+<path d="M232 292v-6h10 M474 292v-6h-10 M232 416v6h10 M474 416v6h-10" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".4" stroke-width="1.4"/>
+<path d="M338 334l30 20-30 20z" fill="#C9A44C" fill-opacity=".5" stroke="#C9A44C" stroke-opacity=".8" stroke-width="1.4"/>
+<line x1="240" y1="400" x2="468" y2="400" stroke="#F7F7F5" stroke-opacity=".14" stroke-width="1.2"/>
+<line x1="240" y1="400" x2="356" y2="400" stroke="#C9A44C" stroke-opacity=".7" stroke-width="2.4"/>
+<text x="524" y="140" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" font-weight="400" letter-spacing="2.4" fill="#C9A44C" fill-opacity=".85" text-anchor="start">DELIVERABLES</text>
+<line x1="524" y1="188" x2="728" y2="188" stroke="#F7F7F5" stroke-opacity=".13" stroke-width="1.2"/>
+<text x="524" y="172" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".66" text-anchor="start">Campaign key art</text>
+<text x="728" y="172" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".3" text-anchor="end">01</text>
+<line x1="524" y1="235" x2="728" y2="235" stroke="#F7F7F5" stroke-opacity=".13" stroke-width="1.2"/>
+<text x="524" y="219" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".66" text-anchor="start">Social system</text>
+<text x="728" y="219" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".3" text-anchor="end">02</text>
+<line x1="524" y1="282" x2="728" y2="282" stroke="#F7F7F5" stroke-opacity=".13" stroke-width="1.2"/>
+<text x="524" y="266" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".66" text-anchor="start">Motion cuts</text>
+<text x="728" y="266" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".3" text-anchor="end">03</text>
+<line x1="524" y1="329" x2="728" y2="329" stroke="#F7F7F5" stroke-opacity=".13" stroke-width="1.2"/>
+<text x="524" y="313" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".66" text-anchor="start">Brand guide</text>
+<text x="728" y="313" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".3" text-anchor="end">04</text>
+<path d="M524 380h204" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".4" stroke-width="1.6"/>
+<text x="524" y="404" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" font-weight="400" letter-spacing="1.4" fill="#C9A44C" fill-opacity=".7" text-anchor="start">ONE NAMED CREATIVE LEAD</text>
+</g>
+</svg>

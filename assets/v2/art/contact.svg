@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" width="800" height="640" role="img" aria-hidden="true">
+<defs>
+<radialGradient id="glow" cx="0.79" cy="0.04" r="0.8">
+<stop offset="0" stop-color="#C9A44C" stop-opacity=".20"/>
+<stop offset=".55" stop-color="#C9A44C" stop-opacity=".05"/>
+<stop offset="1" stop-color="#C9A44C" stop-opacity="0"/>
+</radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40 0H0V40" fill="none" stroke="#F7F7F5" stroke-opacity=".045" stroke-width="1"/>
+</pattern>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5"
+ markerHeight="6.5" orient="auto-start-reverse">
+<path d="M0 0L10 5L0 10z" fill="#C9A44C" fill-opacity=".75"/>
+</marker>
+</defs>
+<rect width="800" height="640" fill="#0B0D11"/>
+<rect width="800" height="640" fill="url(#glow)"/>
+<rect width="800" height="640" fill="url(#grid)"/>
+<rect x="36" y="36" width="728" height="568" rx="2" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".10" stroke-width="1.2"/>
+<path d="M36 60V36h24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M740 36h24v24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M36 580v24h24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M740 604h24v-24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<circle cx="62" cy="72" r="4" fill="#C9A44C" fill-opacity=".9"/>
+<text x="76" y="79" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="400" letter-spacing="3.4" fill="#C9A44C" fill-opacity=".9" text-anchor="start">GC³ · CONTACT</text>
+<text x="740" y="79" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="400" letter-spacing="2.6" fill="#F7F7F5" fill-opacity=".34" text-anchor="end">PLATE 13</text>
+<line x1="60" y1="544" x2="740" y2="544" stroke="#F7F7F5" stroke-opacity=".10" stroke-width="1.2"/>
+<text x="60" y="572" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" font-weight="400" letter-spacing="2.2" fill="#F7F7F5" fill-opacity=".38" text-anchor="start">BOOK, BRIEF, PLAN</text>
+<text x="740" y="572" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" font-weight="400" letter-spacing="2.2" fill="#F7F7F5" fill-opacity=".28" text-anchor="end">QUANTOCOS.COM</text>
+<g transform="translate(0,34)">
+<rect x="60" y="126" width="300" height="252" rx="8" fill="#F7F7F5" fill-opacity=".02" stroke="#F7F7F5" stroke-opacity=".18" stroke-width="1.2"/>
+<text x="78" y="152" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="2" fill="#C9A44C" fill-opacity=".85" text-anchor="start">DISCOVERY CALL</text>
+<text x="86" y="186" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".32" text-anchor="middle">M</text>
+<line x1="74" y1="196" x2="74" y2="356" stroke="#F7F7F5" stroke-opacity=".06" stroke-width="1.2"/>
+<text x="124" y="186" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".32" text-anchor="middle">T</text>
+<line x1="112" y1="196" x2="112" y2="356" stroke="#F7F7F5" stroke-opacity=".06" stroke-width="1.2"/>
+<text x="162" y="186" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".32" text-anchor="middle">W</text>
+<line x1="150" y1="196" x2="150" y2="356" stroke="#F7F7F5" stroke-opacity=".06" stroke-width="1.2"/>
+<text x="200" y="186" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".32" text-anchor="middle">T</text>
+<line x1="188" y1="196" x2="188" y2="356" stroke="#F7F7F5" stroke-opacity=".06" stroke-width="1.2"/>
+<text x="238" y="186" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".32" text-anchor="middle">F</text>
+<line x1="226" y1="196" x2="226" y2="356" stroke="#F7F7F5" stroke-opacity=".06" stroke-width="1.2"/>
+<text x="276" y="186" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".32" text-anchor="middle">S</text>
+<line x1="264" y1="196" x2="264" y2="356" stroke="#F7F7F5" stroke-opacity=".06" stroke-width="1.2"/>
+<text x="314" y="186" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" font-weight="400" letter-spacing="0" fill="#F7F7F5" fill-opacity=".32" text-anchor="middle">S</text>
+<line x1="302" y1="196" x2="302" y2="356" stroke="#F7F7F5" stroke-opacity=".06" stroke-width="1.2"/>
+<line x1="74" y1="214" x2="346" y2="214" stroke="#F7F7F5" stroke-opacity=".08" stroke-width="1.2"/>
+<line x1="74" y1="250" x2="346" y2="250" stroke="#F7F7F5" stroke-opacity=".08" stroke-width="1.2"/>
+<line x1="74" y1="286" x2="346" y2="286" stroke="#F7F7F5" stroke-opacity=".08" stroke-width="1.2"/>
+<line x1="74" y1="322" x2="346" y2="322" stroke="#F7F7F5" stroke-opacity=".08" stroke-width="1.2"/>
+<rect x="150" y="232" width="30" height="26" rx="4" fill="#C9A44C" fill-opacity=".16" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="165" y="250" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="0" fill="#C9A44C" fill-opacity=".95" text-anchor="middle">18</text>
+<rect x="400" y="126" width="340" height="108" rx="8" fill="#C9A44C" fill-opacity=".04" stroke="#C9A44C" stroke-opacity=".4" stroke-width="1.2"/>
+<circle cx="440" cy="180" r="20" fill="none" stroke="#C9A44C" stroke-opacity=".5"/>
+<path d="M433 174c4-4 8-2 9 2l1 4 5 1c1 5-2 7-6 9-6 2-14-4-16-10-1-4 3-8 7-6" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".75" stroke-width="1.4"/>
+<text x="474" y="176" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" font-weight="400" letter-spacing="1.4" fill="#F7F7F5" fill-opacity=".8" text-anchor="start">30 MINUTES</text>
+<text x="474" y="196" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" font-weight="400" letter-spacing="1" fill="#C9A44C" fill-opacity=".75" text-anchor="start">BOOK A DISCOVERY CALL</text>
+<text x="400" y="282" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" font-weight="400" letter-spacing="1" fill="#C9A44C" fill-opacity=".7" text-anchor="start">01</text>
+<text x="430" y="282" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" font-weight="400" letter-spacing=".8" fill="#F7F7F5" fill-opacity=".62" text-anchor="start">SEND CONTEXT</text>
+<line x1="400" y1="300" x2="740" y2="300" stroke="#F7F7F5" stroke-opacity=".1" stroke-width="1.2"/>
+<text x="400" y="334" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" font-weight="400" letter-spacing="1" fill="#C9A44C" fill-opacity=".7" text-anchor="start">02</text>
+<text x="430" y="334" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" font-weight="400" letter-spacing=".8" fill="#F7F7F5" fill-opacity=".62" text-anchor="start">SCOPE THE POD</text>
+<line x1="400" y1="352" x2="740" y2="352" stroke="#F7F7F5" stroke-opacity=".1" stroke-width="1.2"/>
+<text x="400" y="386" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" font-weight="400" letter-spacing="1" fill="#C9A44C" fill-opacity=".7" text-anchor="start">03</text>
+<text x="430" y="386" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" font-weight="400" letter-spacing=".8" fill="#F7F7F5" fill-opacity=".62" text-anchor="start">START THE PILOT</text>
+<line x1="400" y1="404" x2="740" y2="404" stroke="#F7F7F5" stroke-opacity=".1" stroke-width="1.2"/>
+</g>
+</svg>

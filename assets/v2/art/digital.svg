@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" width="800" height="640" role="img" aria-hidden="true">
+<defs>
+<radialGradient id="glow" cx="0.79" cy="0.04" r="0.8">
+<stop offset="0" stop-color="#C9A44C" stop-opacity=".20"/>
+<stop offset=".55" stop-color="#C9A44C" stop-opacity=".05"/>
+<stop offset="1" stop-color="#C9A44C" stop-opacity="0"/>
+</radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40 0H0V40" fill="none" stroke="#F7F7F5" stroke-opacity=".045" stroke-width="1"/>
+</pattern>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5"
+ markerHeight="6.5" orient="auto-start-reverse">
+<path d="M0 0L10 5L0 10z" fill="#C9A44C" fill-opacity=".75"/>
+</marker>
+</defs>
+<rect width="800" height="640" fill="#0B0D11"/>
+<rect width="800" height="640" fill="url(#glow)"/>
+<rect width="800" height="640" fill="url(#grid)"/>
+<rect x="36" y="36" width="728" height="568" rx="2" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".10" stroke-width="1.2"/>
+<path d="M36 60V36h24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M740 36h24v24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M36 580v24h24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M740 604h24v-24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<circle cx="62" cy="72" r="4" fill="#C9A44C" fill-opacity=".9"/>
+<text x="76" y="79" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="400" letter-spacing="3.4" fill="#C9A44C" fill-opacity=".9" text-anchor="start">GC³ · DIGITAL</text>
+<text x="740" y="79" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="400" letter-spacing="2.6" fill="#F7F7F5" fill-opacity=".34" text-anchor="end">PLATE 03</text>
+<line x1="60" y1="544" x2="740" y2="544" stroke="#F7F7F5" stroke-opacity=".10" stroke-width="1.2"/>
+<text x="60" y="572" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" font-weight="400" letter-spacing="2.2" fill="#F7F7F5" fill-opacity=".38" text-anchor="start">SITE AND PRODUCT SURFACES</text>
+<text x="740" y="572" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" font-weight="400" letter-spacing="2.2" fill="#F7F7F5" fill-opacity=".28" text-anchor="end">QUANTOCOS.COM</text>
+<g transform="translate(0,34)">
+<rect x="60" y="118" width="400" height="262" rx="8" fill="#F7F7F5" fill-opacity=".02" stroke="#F7F7F5" stroke-opacity=".22" stroke-width="1.2"/>
+<line x1="60" y1="152" x2="460" y2="152" stroke="#F7F7F5" stroke-opacity=".14" stroke-width="1.2"/>
+<circle cx="80" cy="135" r="3" fill="#F7F7F5" fill-opacity=".3"/>
+<circle cx="94" cy="135" r="3" fill="#F7F7F5" fill-opacity=".3"/>
+<circle cx="108" cy="135" r="3" fill="#F7F7F5" fill-opacity=".3"/>
+<text x="116" y="139" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" font-weight="400" letter-spacing=".6" fill="#F7F7F5" fill-opacity=".34" text-anchor="start">quantocos.com</text>
+<rect x="76" y="168" width="368" height="92" rx="5" fill="#C9A44C" fill-opacity=".06" stroke="#C9A44C" stroke-opacity=".34" stroke-width="1.2"/>
+<rect x="92" y="186" width="150" height="9" rx="2" fill="#F7F7F5" fill-opacity=".45" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="92" y="204" width="108" height="6" rx="2" fill="#F7F7F5" fill-opacity=".2" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="92" y="232" width="62" height="16" rx="3" fill="#C9A44C" fill-opacity=".55" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="76" y="276" width="112" height="88" rx="4" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".16" stroke-width="1.2"/>
+<rect x="86" y="288" width="92" height="34" rx="3" fill="#F7F7F5" fill-opacity=".05" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="86" y="332" width="62" height="5" rx="2" fill="#F7F7F5" fill-opacity=".22" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="86" y="344" width="44" height="4" rx="2" fill="#F7F7F5" fill-opacity=".13" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="200" y="276" width="112" height="88" rx="4" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".16" stroke-width="1.2"/>
+<rect x="210" y="288" width="92" height="34" rx="3" fill="#C9A44C" fill-opacity=".10" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="210" y="332" width="62" height="5" rx="2" fill="#F7F7F5" fill-opacity=".22" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="210" y="344" width="44" height="4" rx="2" fill="#F7F7F5" fill-opacity=".13" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="324" y="276" width="112" height="88" rx="4" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".16" stroke-width="1.2"/>
+<rect x="334" y="288" width="92" height="34" rx="3" fill="#F7F7F5" fill-opacity=".05" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="334" y="332" width="62" height="5" rx="2" fill="#F7F7F5" fill-opacity=".22" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="334" y="344" width="44" height="4" rx="2" fill="#F7F7F5" fill-opacity=".13" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="496" y="186" width="118" height="238" rx="18" fill="#F7F7F5" fill-opacity=".02" stroke="#C9A44C" stroke-opacity=".4" stroke-width="1.2"/>
+<rect x="516" y="206" width="78" height="10" rx="4" fill="#F7F7F5" fill-opacity=".14" stroke="none" stroke-opacity=".16" stroke-width="0"/>
+<rect x="516" y="228" width="78" height="54" rx="4" fill="#C9A44C" fill-opacity=".07" stroke="#C9A44C" stroke-opacity=".3" stroke-width="1.2"/>
+<rect x="516" y="294" width="78" height="20" rx="3" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".14" stroke-width="1.2"/>
+<rect x="516" y="324" width="78" height="20" rx="3" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".14" stroke-width="1.2"/>
+<rect x="516" y="354" width="78" height="20" rx="3" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".14" stroke-width="1.2"/>
+<line x1="460" y1="260" x2="488" y2="260" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.2" marker-end="url(#ar)"/>
+<text x="470" y="466" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" font-weight="400" letter-spacing="1.4" fill="#C9A44C" fill-opacity=".65" text-anchor="start">RESPONSIVE, NOT REPLICA</text>
+<text x="636" y="232" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.6" fill="#F7F7F5" fill-opacity=".4" text-anchor="start">MARKETING</text>
+<text x="636" y="258" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.6" fill="#F7F7F5" fill-opacity=".4" text-anchor="start">PAGES</text>
+<line x1="636" y1="276" x2="636" y2="320" stroke="#F7F7F5" stroke-opacity=".22" stroke-width="1.2"/>
+<text x="636" y="348" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.6" fill="#F7F7F5" fill-opacity=".4" text-anchor="start">PRODUCT</text>
+<text x="636" y="374" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.6" fill="#F7F7F5" fill-opacity=".4" text-anchor="start">UI</text>
+</g>
+</svg>

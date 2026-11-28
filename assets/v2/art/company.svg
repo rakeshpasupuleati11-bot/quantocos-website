@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" width="800" height="640" role="img" aria-hidden="true">
+<defs>
+<radialGradient id="glow" cx="0.79" cy="0.04" r="0.8">
+<stop offset="0" stop-color="#C9A44C" stop-opacity=".20"/>
+<stop offset=".55" stop-color="#C9A44C" stop-opacity=".05"/>
+<stop offset="1" stop-color="#C9A44C" stop-opacity="0"/>
+</radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40 0H0V40" fill="none" stroke="#F7F7F5" stroke-opacity=".045" stroke-width="1"/>
+</pattern>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5"
+ markerHeight="6.5" orient="auto-start-reverse">
+<path d="M0 0L10 5L0 10z" fill="#C9A44C" fill-opacity=".75"/>
+</marker>
+</defs>
+<rect width="800" height="640" fill="#0B0D11"/>
+<rect width="800" height="640" fill="url(#glow)"/>
+<rect width="800" height="640" fill="url(#grid)"/>
+<rect x="36" y="36" width="728" height="568" rx="2" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".10" stroke-width="1.2"/>
+<path d="M36 60V36h24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M740 36h24v24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M36 580v24h24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<path d="M740 604h24v-24" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".5" stroke-width="1.6"/>
+<circle cx="62" cy="72" r="4" fill="#C9A44C" fill-opacity=".9"/>
+<text x="76" y="79" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="400" letter-spacing="3.4" fill="#C9A44C" fill-opacity=".9" text-anchor="start">GC³ · COMPANY</text>
+<text x="740" y="79" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="400" letter-spacing="2.6" fill="#F7F7F5" fill-opacity=".34" text-anchor="end">PLATE 12</text>
+<line x1="60" y1="544" x2="740" y2="544" stroke="#F7F7F5" stroke-opacity=".10" stroke-width="1.2"/>
+<text x="60" y="572" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" font-weight="400" letter-spacing="2.2" fill="#F7F7F5" fill-opacity=".38" text-anchor="start">NAMED PEOPLE, NAMED OWNER</text>
+<text x="740" y="572" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12.5" font-weight="400" letter-spacing="2.2" fill="#F7F7F5" fill-opacity=".28" text-anchor="end">QUANTOCOS.COM</text>
+<g transform="translate(0,34)">
+<rect x="300" y="258" width="200" height="72" rx="10" fill="#C9A44C" fill-opacity=".05" stroke="#C9A44C" stroke-opacity=".45" stroke-width="1.2"/>
+<text x="400" y="288" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="2" fill="#C9A44C" fill-opacity=".95" text-anchor="middle">POD LEAD</text>
+<text x="400" y="310" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="8.5" font-weight="400" letter-spacing="1" fill="#F7F7F5" fill-opacity=".45" text-anchor="middle">ONE NAMED MANAGER</text>
+<rect x="120" y="170" width="148" height="54" rx="6" fill="#F7F7F5" fill-opacity=".02" stroke="#F7F7F5" stroke-opacity=".18" stroke-width="1.2"/>
+<text x="134" y="202" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.2" fill="#F7F7F5" fill-opacity=".68" text-anchor="start">CREATIVE</text>
+<path d="M268 197C298 197 268 294 300 294" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".3" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="120" y="352" width="148" height="54" rx="6" fill="#F7F7F5" fill-opacity=".02" stroke="#F7F7F5" stroke-opacity=".18" stroke-width="1.2"/>
+<text x="134" y="384" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.2" fill="#F7F7F5" fill-opacity=".68" text-anchor="start">DIGITAL</text>
+<path d="M268 379C298 379 268 294 300 294" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".3" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="532" y="170" width="148" height="54" rx="6" fill="#F7F7F5" fill-opacity=".02" stroke="#F7F7F5" stroke-opacity=".18" stroke-width="1.2"/>
+<text x="546" y="202" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.2" fill="#F7F7F5" fill-opacity=".68" text-anchor="start">STRATEGY</text>
+<path d="M532 197C502 197 532 294 500 294" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".3" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="532" y="352" width="148" height="54" rx="6" fill="#F7F7F5" fill-opacity=".02" stroke="#F7F7F5" stroke-opacity=".18" stroke-width="1.2"/>
+<text x="546" y="384" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.2" fill="#F7F7F5" fill-opacity=".68" text-anchor="start">AUTOMATION</text>
+<path d="M532 379C502 379 532 294 500 294" fill="none" fill-opacity="1" stroke="#C9A44C" stroke-opacity=".3" stroke-width="1.4" marker-end="url(#ar)"/>
+<line x1="400" y1="330" x2="400" y2="376" stroke="#F7F7F5" stroke-opacity=".25" stroke-width="1.2" stroke-dasharray="4 5"/>
+<rect x="250" y="380" width="300" height="44" rx="5" fill="none" fill-opacity="1" stroke="#F7F7F5" stroke-opacity=".16" stroke-width="1.2"/>
+<text x="400" y="408" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" font-weight="400" letter-spacing="1.2" fill="#F7F7F5" fill-opacity=".55" text-anchor="middle">FIVE GATES · ONE CONTRACT</text>
+<text x="60" y="470" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9.5" font-weight="400" letter-spacing="1.2" fill="#F7F7F5" fill-opacity=".38" text-anchor="start">ROLE COVERAGE AGREED IN THE POD PLAN</text>
+</g>
+</svg>
