@@ -267,17 +267,18 @@ a.pcard:hover .pcard__link svg{transform:translateX(4px)}
 .pdiagram{position:relative;border-radius:var(--bindu-r-xl);overflow:hidden;border:1px solid var(--bindu-line);background:var(--bindu-paper);padding:clamp(18px,2.6vw,34px);box-shadow:var(--bindu-sh-sm)}
 .pdiagram svg{width:100%;height:auto}
 .pdiagram--dark{background:var(--bindu-void);border-color:rgba(255,255,255,.1)}
+.pdiagram{width:100%}
 .pdiagram figcaption{margin-top:14px;font-family:var(--bindu-font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--bindu-ink-3);text-transform:uppercase}
 .pdiagram--dark figcaption{color:rgba(250,248,242,.5)}
-.dg-line{stroke:var(--bindu-line-strong);stroke-width:1}
-.dg-node{fill:var(--bindu-paper);stroke:var(--bindu-line-strong);stroke-width:1}
+.dg-line{stroke:rgba(10,10,10,.34);stroke-width:1.2}
+.dg-node{fill:var(--bindu-paper);stroke:rgba(10,10,10,.3);stroke-width:1.2}
 .dg-node--gold{fill:var(--bindu-soma-wash);stroke:rgba(201,164,76,.45)}
 .dg-text{font-family:'Inter',system-ui,sans-serif;font-size:12px;font-weight:500;fill:var(--bindu-ink)}
 .dg-label{font-family:'Inter',system-ui,sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;fill:var(--bindu-ink-3)}
-.pdiagram--dark .dg-line{stroke:rgba(250,248,242,.18)}
-.pdiagram--dark .dg-node{fill:rgba(250,248,242,.04);stroke:rgba(250,248,242,.16)}
+.pdiagram--dark .dg-line{stroke:rgba(201,164,76,.5)}
+.pdiagram--dark .dg-node{fill:rgba(250,248,242,.05);stroke:rgba(250,248,242,.3)}
 .pdiagram--dark .dg-text{fill:var(--bindu-on-dark)}
-.pdiagram--dark .dg-label{fill:rgba(250,248,242,.52)}
+.pdiagram--dark .dg-label{fill:rgba(250,248,242,.72)}
 
 /* ---------- footnote / trust note ---------- */
 .pnote{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--bindu-line)}
